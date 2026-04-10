@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GTech Soluções Ambientais - Plataforma Institucional
 
-## Getting Started
+Este repositório contém o código-fonte da plataforma institucional B2B desenvolvida para a **GTech Soluções Ambientais**. O projeto foi construído focando em altíssima performance, SEO, e uma interface corporativa de vanguarda que transmita a segurança e os pilares de ESG, Compliance e certificações da marca (como a R2v3 e ISOs).
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠 Pré-Requisitos do Ambiente
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Para rodar, modificar ou realizar o "build" desta aplicação, certifique-se de que o ambiente (servidor ou máquina local) possua:
+- **Node.js** (versão 18.17.0 ou superior recomendada)
+- **NPM** ou **Yarn** (gerenciadores de pacotes)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Tecnologias Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+A base da aplicação utiliza o estado da arte do framework ecossistema React:
+- **[Next.js (App Router)](https://nextjs.org/)** - Framework React (Server Side Rendering & escalabilidade).
+- **[Tailwind CSS](https://tailwindcss.com/)** - Estilização responsiva e ágil.
+- **[Framer Motion](https://www.framer.com/motion/)** - Motor avançado de micro-interações e animações declarativas.
+- **[Lucide React](https://lucide.dev/)** - Biblioteca de Ícones otimizados.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 💻 Como Rodar o Projeto Localmente
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone o repositório** ou faça o download dos arquivos:
+   ```bash
+   git clone https://github.com/bielcolares/site-gtech.git
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. **Acesse o diretório** do projeto:
+   ```bash
+   cd site-gtech
+   ```
 
-## Deploy on Vercel
+3. **Instale as dependências** do Node:
+   ```bash
+   npm install
+   # ou caso use yarn
+   yarn install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Inicie o Servidor de Desenvolvimento**:
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+5. O site estará rodando instantaneamente em `http://localhost:3000`.
+
+---
+
+## 🏗 Como Compilar (Build) para Produção
+
+Se a sua intenção é levar este código para um servidor próprio (VPS, AWS EC2, DigitalOcean, etc), você precisa compilar o código em um formato otimizado:
+
+1. **Gere a versão de produção**:
+   ```bash
+   npm run build
+   ```
+
+2. Após o término compilado pelo Next.js, **inicie a versão final**:
+   ```bash
+   npm start
+   ```
+*(O site passará a responder na porta 3000 do servidor, já otimizado e com tempos de carregamento extremante velozes).*
+
+---
+
+## 🌐 Instruções Simplificadas para Hospedagem Nuvem (Deploy)
+
+A arquitetura do site foi projetada para interagir nativamente com serviços PaaS (Plataforma como Serviço). Se deseja publicá-lo de forma simplificada sem precisar configurar servidores manualmente:
+
+### Recomendação principal: Vercel ou Netlify
+1. Crie uma conta na [Vercel](https://vercel.com/) ou [Netlify](https://netlify.com/).
+2. Vincule a sua conta do GitHub a plataforma.
+3. Importe este repositório (`site-gtech`).
+4. Ao clicar em **"Deploy"**, as configurações serão preenchidas automaticamente (Framework Preset: *Next.js*; Build Command: `npm run build`).
+5. A plataforma gerará um link online em menos de 2 minutos. Basta apontar o DNS / Domínio Oficial (`www.gtech.com.br`) pelo painel.
+
+---
+
+## 📂 Estrutura Principal dos Arquivos 
+
+Caso ocorra futuras manutenções na estrutura visual ou textual, guie-se por este mapeamento:
+- `src/app/` → Ponto central das rotas (Páginas do site).
+  - `page.js` → A página **Principal (Home)** B2B.
+  - `sobre-nos/page.js` → Página dedicada à trajetória.
+  - `servicos/page.js` → Catálogo de serviços.
+  - `fale-conosco/page.js` → Central de Contato e Localização.
+- `src/components/` → Todos os "blocos dinâmicos" do site estão aqui. 
+  - (O *Header*, *Footer*, *Hero*, *Serviços Oficiais* entre outros pequenos pedaços customizáveis de fácil edição).
+- `public/images/` → Todas as imagens estáticas utilizadas (Logo e Fotografia do Galpão).
+- `tailwind.config.js` → Arquivo configurador do **Design System**. Toda a paleta de Cores base (os tons de Verde Oficial e Cinza) são controlados centralmente por este sistema.
+
+---
+**Documentação Estruturada por Engenharia de Software B2B projetada para alta disponibilidade e padronização ESG.**
