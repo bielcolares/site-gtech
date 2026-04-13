@@ -152,10 +152,15 @@ export default function ServicosContent() {
               className="order-1 hidden md:block lg:order-2"
             >
               <div className="relative flex h-[450px] w-full items-center justify-center">
-                {/* Bg Box / Texture */}
-                <div className="absolute inset-4 flex items-center justify-center overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-inner sm:inset-10">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_black_10%,_transparent_10%)] bg-[length:24px_24px] opacity-[0.03]"></div>
-                  <Network className="h-40 w-40 text-slate-200" />
+                {/* Bg Box / Texture (fundo-gtech) */}
+                <div className="absolute inset-4 flex items-center justify-center overflow-hidden rounded-3xl border border-slate-200 shadow-inner sm:inset-10">
+                  <img
+                    src="/images/fundo-gtech.jpeg"
+                    alt="Operação GTech"
+                    className="absolute h-full w-full object-cover"
+                  />
+                  {/* Overlay escuro para dar destaque aos cards menores da frente */}
+                  <div className="absolute inset-0 bg-slate-900/60"></div>
                 </div>
 
                 {/* Left floating card */}
@@ -179,15 +184,15 @@ export default function ServicosContent() {
                 </div>
 
                 {/* Right floating card (Main Metric) */}
-                <div className="bg-primary/95 border-primary-light relative z-20 ml-auto w-72 translate-x-4 translate-y-12 transform rounded-3xl border p-8 shadow-[0_10px_40px_rgba(156,192,38,0.5)] backdrop-blur">
-                  <span className="mb-1 block text-6xl font-black tracking-tighter text-white drop-shadow-sm">
+                <div className="relative z-20 ml-auto w-72 translate-x-4 translate-y-12 transform rounded-3xl border border-slate-200 bg-white p-8 shadow-[0_15px_40px_rgba(156,192,38,0.4)] transition-transform hover:-translate-y-1">
+                  <span className="mb-1 block text-6xl font-black tracking-tighter text-primary-dark">
                     +95%
                   </span>
-                  <span className="text-sm font-extrabold uppercase tracking-widest text-emerald-950">
+                  <span className="text-sm font-extrabold uppercase tracking-widest text-slate-800">
                     Reaproveitamento
                   </span>
-                  <div className="mt-5 border-t border-emerald-900/10 pt-5">
-                    <p className="text-sm font-semibold leading-snug text-emerald-950/80">
+                  <div className="mt-5 border-t border-slate-100 pt-5">
+                    <p className="text-sm font-semibold leading-snug text-slate-600">
                       Índice real certificado e rastreável gerado pela nossa
                       mineração urbana.
                     </p>
