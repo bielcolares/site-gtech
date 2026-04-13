@@ -9,36 +9,25 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden pb-16 pt-32 lg:pb-24 lg:pt-[136px]"
+      className="relative overflow-hidden bg-slate-50 pb-16 pt-32 lg:pb-24 lg:pt-[136px]"
     >
-      {/* Background Image Setup */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/fundo-gtech.jpeg"
-          alt="Galpão GTech"
-          className="h-full w-full object-cover"
-        />
-        {/* Light gradient overlay to preserve readability and B2B tone */}
-        <div className="absolute inset-0 bg-white/85 sm:bg-gradient-to-r sm:from-white/95 sm:via-white/40 sm:to-transparent"></div>
-      </div>
-
-      {/* Design Verde — direita, acima do fundo-gtech, degradê suave (mask) para incorporar e não ter corte reto */}
+      {/* Design Verde — Lado Direito, Degradê Direita para Esquerda e Cima para Baixo */}
       <motion.div
-        initial={{ opacity: 0, x: 150 }}
+        initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.6, ease: 'easeOut', delay: 0.1 }}
-        className="pointer-events-none absolute bottom-0 right-0 top-0 z-[1] w-full max-w-[60%] select-none lg:max-w-[45%]"
+        transition={{ duration: 2, ease: 'easeOut' }}
+        className="pointer-events-none absolute bottom-0 right-0 top-0 z-[1] w-full max-w-[70%] select-none lg:max-w-[50%]"
         style={{
           maskImage:
-            'linear-gradient(to left, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%)',
+            'radial-gradient(ellipse at top right, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%)',
           WebkitMaskImage:
-            'linear-gradient(to left, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%)',
+            'radial-gradient(ellipse at top right, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%)',
         }}
       >
         <img
           src="/images/design verde.png"
           alt=""
-          className="h-full w-full object-cover object-right opacity-30"
+          className="h-full w-full object-cover object-right-top opacity-[0.15] mix-blend-multiply"
         />
       </motion.div>
 

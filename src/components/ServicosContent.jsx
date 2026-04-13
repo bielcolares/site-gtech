@@ -47,8 +47,27 @@ export default function ServicosContent() {
   return (
     <div className="flex-grow overflow-hidden bg-white pb-24">
       {/* Header Services */}
-      <section className="relative border-b border-slate-200 bg-slate-50 pb-20 pt-32">
+      <section className="relative overflow-hidden border-b border-slate-200 bg-slate-50 pb-16 pt-32 lg:pb-24 lg:pt-[136px]">
         <div className="from-primary/20 pointer-events-none absolute right-0 top-0 h-full w-full bg-[radial-gradient(circle_at_right,_var(--tw-gradient-stops))] via-transparent to-transparent opacity-30"></div>
+        {/* Design Verde — Lado Direito, Degradê Direita para Esquerda e Cima para Baixo */}
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 2, ease: 'easeOut' }}
+          className="pointer-events-none absolute bottom-0 right-0 top-0 z-[1] w-full max-w-[70%] select-none lg:max-w-[50%]"
+          style={{
+            maskImage:
+              'radial-gradient(ellipse at top right, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%)',
+            WebkitMaskImage:
+              'radial-gradient(ellipse at top right, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%)',
+          }}
+        >
+          <img
+            src="/images/design verde.png"
+            alt=""
+            className="h-full w-full object-cover object-right-top opacity-[0.15] mix-blend-multiply"
+          />
+        </motion.div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"

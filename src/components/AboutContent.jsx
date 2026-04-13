@@ -28,15 +28,37 @@ export default function AboutContent() {
   };
 
   return (
-    <div className="relative flex-grow overflow-hidden bg-white py-24">
-      {/* Design verde como watermark de fundo */}
-      <div className="pointer-events-none absolute -right-16 top-0 h-[700px] w-[700px] select-none opacity-[0.04]">
+    <div className="relative flex-grow overflow-hidden pb-16 pt-32 lg:pb-24 lg:pt-[136px]">
+      {/* Background Imagem Galpão com Efeito Vidro (Glassmorphism) */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/fundo-gtech.jpeg"
+          alt="Galpão Corporativo GTech"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-white/80 backdrop-blur-lg"></div>
+        {/* Degradê suave na base para conectar com a próxima seção, se houver */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+      </div>
+      {/* Design Verde — Lado Esquerdo, Degradê Esquerda para Direita e Cima para Baixo */}
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, ease: 'easeOut' }}
+        className="pointer-events-none absolute left-0 top-0 z-[1] h-[700px] w-full max-w-[70%] select-none lg:h-[800px] lg:max-w-[50%]"
+        style={{
+          maskImage:
+            'radial-gradient(ellipse at top left, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 70%)',
+          WebkitMaskImage:
+            'radial-gradient(ellipse at top left, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 70%)',
+        }}
+      >
         <img
           src="/images/design verde.png"
           alt=""
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-left-top opacity-[0.15] mix-blend-multiply"
         />
-      </div>
+      </motion.div>
       {/* Glow bg */}
       <div className="bg-primary/10 pointer-events-none absolute right-0 top-0 h-[800px] w-[800px] -translate-y-1/2 translate-x-1/3 rounded-full blur-[150px]"></div>
 

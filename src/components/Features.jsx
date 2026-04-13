@@ -52,8 +52,19 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="relative overflow-hidden border-t border-slate-200 bg-slate-50 py-24 lg:py-32"
+      className="relative overflow-hidden border-t border-slate-200 py-24 lg:py-32"
     >
+      {/* Background Imagem Galpão (Clean + Nítido) */}
+      <div className="absolute inset-0 z-0 opacity-40">
+        <img
+          src="/images/fundo-gtech.jpeg"
+          alt="Galpão Corporativo GTech"
+          className="h-full w-full object-cover grayscale"
+        />
+        {/* Camada branca limpa apenas para contraste, sem blur */}
+        <div className="absolute inset-0 bg-white/60"></div>
+      </div>
+
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

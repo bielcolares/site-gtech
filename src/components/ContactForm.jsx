@@ -39,8 +39,31 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="w-full overflow-hidden bg-slate-50 py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section
+      id="contact"
+      className="relative w-full overflow-hidden bg-slate-50 pb-16 pt-32 lg:pb-24 lg:pt-[136px]"
+    >
+      {/* Design Verde — Lado Esquerdo, Degradê Esquerda para Direita e Cima para Baixo */}
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 2, ease: 'easeOut' }}
+        className="pointer-events-none absolute left-0 top-0 z-[1] h-full w-full max-w-[70%] select-none lg:max-w-[50%]"
+        style={{
+          maskImage:
+            'radial-gradient(ellipse at top left, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%)',
+          WebkitMaskImage:
+            'radial-gradient(ellipse at top left, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%)',
+        }}
+      >
+        <img
+          src="/images/design verde.png"
+          alt=""
+          className="h-full w-full object-cover object-left-top opacity-[0.15] mix-blend-multiply"
+        />
+      </motion.div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
