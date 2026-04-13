@@ -29,6 +29,14 @@ export default function AboutContent() {
 
   return (
     <div className="relative flex-grow overflow-hidden bg-white py-24">
+      {/* Design verde como watermark de fundo */}
+      <div className="pointer-events-none absolute -right-16 top-0 h-[700px] w-[700px] select-none opacity-[0.04]">
+        <img
+          src="/images/design verde.png"
+          alt=""
+          className="h-full w-full object-cover"
+        />
+      </div>
       {/* Glow bg */}
       <div className="bg-primary/10 pointer-events-none absolute right-0 top-0 h-[800px] w-[800px] -translate-y-1/2 translate-x-1/3 rounded-full blur-[150px]"></div>
 
@@ -178,6 +186,14 @@ export default function AboutContent() {
               variants={itemVariants}
               className="relative flex h-full min-h-[400px] flex-col justify-center overflow-hidden rounded-3xl bg-primary-deep p-10 shadow-xl lg:p-16"
             >
+              {/* Design branco como textura decorativa no card verde escuro */}
+              <div className="pointer-events-none absolute inset-0 select-none opacity-[0.06]">
+                <img
+                  src="/images/design branco.png"
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              </div>
               <div className="bg-primary/20 pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full blur-[60px]"></div>
               <div className="pointer-events-none absolute bottom-0 left-0 h-80 w-80 rounded-full bg-white/5 blur-[80px]"></div>
               <div className="relative z-10">

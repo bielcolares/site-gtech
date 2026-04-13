@@ -14,9 +14,9 @@ export default function Footer() {
               className="mb-6 block transition-opacity hover:opacity-80"
             >
               <img
-                src="/images/logo-gtech.png"
-                alt="GTech Soluções Ambientais"
-                className="h-12 w-auto"
+                src="/images/selo 10 anos gtech.png"
+                alt="GTech Soluções Ambientais - 10 Anos"
+                className="h-16 w-auto"
               />
             </Link>
             <p className="mb-6 max-w-md text-balance text-sm leading-relaxed text-slate-600">

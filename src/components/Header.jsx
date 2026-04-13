@@ -14,9 +14,9 @@ export default function Header() {
           <div className="flex flex-shrink-0 items-center transition-opacity hover:opacity-80">
             <Link href="/">
               <img
-                src="/images/logo-gtech.png"
-                alt="GTech Soluções Ambientais"
-                className="h-10 w-auto lg:h-12"
+                src="/images/selo 10 anos gtech.png"
+                alt="GTech Soluções Ambientais - 10 Anos"
+                className="h-16 w-auto"
               />
             </Link>
           </div>

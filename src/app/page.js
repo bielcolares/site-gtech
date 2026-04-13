@@ -7,10 +7,10 @@ import Partners from '@/components/Partners';
 export default function Home() {
   return (
     <>
-      {/* 1ª Dobra: Apresentação B2B Clean com Medidor Embutido */}
+      {/* 1ª Dobra: Apresentação B2B */}
       <Hero />
 
-      {/* 2ª Dobra: Radar de Reciclagem com as métricas auditadas */}
+      {/* 2ª Dobra: Radar de Reciclagem */}
       <RadarReciclagem />
 
       {/* 3ª Dobra: Vídeo Institucional */}

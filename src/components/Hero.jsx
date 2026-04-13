@@ -1,41 +1,15 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, Leaf, Cpu } from 'lucide-react';
-import { motion, useInView } from 'framer-motion';
+import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
-  // Logic for the Recycling Meter
-  const [count, setCount] = useState(0);
-  const target = 1500; // Tons
-  const meterRef = useRef(null);
-  const isInView = useInView(meterRef, { once: true, margin: '-50px' });
-
-  useEffect(() => {
-    if (isInView) {
-      let start = 0;
-      const duration = 2000;
-      const increment = target / (duration / 16);
-
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-          setCount(target);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(start));
-        }
-      }, 16);
-
-      return () => clearInterval(timer);
-    }
-  }, [isInView, target]);
-
   return (
     <section
       id="hero"
-      className="relative overflow-hidden pb-24 pt-32 lg:pb-32 lg:pt-48"
+      className="relative overflow-hidden pb-16 pt-32 lg:pb-24 lg:pt-[136px]"
     >
       {/* Background Image Setup */}
       <div className="absolute inset-0 z-0">
@@ -48,6 +22,26 @@ export default function Hero() {
         <div className="absolute inset-0 bg-white/85 sm:bg-gradient-to-r sm:from-white/95 sm:via-white/40 sm:to-transparent"></div>
       </div>
 
+      {/* Design Verde — direita, acima do fundo-gtech, degradê suave (mask) para incorporar e não ter corte reto */}
+      <motion.div
+        initial={{ opacity: 0, x: 150 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.6, ease: 'easeOut', delay: 0.1 }}
+        className="pointer-events-none absolute bottom-0 right-0 top-0 z-[1] w-full max-w-[60%] select-none lg:max-w-[45%]"
+        style={{
+          maskImage:
+            'linear-gradient(to left, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%)',
+          WebkitMaskImage:
+            'linear-gradient(to left, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%)',
+        }}
+      >
+        <img
+          src="/images/design verde.png"
+          alt=""
+          className="h-full w-full object-cover object-right opacity-30"
+        />
+      </motion.div>
+
       {/* Decorative gradients */}
       <div className="bg-primary/20 pointer-events-none absolute right-0 top-0 -mr-40 -mt-40 h-[600px] w-[600px] rounded-full blur-[100px]"></div>
       <div className="pointer-events-none absolute bottom-0 left-0 -mb-40 -ml-40 h-[500px] w-[500px] rounded-full bg-slate-100 blur-[100px]"></div>
@@ -58,7 +52,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="max-w-3xl lg:col-span-7"
+            className="relative z-10 max-w-3xl lg:col-span-8"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -117,58 +111,6 @@ export default function Hero() {
                 </span>{' '}
                 em todo país.
               </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-            className="relative hidden lg:col-span-5 lg:block"
-            ref={meterRef}
-          >
-            {/* Impact Meter Card Replacing the previous faux-dashboard */}
-            <div className="border-primary-light relative flex h-[500px] flex-col justify-between overflow-hidden rounded-3xl border bg-primary shadow-[0_20px_50px_rgba(156,192,38,0.3)]">
-              {/* Card Background Effects */}
-              <div className="pointer-events-none absolute left-0 top-0 h-full w-full bg-[radial-gradient(circle_at_center,_white_10%,_transparent_10%)] bg-[length:16px_16px] opacity-10"></div>
-              <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/20 blur-[50px]"></div>
-
-              <div className="relative z-20 flex h-full flex-col items-center justify-center p-8 text-center">
-                <div className="mb-8 rounded-2xl border border-white/30 bg-white/20 p-4 backdrop-blur-md">
-                  <Cpu className="h-10 w-10 text-white" />
-                </div>
-
-                <h2 className="mb-6 flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-widest text-white/90">
-                  <Leaf className="h-4 w-4" /> Nosso Impacto Ambiental
-                </h2>
-
-                <div className="mb-6 flex flex-col items-center justify-center">
-                  <div className="flex items-start leading-none text-white">
-                    <span className="mt-2 text-4xl font-extrabold">+</span>
-                    <span className="mx-1 text-7xl font-black tabular-nums tracking-tighter drop-shadow-md">
-                      {count.toLocaleString('pt-BR')}
-                    </span>
-                  </div>
-                  <span className="mt-2 text-2xl font-bold uppercase tracking-widest text-white">
-                    Toneladas
-                  </span>
-                </div>
-
-                <p className="mt-4 max-w-sm px-4 text-base font-medium text-white/90">
-                  Recuperadas e reinseridas na cadeia produtiva, menos mineração
-                  e mais segurança.
-                </p>
-              </div>
-
-              {/* R2v3 Badge Bottom */}
-              <div className="relative z-20 flex w-full items-center justify-between border-t border-white/20 bg-emerald-950/20 p-4 backdrop-blur-sm">
-                <span className="text-sm font-bold text-white/90">
-                  Certificação Ouro Global
-                </span>
-                <div className="rounded border border-white/40 bg-white px-3 py-1 text-xs font-black uppercase text-primary-dark shadow-sm">
-                  R2v3
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>

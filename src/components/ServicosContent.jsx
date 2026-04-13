@@ -180,146 +180,7 @@ export default function ServicosContent() {
         </div>
       </section>
 
-      {/* Serviço 2: Segurança Jurídica e Rastreabilidade */}
-      <section className="border-y border-slate-200 bg-slate-50 py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-16 lg:grid-cols-2">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-100px' }}
-              variants={slideRight}
-              className="relative hidden md:block"
-            >
-              <div className="relative flex aspect-square flex-col items-center justify-center gap-8 overflow-hidden rounded-3xl border border-slate-200 bg-white p-12 shadow-lg">
-                <Shield className="center absolute h-32 w-32 text-primary-dark opacity-10" />
-                <div className="relative z-10 flex w-full items-center justify-between rounded-xl border border-slate-100 bg-slate-50 p-4 shadow-sm transition-transform hover:scale-105">
-                  <span className="font-bold text-slate-800">ISO 9001</span>
-                  <SearchCheck className="h-5 w-5 text-primary-dark" />
-                </div>
-                <div className="relative z-10 flex w-full items-center justify-between rounded-xl border border-slate-100 bg-slate-50 p-4 shadow-sm transition-transform hover:scale-105">
-                  <span className="font-bold text-slate-800">ISO 14001</span>
-                  <SearchCheck className="h-5 w-5 text-primary-dark" />
-                </div>
-                <div className="relative z-10 flex w-full items-center justify-between rounded-xl border border-slate-100 bg-slate-50 p-4 shadow-sm transition-transform hover:scale-105">
-                  <span className="font-bold text-slate-800">ISO 45001</span>
-                  <SearchCheck className="h-5 w-5 text-primary-dark" />
-                </div>
-                <div className="relative z-10 flex w-full scale-105 transform items-center justify-between rounded-xl bg-primary p-4 shadow-[0_4px_15px_rgba(156,192,38,0.4)]">
-                  <span className="font-black text-white">
-                    Certificação R2v3
-                  </span>
-                  <Shield className="h-5 w-5 text-white" />
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-100px' }}
-              variants={slideLeft}
-            >
-              <div className="mb-6 inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-3 text-primary-dark shadow-sm">
-                <SearchCheck className="h-8 w-8" />
-              </div>
-              <h2 className="mb-6 text-balance text-3xl font-extrabold text-slate-800 lg:text-5xl">
-                Segurança Jurídica Total e Rastreabilidade
-              </h2>
-              <p className="mb-6 text-balance text-lg leading-relaxed text-slate-600">
-                Nós protegemos algo muito mais valioso que o resíduo em si:{' '}
-                <strong>a integridade e a reputação da sua marca.</strong> Todo
-                o processo corporativo é auditado ponto a ponto.
-              </p>
-              <div className="mb-6 rounded-r-xl border-l-4 border-primary bg-white p-6 italic text-slate-700 shadow-sm">
-                &quot;Somos referência nacional portando a seleta certificação
-                R2v3, o principal benchmark global que comprova a
-                responsabilidade na destruição de dados e gestão integral de
-                eletrônicos.&quot;
-              </div>
-              <p className="font-medium text-slate-600">
-                Além das ISOs 9001 (Qualidade), 14001 (Meio Ambiente) e 45001
-                (Saúde e Segurança).
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Serviço 3: Gerenciamento Opeacional Completo */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            variants={fadeUp}
-            className="mx-auto mb-16 max-w-4xl text-center"
-          >
-            <div className="mb-6 inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-3 text-primary-dark shadow-sm">
-              <Factory className="h-8 w-8" />
-            </div>
-            <h2 className="mb-6 text-balance text-3xl font-extrabold text-slate-800 lg:text-5xl">
-              Operação em Escala Industrial
-            </h2>
-            <p className="text-balance text-lg text-slate-600">
-              Atuamos na coleta especializada e{' '}
-              <strong>
-                gerenciamento de resíduos eletrônicos, eletroeletrônicos e
-                materiais não ferrosos.
-              </strong>{' '}
-              Na GTech, a conformidade deixa de ser apenas uma regra e se
-              transforma em vantagem competitiva perante ao mercado, garantindo{' '}
-              <strong>governança sólida e inquestionável.</strong>
-            </p>
-          </motion.div>
-
-          <div className="relative z-10 grid gap-8 md:grid-cols-2">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={slideRight}
-              className="hover:border-primary/50 group rounded-3xl border border-slate-200 bg-white p-10 shadow-lg transition-all hover:shadow-xl"
-            >
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-100 bg-slate-50 transition-colors group-hover:bg-primary group-hover:text-white">
-                <Network className="h-8 w-8 text-primary-dark group-hover:text-white" />
-              </div>
-              <h3 className="mb-4 text-2xl font-extrabold text-slate-800">
-                Resíduos Tecnológicos (REEE)
-              </h3>
-              <p className="mb-8 text-lg text-slate-600">
-                Logística reversa corporativa desde o datacenter até o
-                periférico. Descaracterização física completa que aniquila dados
-                sensíveis antes de moer e segregar as placas de circuito (PCI) e
-                litologias variadas.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={slideLeft}
-              className="hover:border-primary/50 group rounded-3xl border border-slate-200 bg-white p-10 shadow-lg transition-all hover:shadow-xl"
-            >
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-100 bg-slate-50 transition-colors group-hover:bg-primary group-hover:text-white">
-                <Factory className="h-8 w-8 text-primary-dark group-hover:text-white" />
-              </div>
-              <h3 className="mb-4 text-2xl font-extrabold text-slate-800">
-                Materiais Não Ferrosos
-              </h3>
-              <p className="mb-8 text-lg text-slate-600">
-                Especialização na triagem, preparação mecânica em larga escala e
-                destinação segura de ligas metálicas que abastecem siderúrgicas
-                e o mercado de extração urbana secundária.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Grid Oficial de Serviços (9 Itens) */}
+      {/* Grid Oficial de Serviços (9 Itens) - Movido para cima */}
       <section className="border-t border-slate-200 bg-slate-50 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -380,7 +241,7 @@ export default function ServicosContent() {
               },
               {
                 title: 'Compra de Lotes',
-                desc: 'Compra de lotes de descarte de empresas, produtos de informática ou itens impróprios para venda, garantindo sanitização.',
+                desc: 'Compra de lotes de descarte de empresas, produtos de informática ou items impróprios para venda, garantindo sanitização.',
               },
             ].map((svc, i) => (
               <motion.div
@@ -397,6 +258,145 @@ export default function ServicosContent() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Serviço 2: Segurança Jurídica e Rastreabilidade - Fundo alterado para branco para zebrar */}
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-16 lg:grid-cols-2">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-100px' }}
+              variants={slideRight}
+              className="relative hidden md:block"
+            >
+              <div className="relative flex aspect-square flex-col items-center justify-center gap-8 overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-12 shadow-lg">
+                <Shield className="center absolute h-32 w-32 text-primary-dark opacity-10" />
+                <div className="relative z-10 flex w-full items-center justify-between rounded-xl border border-slate-100 bg-white p-4 shadow-sm transition-transform hover:scale-105">
+                  <span className="font-bold text-slate-800">ISO 9001</span>
+                  <SearchCheck className="h-5 w-5 text-primary-dark" />
+                </div>
+                <div className="relative z-10 flex w-full items-center justify-between rounded-xl border border-slate-100 bg-white p-4 shadow-sm transition-transform hover:scale-105">
+                  <span className="font-bold text-slate-800">ISO 14001</span>
+                  <SearchCheck className="h-5 w-5 text-primary-dark" />
+                </div>
+                <div className="relative z-10 flex w-full items-center justify-between rounded-xl border border-slate-100 bg-white p-4 shadow-sm transition-transform hover:scale-105">
+                  <span className="font-bold text-slate-800">ISO 45001</span>
+                  <SearchCheck className="h-5 w-5 text-primary-dark" />
+                </div>
+                <div className="relative z-10 flex w-full scale-105 transform items-center justify-between rounded-xl bg-primary p-4 shadow-[0_4px_15px_rgba(156,192,38,0.4)]">
+                  <span className="font-black text-white">
+                    Certificação R2v3
+                  </span>
+                  <Shield className="h-5 w-5 text-white" />
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-100px' }}
+              variants={slideLeft}
+            >
+              <div className="mb-6 inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-3 text-primary-dark shadow-sm">
+                <SearchCheck className="h-8 w-8" />
+              </div>
+              <h2 className="mb-6 text-balance text-3xl font-extrabold text-slate-800 lg:text-5xl">
+                Segurança Jurídica Total e Rastreabilidade
+              </h2>
+              <p className="mb-6 text-balance text-lg leading-relaxed text-slate-600">
+                Nós protegemos algo muito mais valioso que o resíduo em si:{' '}
+                <strong>a integridade e a reputação da sua marca.</strong> Todo
+                o processo corporativo é auditado ponto a ponto.
+              </p>
+              <div className="mb-6 rounded-r-xl border-l-4 border-primary bg-slate-50 p-6 italic text-slate-700 shadow-sm">
+                &quot;Somos referência nacional portando a seleta certificação
+                R2v3, o principal benchmark global que comprova a
+                responsabilidade na destruição de dados e gestão integral de
+                eletrônicos.&quot;
+              </div>
+              <p className="font-medium text-slate-600">
+                Além das ISOs 9001 (Qualidade), 14001 (Meio Ambiente) e 45001
+                (Saúde e Segurança).
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Serviço 3: Gerenciamento Opeacional Completo - Fundo alterado para slate-50 para zebrar */}
+      <section className="border-t border-slate-200 bg-slate-50 py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            variants={fadeUp}
+            className="mx-auto mb-16 max-w-4xl text-center"
+          >
+            <div className="mb-6 inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-3 text-primary-dark shadow-sm">
+              <Factory className="h-8 w-8" />
+            </div>
+            <h2 className="mb-6 text-balance text-3xl font-extrabold text-slate-800 lg:text-5xl">
+              Operação em Escala Industrial
+            </h2>
+            <p className="text-balance text-lg text-slate-600">
+              Atuamos na coleta especializada e{' '}
+              <strong>
+                gerenciamento de resíduos eletrônicos, eletroeletrônicos e
+                materiais não ferrosos.
+              </strong>{' '}
+              Na GTech, a conformidade deixa de ser apenas uma regra e se
+              transforma em vantagem competitiva perante ao mercado, garantindo{' '}
+              <strong>governança sólida e inquestionável.</strong>
+            </p>
+          </motion.div>
+
+          <div className="relative z-10 grid gap-8 md:grid-cols-2">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={slideRight}
+              className="hover:border-primary/50 group rounded-3xl border border-slate-200 bg-white p-10 shadow-lg transition-all hover:shadow-xl"
+            >
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-100 bg-slate-50 transition-colors group-hover:bg-primary group-hover:text-white">
+                <Network className="h-8 w-8 text-primary-dark group-hover:text-white" />
+              </div>
+              <h3 className="mb-4 text-2xl font-extrabold text-slate-800">
+                Resíduos Tecnológicos (REEE)
+              </h3>
+              <p className="mb-8 text-lg text-slate-600">
+                Logística reversa corporativa desde o datacenter até o
+                periférico. Descaracterização física completa que aniquila dados
+                sensíveis antes de moer e segregar as placas de circuito (PCI) e
+                litologias variadas.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={slideLeft}
+              className="hover:border-primary/50 group rounded-3xl border border-slate-200 bg-white p-10 shadow-lg transition-all hover:shadow-xl"
+            >
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-100 bg-slate-50 transition-colors group-hover:bg-primary group-hover:text-white">
+                <Factory className="h-8 w-8 text-primary-dark group-hover:text-white" />
+              </div>
+              <h3 className="mb-4 text-2xl font-extrabold text-slate-800">
+                Materiais Não Ferrosos
+              </h3>
+              <p className="mb-8 text-lg text-slate-600">
+                Especialização na triagem, preparação mecânica em larga escala e
+                destinação segura de ligas metálicas que abastecem siderúrgicas
+                e o mercado de extração urbana secundária.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>
