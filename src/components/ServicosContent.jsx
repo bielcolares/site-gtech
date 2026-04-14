@@ -252,8 +252,11 @@ export default function ServicosContent() {
 
       {/* Grid Oficial de Serviços (9 Itens) - Movido para cima */}
       {/* Grid Oficial de Serviços (9 Itens) - Movido para cima */}
-      <section className="border-primary-light border-t bg-primary-dark py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-[#015637] py-24">
+        {/* Background com pontos — padrão RadarReciclagem */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#ffffff_10%,_transparent_10%)] bg-[length:24px_24px] opacity-10"></div>
+        <div className="pointer-events-none absolute right-0 top-0 h-[800px] w-[800px] -translate-y-1/3 translate-x-1/3 transform rounded-full bg-primary opacity-20 blur-[150px]"></div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
