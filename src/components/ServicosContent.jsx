@@ -261,8 +261,13 @@ export default function ServicosContent() {
             variants={fadeUp}
             className="mb-16 text-center"
           >
-            <h2 className="mb-6 text-3xl font-extrabold tracking-tight text-white lg:text-5xl">
-              Catálogo de serviços Gtech
+            <h2 className="mb-6 inline-flex flex-wrap items-center justify-center gap-4 text-3xl font-extrabold tracking-tight text-white lg:text-5xl">
+              Catálogo de serviços
+              <img
+                src="/images/logo branco.png"
+                alt="Gtech"
+                className="h-10 w-auto object-contain lg:h-14"
+              />
             </h2>
             <p className="mx-auto max-w-2xl text-balance text-lg text-slate-200">
               Conheça todas as frentes operacionais em que atuamos para entregar
