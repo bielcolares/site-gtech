@@ -9,9 +9,9 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-x-hidden bg-slate-50 pb-16 pt-32 lg:pb-24 lg:pt-[136px]"
+      className="relative overflow-hidden bg-slate-50 pb-16 pt-32 lg:pb-24 lg:pt-[136px]"
     >
-      {/* Design Verde — Lado Direito, Degradê Direita para Esquerda e Cima para Baixo */}
+      {/* Design Verde — Lado Direito */}
       <motion.div
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
@@ -35,13 +35,36 @@ export default function Hero() {
       <div className="bg-primary/20 pointer-events-none absolute right-0 top-0 -mr-40 -mt-40 h-[600px] w-[600px] rounded-full blur-[100px]"></div>
       <div className="pointer-events-none absolute bottom-0 left-0 -mb-40 -ml-40 h-[500px] w-[500px] rounded-full bg-slate-100 blur-[100px]"></div>
 
+      {/* Robô GTech — absolute, fora do fluxo, não afeta a altura da section */}
+      <motion.div
+        initial={{ opacity: 0, x: 80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
+        className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 hidden items-center justify-end pr-4 lg:flex xl:pr-8"
+        style={{ width: '44%' }}
+      >
+        <motion.img
+          src="/images/robo_gtech.png"
+          alt="Robô GTech — tecnologia e inovação na gestão de resíduos"
+          className="h-[115%] w-auto object-contain object-center drop-shadow-2xl"
+          animate={{ y: [0, -16, 0] }}
+          transition={{
+            duration: 4,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            repeatType: 'loop',
+          }}
+        />
+      </motion.div>
+
+      {/* Conteúdo principal — texto fica em 7 colunas, robô flutua por cima nas outras */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-12">
+        <div className="grid items-center lg:grid-cols-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="relative z-10 max-w-3xl lg:col-span-8"
+            className="relative z-10 max-w-3xl lg:col-span-7"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -78,7 +101,7 @@ export default function Hero() {
                 href="/sobre-nos"
                 className="inline-flex items-center justify-center rounded-md border border-slate-200 bg-white px-8 py-4 font-bold text-slate-700 shadow-sm transition-colors hover:-translate-y-1 hover:bg-slate-50"
               >
-                Conheça a GTech
+                Conheça a Gtech
               </Link>
             </div>
 
@@ -99,32 +122,6 @@ export default function Hero() {
                 em todo país.
               </p>
             </div>
-          </motion.div>
-
-          {/* Robô GTech — lado direito, acima do design verde */}
-          <motion.div
-            initial={{ opacity: 0, x: 60, y: 20 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
-            className="relative z-10 hidden items-center justify-center overflow-visible lg:col-span-4 lg:flex"
-          >
-            <motion.img
-              src="/images/robo_gtech.png"
-              alt="Robô GTech — tecnologia e inovação na gestão de resíduos"
-              className="max-w-none drop-shadow-2xl"
-              style={{
-                width: '580px',
-                marginTop: '-120px',
-                marginBottom: '-120px',
-              }}
-              animate={{ y: [0, -16, 0] }}
-              transition={{
-                duration: 4,
-                ease: 'easeInOut',
-                repeat: Infinity,
-                repeatType: 'loop',
-              }}
-            />
           </motion.div>
         </div>
       </div>

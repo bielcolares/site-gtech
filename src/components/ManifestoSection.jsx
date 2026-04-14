@@ -20,7 +20,7 @@ export default function ManifestoSection() {
             className="flex flex-col justify-center bg-white px-8 py-20 lg:px-16 xl:px-24"
           >
             <span className="mb-4 inline-block text-xs font-black uppercase tracking-[0.25em] text-primary">
-              Nosso Propósito
+              Nosso propósito
             </span>
             <h2 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-slate-800 lg:text-5xl xl:text-6xl">
               Tecnologia que <span className="text-primary-dark">regenera</span>{' '}
@@ -95,7 +95,7 @@ export default function ManifestoSection() {
             className="order-1 flex flex-col justify-center px-8 py-20 lg:order-2 lg:px-16 xl:px-24"
           >
             <span className="mb-4 inline-block text-xs font-black uppercase tracking-[0.25em] text-primary">
-              Economia Circular
+              Economia circular
             </span>
             <h2 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-white lg:text-5xl xl:text-6xl">
               Fechando o <span className="text-primary">ciclo</span> com

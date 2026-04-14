@@ -9,7 +9,7 @@ export default function VideoSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-slate-800 lg:text-5xl">
-            Assista a GTech em Ação
+            Assista a Gtech em ação
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-500">
             Por dentro da nossa mineração urbana. Veja como a tecnologia somada

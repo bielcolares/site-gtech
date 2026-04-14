@@ -19,7 +19,7 @@ const certData = [
     alt: 'ISO 9001',
     title: 'ISO 9001 — Gestão da Qualidade',
     subtitle: 'Excelência Operacional Auditada',
-    body: 'A ISO 9001 é o padrão internacional para Sistemas de Gestão da Qualidade (SGQ). Significa que a GTech possui processos controlados, com rastreabilidade ponta a ponta — desde a coleta do resíduo até o Certificado de Destinação Final (CDF) entregue ao cliente. Para o seu departamento de compliance, isso representa previsibilidade, evidência documental e proteção jurídica.',
+    body: 'A ISO 9001 é o padrão internacional para Sistemas de Gestão da Qualidade (SGQ). Significa que a Gtech possui processos controlados, com rastreabilidade ponta a ponta — desde a coleta do resíduo até o Certificado de Destinação Final (CDF) entregue ao cliente. Para o seu departamento de compliance, isso representa previsibilidade, evidência documental e proteção jurídica.',
     badge: 'Qualidade Rastreável',
     badgeColor: 'bg-blue-100 text-blue-800',
   },
@@ -29,7 +29,7 @@ const certData = [
     alt: 'ISO 14001',
     title: 'ISO 14001 — Gestão Ambiental',
     subtitle: 'Conformidade com a PNRS',
-    body: 'A ISO 14001 garante que a GTech monitorou e controlou todos os impactos ambientais de suas atividades. Está em plena conformidade com a Política Nacional de Resíduos Sólidos (PNRS — Lei 12.305/10), que responsabiliza solidariamente o gerador dos resíduos. Ao descartar com a GTech, sua empresa transfere este risco legal de forma documentada e auditável.',
+    body: 'A ISO 14001 garante que a Gtech monitorou e controlou todos os impactos ambientais de suas atividades. Está em plena conformidade com a Política Nacional de Resíduos Sólidos (PNRS — Lei 12.305/10), que responsabiliza solidariamente o gerador dos resíduos. Ao descartar com a Gtech, sua empresa transfere este risco legal de forma documentada e auditável.',
     badge: 'PNRS Compliant',
     badgeColor: 'bg-emerald-100 text-emerald-800',
   },
@@ -39,7 +39,7 @@ const certData = [
     alt: 'ISO 45001',
     title: 'ISO 45001 — Saúde e Segurança',
     subtitle: 'Operação Segura & Responsável',
-    body: 'A ISO 45001 certifica o Sistema de Gestão de Saúde e Segurança Ocupacional (SGSSO). Ela garante que toda equipe que manuseia seus equipamentos — desde os técnicos de campo até os operadores de descaracterização — trabalha sob protocolos rigorosos de segurança. Isso reflete o compromisso ESG da GTech e elimina riscos de responsabilidade trabalhista para o contratante.',
+    body: 'A ISO 45001 certifica o Sistema de Gestão de Saúde e Segurança Ocupacional (SGSSO). Ela garante que toda equipe que manuseia seus equipamentos — desde os técnicos de campo até os operadores de descaracterização — trabalha sob protocolos rigorosos de segurança. Isso reflete o compromisso ESG da Gtech e elimina riscos de responsabilidade trabalhista para o contratante.',
     badge: 'ESG Verificado',
     badgeColor: 'bg-orange-100 text-orange-800',
   },
@@ -262,7 +262,7 @@ export default function ServicosContent() {
             className="mb-16 text-center"
           >
             <h2 className="mb-6 text-3xl font-extrabold tracking-tight text-white lg:text-5xl">
-              Catálogo de Serviços GTech
+              Catálogo de serviços Gtech
             </h2>
             <p className="mx-auto max-w-2xl text-balance text-lg text-slate-200">
               Conheça todas as frentes operacionais em que atuamos para entregar
@@ -420,7 +420,7 @@ export default function ServicosContent() {
                 gerenciamento de resíduos eletrônicos, eletroeletrônicos e
                 materiais não ferrosos.
               </strong>{' '}
-              Na GTech, a conformidade deixa de ser apenas uma regra e se
+              Na Gtech, a conformidade deixa de ser apenas uma regra e se
               transforma em vantagem competitiva perante ao mercado, garantindo{' '}
               <strong>governança sólida e inquestionável.</strong>
             </p>
@@ -577,7 +577,7 @@ export default function ServicosContent() {
             {/* Rodapé */}
             <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50 px-8 py-4">
               <span className="text-sm text-slate-500">
-                GTech — Conformidade de Ponta
+                Gtech — Conformidade de ponta
               </span>
               <a
                 href="#whatsapp"

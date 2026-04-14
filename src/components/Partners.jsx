@@ -23,7 +23,7 @@ export default function Partners() {
     <section className="overflow-hidden border-y border-slate-200 bg-white py-16">
       <div className="mx-auto mb-8 max-w-7xl px-4 text-center sm:px-6 lg:px-8">
         <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500">
-          Confira alguns parceiros GTech
+          Confira alguns parceiros Gtech
         </h3>
       </div>
 

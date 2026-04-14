@@ -109,7 +109,7 @@ ${formData.mensagem}`);
               variants={itemVariants}
               className="mb-6 text-3xl font-extrabold text-slate-800 sm:text-4xl"
             >
-              Fale com um Especialista
+              Fale com um especialista
             </motion.h2>
             <motion.p
               variants={itemVariants}
@@ -190,7 +190,7 @@ ${formData.mensagem}`);
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label className="mb-2 block text-sm font-bold text-slate-700">
-                    Nome Completo *
+                    Nome completo *
                   </label>
                   <input
                     required
@@ -204,7 +204,7 @@ ${formData.mensagem}`);
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-bold text-slate-700">
-                    Cargo na Empresa
+                    Cargo na empresa
                   </label>
                   <input
                     type="text"
@@ -231,7 +231,7 @@ ${formData.mensagem}`);
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-bold text-slate-700">
-                    E-mail Corporativo
+                    E-mail corporativo
                   </label>
                   <input
                     type="email"
@@ -258,7 +258,7 @@ ${formData.mensagem}`);
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-bold text-slate-700">
-                    Tipo de Resíduo *
+                    Tipo de resíduo *
                   </label>
                   <select
                     required
@@ -288,7 +288,7 @@ ${formData.mensagem}`);
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-bold text-slate-700">
-                    Volume Estimado
+                    Volume estimado
                   </label>
                   <input
                     type="text"
@@ -302,7 +302,7 @@ ${formData.mensagem}`);
                 </div>
                 <div className="sm:col-span-2">
                   <label className="mb-2 block text-sm font-bold text-slate-700">
-                    Estado e Cidade para Logística *
+                    Estado e cidade para logística *
                   </label>
                   <input
                     required
@@ -319,7 +319,7 @@ ${formData.mensagem}`);
 
               <div>
                 <label className="mb-2 block text-sm font-bold text-slate-700">
-                  Mensagem Adicional / Demanda
+                  Mensagem adicional / demanda
                 </label>
                 <textarea
                   rows={3}

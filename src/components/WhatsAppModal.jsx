@@ -149,7 +149,7 @@ export default function WhatsAppModal() {
                   </div>
                   <div className="sm:col-span-2">
                     <label className="mb-1 block text-sm font-semibold text-slate-700">
-                      Nome da Empresa *
+                      Nome da empresa *
                     </label>
                     <input
                       required
@@ -162,7 +162,7 @@ export default function WhatsAppModal() {
                   </div>
                   <div>
                     <label className="mb-1 block text-sm font-semibold text-slate-700">
-                      Telefone / Celular *
+                      Telefone / celular *
                     </label>
                     <input
                       required
@@ -187,7 +187,7 @@ export default function WhatsAppModal() {
                   </div>
                   <div>
                     <label className="mb-1 block text-sm font-semibold text-slate-700">
-                      Tipo de Resíduo *
+                      Tipo de resíduo *
                     </label>
                     <select
                       required
@@ -216,7 +216,7 @@ export default function WhatsAppModal() {
                   </div>
                   <div>
                     <label className="mb-1 block text-sm font-semibold text-slate-700">
-                      Volume Estimado
+                      Volume estimado
                     </label>
                     <input
                       type="text"
@@ -229,7 +229,7 @@ export default function WhatsAppModal() {
                   </div>
                   <div className="sm:col-span-2">
                     <label className="mb-1 block text-sm font-semibold text-slate-700">
-                      Estado e Cidade para Logística *
+                      Estado e cidade para logística *
                     </label>
                     <input
                       required
@@ -243,7 +243,7 @@ export default function WhatsAppModal() {
                   </div>
                   <div className="sm:col-span-2">
                     <label className="mb-1 block text-sm font-semibold text-slate-700">
-                      Mensagem Adicional
+                      Mensagem adicional
                     </label>
                     <textarea
                       name="mensagem"

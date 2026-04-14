@@ -63,7 +63,7 @@ export default function AboutContent() {
           className="mb-24 max-w-3xl border-l-4 border-primary pl-6 text-left"
         >
           <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-slate-800 sm:text-6xl">
-            A Conformidade como Vantagem Competitiva
+            A conformidade como vantagem competitiva
           </h1>
           <p className="text-xl text-slate-600">
             Transformamos o descarte eletrônico em um ativo estratégico que
@@ -74,7 +74,7 @@ export default function AboutContent() {
         <div className="grid items-start gap-16 lg:grid-cols-2">
           <motion.div variants={itemVariants}>
             <h2 className="mb-4 text-sm font-black uppercase tracking-widest text-primary-dark">
-              Nossa Essência
+              Nossa essência
             </h2>
             <div className="space-y-6 text-balance text-lg leading-relaxed text-slate-600">
               <p>
@@ -93,7 +93,7 @@ export default function AboutContent() {
               <p>
                 Atuamos no gerenciamento especializado de resíduos eletrônicos,
                 eletroeletrônicos e materiais não ferrosos em escala industrial.
-                Na GTech, garantimos governança sólida e inquestionável para a
+                Na Gtech, garantimos governança sólida e inquestionável para a
                 sua empresa.
               </p>
             </div>
@@ -154,10 +154,10 @@ export default function AboutContent() {
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <motion.div variants={itemVariants}>
               <h2 className="mb-2 text-3xl font-extrabold tracking-tight text-slate-800 lg:text-5xl">
-                Resolução de Ação Climática
+                Resolução de ação climática
               </h2>
               <p className="mb-8 text-lg font-medium text-slate-600">
-                Análise Gravimétrica de Redução de Emissões
+                Análise gravimétrica de redução de emissões
               </p>
 
               <div className="space-y-6">
@@ -242,7 +242,7 @@ export default function AboutContent() {
         >
           <motion.div variants={itemVariants} className="mb-16 text-center">
             <h2 className="mb-4 text-2xl font-extrabold text-slate-800">
-              Nossos Alicerces de Excelência
+              Nossos alicerces de excelência
             </h2>
             <p className="text-slate-600">
               Auditorias rigorosas comprovam nossa capacidade de gestão a nível

@@ -28,21 +28,21 @@ export default function Features() {
           />
         </div>
       ),
-      title: 'SGI & Certificados',
+      title: 'SGI & certificados',
       description:
         'Sistema de Gestão Integrado (SGI). ISO 9001, 14001 e 45001. Todo fluxo atende as minúcias da Política Nacional de Resíduos Sólidos (PNRS).',
     },
     {
       id: 2,
       icon: <Award className="h-8 w-8 text-primary-dark" />,
-      title: 'Emissão de Laudos de Destruição',
+      title: 'Emissão de laudos de destruição',
       description:
         'Após o processo limpo e rastreável, disponibilizamos ao cliente o Certificado de Destinação Final (CDF) acompanhado do Laudo de Destruição Fotográfico.',
     },
     {
       id: 3,
       icon: <Recycle className="h-8 w-8 text-primary-dark" />,
-      title: 'Logística Reversa Implacável',
+      title: 'Logística reversa implacável',
       description:
         'Atendimentos em todo território nacional com agendamento em até 48h. Frota impecável < 5 anos (Sider, Julieta 40t, Caminhão Garra e Rolon).',
     },
@@ -92,13 +92,13 @@ export default function Features() {
           className="mx-auto mb-20 max-w-3xl text-center"
         >
           <h2 className="mb-3 text-sm font-black uppercase tracking-widest text-primary-dark">
-            Vantagem Competitiva
+            Vantagem competitiva
           </h2>
           <p className="mt-2 text-balance text-3xl font-extrabold leading-snug tracking-tight text-slate-800 sm:text-5xl">
-            Elevando o Padrão do Descarte Corporativo
+            Elevando o padrão do descarte corporativo
           </p>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
-            Na GTech, o compliance deixa de ser um custo obrigatório para se
+            Na Gtech, o compliance deixa de ser um custo obrigatório para se
             tornar uma certificação de excelência que valoriza a imagem e
             protege a reputação da sua marca.
           </p>

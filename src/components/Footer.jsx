@@ -125,7 +125,7 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col items-center justify-between border-t border-slate-200 pt-6 md:flex-row">
           <p className="text-sm text-slate-500">
-            &copy; {currentYear} GTech Soluções Ambientais. Todos os direitos
+            &copy; {currentYear} Gtech Soluções Ambientais. Todos os direitos
             reservados.
           </p>
         </div>
