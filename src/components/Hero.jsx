@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative bg-slate-50 pb-16 pt-32 lg:pb-24 lg:pt-[136px]"
+      className="relative overflow-x-hidden bg-slate-50 pb-16 pt-32 lg:pb-24 lg:pt-[136px]"
     >
       {/* Design Verde — Lado Direito, Degradê Direita para Esquerda e Cima para Baixo */}
       <motion.div
@@ -106,16 +106,16 @@ export default function Hero() {
             initial={{ opacity: 0, x: 60, y: 20 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
-            className="relative z-10 hidden items-center justify-center lg:col-span-4 lg:flex"
+            className="relative z-10 hidden items-center justify-center overflow-visible lg:col-span-4 lg:flex"
           >
             <motion.img
               src="/images/robo_gtech.png"
               alt="Robô GTech — tecnologia e inovação na gestão de resíduos"
-              className="w-full drop-shadow-2xl"
+              className="max-w-none drop-shadow-2xl"
               style={{
-                marginTop: '-100px',
-                marginBottom: '-100px',
-                maxWidth: '520px',
+                width: '580px',
+                marginTop: '-120px',
+                marginBottom: '-120px',
               }}
               animate={{ y: [0, -16, 0] }}
               transition={{
