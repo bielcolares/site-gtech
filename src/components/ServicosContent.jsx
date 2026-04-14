@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
@@ -9,9 +9,55 @@ import {
   Factory,
   ArrowRight,
   Shield,
+  X,
 } from 'lucide-react';
 
+const certData = [
+  {
+    id: 'iso9001',
+    logo: '/images/iso-9001.png',
+    alt: 'ISO 9001',
+    title: 'ISO 9001 — Gestão da Qualidade',
+    subtitle: 'Excelência Operacional Auditada',
+    body: 'A ISO 9001 é o padrão internacional para Sistemas de Gestão da Qualidade (SGQ). Significa que a GTech possui processos controlados, com rastreabilidade ponta a ponta — desde a coleta do resíduo até o Certificado de Destinação Final (CDF) entregue ao cliente. Para o seu departamento de compliance, isso representa previsibilidade, evidência documental e proteção jurídica.',
+    badge: 'Qualidade Rastreável',
+    badgeColor: 'bg-blue-100 text-blue-800',
+  },
+  {
+    id: 'iso14001',
+    logo: '/images/iso-14001.png',
+    alt: 'ISO 14001',
+    title: 'ISO 14001 — Gestão Ambiental',
+    subtitle: 'Conformidade com a PNRS',
+    body: 'A ISO 14001 garante que a GTech monitorou e controlou todos os impactos ambientais de suas atividades. Está em plena conformidade com a Política Nacional de Resíduos Sólidos (PNRS — Lei 12.305/10), que responsabiliza solidariamente o gerador dos resíduos. Ao descartar com a GTech, sua empresa transfere este risco legal de forma documentada e auditável.',
+    badge: 'PNRS Compliant',
+    badgeColor: 'bg-emerald-100 text-emerald-800',
+  },
+  {
+    id: 'iso45001',
+    logo: '/images/iso-45001.png',
+    alt: 'ISO 45001',
+    title: 'ISO 45001 — Saúde e Segurança',
+    subtitle: 'Operação Segura & Responsável',
+    body: 'A ISO 45001 certifica o Sistema de Gestão de Saúde e Segurança Ocupacional (SGSSO). Ela garante que toda equipe que manuseia seus equipamentos — desde os técnicos de campo até os operadores de descaracterização — trabalha sob protocolos rigorosos de segurança. Isso reflete o compromisso ESG da GTech e elimina riscos de responsabilidade trabalhista para o contratante.',
+    badge: 'ESG Verificado',
+    badgeColor: 'bg-orange-100 text-orange-800',
+  },
+  {
+    id: 'r2v3',
+    logo: '/images/R2v3-selo.png',
+    alt: 'R2v3',
+    title: 'R2v3 — Responsible Recycling',
+    subtitle: 'O mais alto padrão global de ITAD',
+    body: 'A certificação R2v3 (Responsible Recycling, versão 3) é a mais rigorosa norma internacional específica para reciclagem de eletrônicos. Ela cobre destruição segura de dados (data sanitization conforme NIST 800-88), rastreabilidade de materiais, cadeia de custódia auditada e proibição de exportação irregular de lixo eletrônico. Para empresas com operações globais, é a única garantia que o ITAD (IT Asset Disposition) foi realizado com o máximo de responsabilidade.',
+    badge: 'Padrão Internacional ITAD',
+    badgeColor: 'bg-violet-100 text-violet-800',
+  },
+];
+
 export default function ServicosContent() {
+  const [activeCert, setActiveCert] = useState(null);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
@@ -205,7 +251,8 @@ export default function ServicosContent() {
       </section>
 
       {/* Grid Oficial de Serviços (9 Itens) - Movido para cima */}
-      <section className="border-t border-slate-200 bg-slate-50 py-24">
+      {/* Grid Oficial de Serviços (9 Itens) - Movido para cima */}
+      <section className="border-primary-light border-t bg-primary-dark py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -214,10 +261,10 @@ export default function ServicosContent() {
             variants={fadeUp}
             className="mb-16 text-center"
           >
-            <h2 className="mb-6 text-3xl font-extrabold tracking-tight text-slate-800 lg:text-5xl">
+            <h2 className="mb-6 text-3xl font-extrabold tracking-tight text-white lg:text-5xl">
               Catálogo de Serviços GTech
             </h2>
-            <p className="mx-auto max-w-2xl text-balance text-lg text-slate-600">
+            <p className="mx-auto max-w-2xl text-balance text-lg text-slate-200">
               Conheça todas as frentes operacionais em que atuamos para entregar
               proteção à sua marca e compliance ambiental total.
             </p>
@@ -423,6 +470,126 @@ export default function ServicosContent() {
           </div>
         </div>
       </section>
+      {/* ===== SEÇÃO: Nossas Certificações (com Modal Educativo) ===== */}
+      <section className="border-t border-slate-200 bg-white py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            variants={fadeUp}
+            className="mb-16 text-center"
+          >
+            <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-slate-800 lg:text-4xl">
+              Nossas Certificações
+            </h2>
+            <p className="mx-auto max-w-xl text-lg text-slate-600">
+              Clique em cada certificação para entender o que ela representa
+              para a segurança do seu descarte.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          >
+            {certData.map((cert) => (
+              <motion.button
+                key={cert.id}
+                variants={fadeUp}
+                onClick={() => setActiveCert(cert)}
+                className="group flex w-full flex-col items-center rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg focus:outline-none"
+              >
+                <img
+                  src={cert.logo}
+                  alt={cert.alt}
+                  className="mb-6 h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                />
+                <span className="text-sm font-bold text-slate-700">
+                  {cert.alt}
+                </span>
+                <span className="mt-1 text-xs font-medium text-slate-500">
+                  {cert.subtitle}
+                </span>
+                <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary-dark opacity-0 transition-opacity group-hover:opacity-100">
+                  Ver detalhes →
+                </span>
+              </motion.button>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ===== MODAL CERTIFICAÇÕES ===== */}
+      {activeCert && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+          onClick={() => setActiveCert(null)}
+        >
+          <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ type: 'spring', duration: 0.4 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative z-10 w-full max-w-lg overflow-hidden rounded-2xl bg-white shadow-2xl"
+          >
+            {/* Cabeçalho */}
+            <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50 px-6 py-4">
+              <span
+                className={`rounded-full px-3 py-1 text-xs font-bold ${activeCert.badgeColor}`}
+              >
+                {activeCert.badge}
+              </span>
+              <button
+                onClick={() => setActiveCert(null)}
+                className="rounded-full p-2 text-slate-400 transition-colors hover:bg-slate-200 hover:text-slate-700"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            {/* Corpo */}
+            <div className="px-8 py-8">
+              <div className="mb-6 flex items-center gap-6">
+                <img
+                  src={activeCert.logo}
+                  alt={activeCert.alt}
+                  className="h-20 w-auto flex-shrink-0 object-contain"
+                />
+                <div>
+                  <h3 className="text-xl font-extrabold leading-tight text-slate-800">
+                    {activeCert.title}
+                  </h3>
+                  <p className="mt-1 text-sm font-semibold text-slate-500">
+                    {activeCert.subtitle}
+                  </p>
+                </div>
+              </div>
+              <p className="text-base leading-relaxed text-slate-700">
+                {activeCert.body}
+              </p>
+            </div>
+
+            {/* Rodapé */}
+            <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50 px-8 py-4">
+              <span className="text-sm text-slate-500">
+                GTech — Conformidade de Ponta
+              </span>
+              <a
+                href="#whatsapp"
+                onClick={() => setActiveCert(null)}
+                className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white transition hover:bg-primary-dark"
+              >
+                Falar com Especialista
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }

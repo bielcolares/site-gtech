@@ -6,14 +6,11 @@ export default function WhatsAppFloating() {
   const message =
     'Olá! Gostaria de falar com um especialista sobre a gestão correta de resíduos eletrônicos para a minha empresa.';
 
-  const encodedMessage = encodeURIComponent(message);
-  const wpLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  const wpLink = '#whatsapp';
 
   return (
     <a
       href={wpLink}
-      target="_blank"
-      rel="noopener noreferrer"
       className="group fixed bottom-6 right-6 z-50 flex cursor-pointer items-center"
     >
       <div className="pointer-events-none absolute right-full mr-4 hidden whitespace-nowrap rounded-xl border border-slate-100 bg-white px-4 py-2 text-sm font-bold text-slate-800 opacity-0 shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-opacity duration-300 group-hover:opacity-100 md:block">

@@ -6,20 +6,53 @@ import { motion } from 'framer-motion';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    name: '',
+    nome: '',
+    cargo: '',
+    empresa: '',
     email: '',
-    company: '',
-    role: '',
-    message: '',
+    telefone: '',
+    tipo: '',
+    volume: '',
+    local: '',
+    mensagem: '',
   });
   const [status, setStatus] = useState('idle');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('loading');
+
+    const assunto = encodeURIComponent(
+      `Contato Comercial Site: ${formData.empresa} - ${formData.nome}`
+    );
+    const corpo = encodeURIComponent(`Nome: ${formData.nome}
+Cargo: ${formData.cargo}
+Empresa: ${formData.empresa}
+Email corporativo: ${formData.email}
+Telefone: ${formData.telefone}
+
+Tipo de Resíduo: ${formData.tipo}
+Volume Estimado: ${formData.volume}
+Localização da Coleta: ${formData.local}
+
+Mensagem Adicional / Necessidade:
+${formData.mensagem}`);
+
+    window.location.href = `mailto:comercial@gtech.com.br?subject=${assunto}&body=${corpo}`;
+
     setTimeout(() => {
       setStatus('success');
-      setFormData({ name: '', email: '', company: '', role: '', message: '' });
+      setFormData({
+        nome: '',
+        cargo: '',
+        empresa: '',
+        email: '',
+        telefone: '',
+        tipo: '',
+        volume: '',
+        local: '',
+        mensagem: '',
+      });
       setTimeout(() => setStatus('idle'), 3000);
     }, 1500);
   };
@@ -154,36 +187,54 @@ export default function ContactForm() {
           >
             <div className="to-primary-light absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary-dark via-primary"></div>
             <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="mb-2 block text-sm font-bold text-slate-700"
-                  >
-                    Nome Completo
+                  <label className="mb-2 block text-sm font-bold text-slate-700">
+                    Nome Completo *
                   </label>
                   <input
-                    type="text"
-                    id="name"
                     required
+                    type="text"
                     className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-800 placeholder-slate-400 outline-none transition focus:border-primary focus:ring-1 focus:ring-primary"
-                    value={formData.name}
+                    value={formData.nome}
                     onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
+                      setFormData({ ...formData, nome: e.target.value })
                     }
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="mb-2 block text-sm font-bold text-slate-700"
-                  >
-                    Email Corporativo
+                  <label className="mb-2 block text-sm font-bold text-slate-700">
+                    Cargo na Empresa
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-800 placeholder-slate-400 outline-none transition focus:border-primary focus:ring-1 focus:ring-primary"
+                    value={formData.cargo}
+                    onChange={(e) =>
+                      setFormData({ ...formData, cargo: e.target.value })
+                    }
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label className="mb-2 block text-sm font-bold text-slate-700">
+                    Nome da Empresa *
+                  </label>
+                  <input
+                    required
+                    type="text"
+                    className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-800 placeholder-slate-400 outline-none transition focus:border-primary focus:ring-1 focus:ring-primary"
+                    value={formData.empresa}
+                    onChange={(e) =>
+                      setFormData({ ...formData, empresa: e.target.value })
+                    }
+                  />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-bold text-slate-700">
+                    E-mail Corporativo
                   </label>
                   <input
                     type="email"
-                    id="email"
-                    required
                     className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-800 placeholder-slate-400 outline-none transition focus:border-primary focus:ring-1 focus:ring-primary"
                     value={formData.email}
                     onChange={(e) =>
@@ -191,62 +242,91 @@ export default function ContactForm() {
                     }
                   />
                 </div>
-              </div>
-
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div>
-                  <label
-                    htmlFor="company"
-                    className="mb-2 block text-sm font-bold text-slate-700"
-                  >
-                    Empresa
+                  <label className="mb-2 block text-sm font-bold text-slate-700">
+                    Telefone / WhatsApp *
                   </label>
                   <input
-                    type="text"
-                    id="company"
                     required
+                    type="tel"
                     className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-800 placeholder-slate-400 outline-none transition focus:border-primary focus:ring-1 focus:ring-primary"
-                    value={formData.company}
+                    value={formData.telefone}
                     onChange={(e) =>
-                      setFormData({ ...formData, company: e.target.value })
+                      setFormData({ ...formData, telefone: e.target.value })
                     }
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="role"
-                    className="mb-2 block text-sm font-bold text-slate-700"
+                  <label className="mb-2 block text-sm font-bold text-slate-700">
+                    Tipo de Resíduo *
+                  </label>
+                  <select
+                    required
+                    className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-800 outline-none transition focus:border-primary focus:ring-1 focus:ring-primary"
+                    value={formData.tipo}
+                    onChange={(e) =>
+                      setFormData({ ...formData, tipo: e.target.value })
+                    }
                   >
-                    Cargo
+                    <option value="">Selecione...</option>
+                    <option value="Equipamentos Eletrônicos (TI)">
+                      Equipamentos Eletrônicos (TI)
+                    </option>
+                    <option value="Sucata de Telefonia/Comunicação">
+                      Sucata de Telefonia/Telecom
+                    </option>
+                    <option value="Materiais Não Ferrosos">
+                      Materiais Não Ferrosos
+                    </option>
+                    <option value="Baterias/Nobreaks">
+                      Baterias / Nobreaks
+                    </option>
+                    <option value="Misto/Outros">
+                      Vários / Misto / Outros
+                    </option>
+                  </select>
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-bold text-slate-700">
+                    Volume Estimado
                   </label>
                   <input
                     type="text"
-                    id="role"
-                    required
+                    placeholder="Ex: 500 kg, 20 Lotes..."
                     className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-800 placeholder-slate-400 outline-none transition focus:border-primary focus:ring-1 focus:ring-primary"
-                    value={formData.role}
+                    value={formData.volume}
                     onChange={(e) =>
-                      setFormData({ ...formData, role: e.target.value })
+                      setFormData({ ...formData, volume: e.target.value })
+                    }
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label className="mb-2 block text-sm font-bold text-slate-700">
+                    Estado e Cidade para Logística *
+                  </label>
+                  <input
+                    required
+                    type="text"
+                    placeholder="Ex: São Paulo - SP"
+                    className="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-800 placeholder-slate-400 outline-none transition focus:border-primary focus:ring-1 focus:ring-primary"
+                    value={formData.local}
+                    onChange={(e) =>
+                      setFormData({ ...formData, local: e.target.value })
                     }
                   />
                 </div>
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="mb-2 block text-sm font-bold text-slate-700"
-                >
-                  Qual a sua necessidade de descarte/compliance?
+                <label className="mb-2 block text-sm font-bold text-slate-700">
+                  Mensagem Adicional / Demanda
                 </label>
                 <textarea
-                  id="message"
-                  required
-                  rows={4}
+                  rows={3}
                   className="w-full resize-none rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-800 placeholder-slate-400 outline-none transition focus:border-primary focus:ring-1 focus:ring-primary"
-                  value={formData.message}
+                  value={formData.mensagem}
                   onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
+                    setFormData({ ...formData, mensagem: e.target.value })
                   }
                 ></textarea>
               </div>
@@ -257,9 +337,9 @@ export default function ContactForm() {
                 className="w-full rounded-lg bg-primary py-4 font-bold text-white shadow-[0_4px_14px_rgba(156,192,38,0.4)] transition-all hover:-translate-y-1 hover:bg-primary-dark disabled:opacity-70"
               >
                 {status === 'loading'
-                  ? 'Enviando...'
+                  ? 'Preparando e-mail...'
                   : status === 'success'
-                    ? 'Solicitação Recebida!'
+                    ? 'Preparando Formulário!'
                     : 'Solicitar Contato Especializado'}
               </button>
             </form>

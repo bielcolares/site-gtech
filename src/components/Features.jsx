@@ -9,7 +9,25 @@ export default function Features() {
   const features = [
     {
       id: 1,
-      icon: <ShieldAlert className="h-8 w-8 text-primary-dark" />,
+      icon: (
+        <div className="flex items-center gap-3">
+          <img
+            src="/images/iso-9001.png"
+            alt="ISO 9001"
+            className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
+          />
+          <img
+            src="/images/iso-14001.png"
+            alt="ISO 14001"
+            className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
+          />
+          <img
+            src="/images/iso-45001.png"
+            alt="ISO 45001"
+            className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
+          />
+        </div>
+      ),
       title: 'SGI & Certificados',
       description:
         'Sistema de Gestão Integrado (SGI). ISO 9001, 14001 e 45001. Todo fluxo atende as minúcias da Política Nacional de Resíduos Sólidos (PNRS).',
@@ -99,7 +117,7 @@ export default function Features() {
               key={feature.id}
               className="hover:border-primary/50 group rounded-xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
             >
-              <div className="group-hover:bg-primary/10 group-hover:border-primary/30 mb-8 flex h-16 w-16 items-center justify-center rounded-xl border border-slate-100 bg-slate-50 shadow-inner transition-all group-hover:scale-110">
+              <div className="group-hover:bg-primary/10 group-hover:border-primary/30 mb-8 inline-flex h-16 min-w-[4rem] items-center justify-center rounded-xl border border-slate-100 bg-slate-50 px-3 shadow-inner transition-all group-hover:scale-105">
                 {feature.icon}
               </div>
               <h3 className="mb-4 text-2xl font-bold text-slate-800">

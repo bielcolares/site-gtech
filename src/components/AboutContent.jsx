@@ -28,18 +28,7 @@ export default function AboutContent() {
   };
 
   return (
-    <div className="relative flex-grow overflow-hidden pb-16 pt-32 lg:pb-24 lg:pt-[136px]">
-      {/* Background Imagem Galpão com Efeito Vidro (Glassmorphism) */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/fundo-gtech.jpeg"
-          alt="Galpão Corporativo GTech"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-white/80 backdrop-blur-lg"></div>
-        {/* Degradê suave na base para conectar com a próxima seção, se houver */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
-      </div>
+    <div className="relative flex-grow overflow-hidden bg-slate-50 pb-16 pt-32 lg:pb-24 lg:pt-[136px]">
       {/* Design Verde — Lado Esquerdo, Degradê Esquerda para Direita e Cima para Baixo */}
       <motion.div
         initial={{ opacity: 0, x: -100 }}
@@ -138,12 +127,17 @@ export default function AboutContent() {
             </motion.div>
             <motion.div
               variants={popVariants}
-              className="col-span-2 flex flex-col items-center justify-center rounded-2xl bg-primary p-8 text-center shadow-[0_4px_20px_rgba(156,192,38,0.3)] transition-transform hover:-translate-y-1"
+              className="col-span-2 flex flex-col items-center justify-center rounded-2xl border-2 border-primary bg-white p-8 text-center shadow-[0_4px_20px_rgba(156,192,38,0.15)] transition-transform hover:-translate-y-1"
             >
-              <span className="mb-2 text-3xl font-black text-white">
+              <img
+                src="/images/R2v3-selo.png"
+                alt="Selo R2v3"
+                className="mb-4 h-20 w-auto object-contain drop-shadow-sm"
+              />
+              <span className="mb-2 text-3xl font-black text-slate-800">
                 Certificação R2v3
               </span>
-              <span className="font-bold text-emerald-950">
+              <span className="font-bold text-slate-600">
                 Padrão Ouro Global na Gestão de Eletrônicos
               </span>
             </motion.div>
@@ -258,34 +252,40 @@ export default function AboutContent() {
           <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-3">
             <motion.div
               variants={itemVariants}
-              className="flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+              className="group flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
             >
-              <h3 className="mb-2 text-3xl font-black text-primary-dark">
-                ISO 9001
-              </h3>
-              <p className="text-sm font-medium text-slate-600">
+              <img
+                src="/images/iso-9001.png"
+                alt="ISO 9001"
+                className="mb-6 h-28 w-auto object-contain transition-transform group-hover:scale-105"
+              />
+              <p className="text-sm font-bold uppercase tracking-widest text-slate-600">
                 Sistema de Gestão da Qualidade
               </p>
             </motion.div>
             <motion.div
               variants={itemVariants}
-              className="flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+              className="group flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
             >
-              <h3 className="mb-2 text-3xl font-black text-primary-dark">
-                ISO 14001
-              </h3>
-              <p className="text-sm font-medium text-slate-600">
+              <img
+                src="/images/iso-14001.png"
+                alt="ISO 14001"
+                className="mb-6 h-28 w-auto object-contain transition-transform group-hover:scale-105"
+              />
+              <p className="text-sm font-bold uppercase tracking-widest text-slate-600">
                 Sistema de Gestão Ambiental
               </p>
             </motion.div>
             <motion.div
               variants={itemVariants}
-              className="flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+              className="group flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
             >
-              <h3 className="mb-2 text-3xl font-black text-primary-dark">
-                ISO 45001
-              </h3>
-              <p className="text-sm font-medium text-slate-600">
+              <img
+                src="/images/iso-45001.png"
+                alt="ISO 45001"
+                className="mb-6 h-28 w-auto object-contain transition-transform group-hover:scale-105"
+              />
+              <p className="text-sm font-bold uppercase tracking-widest text-slate-600">
                 Saúde e Segurança Ocupacional
               </p>
             </motion.div>

@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-slate-50 pb-16 pt-32 lg:pb-24 lg:pt-[136px]"
+      className="relative bg-slate-50 pb-16 pt-32 lg:pb-24 lg:pt-[136px]"
     >
       {/* Design Verde — Lado Direito, Degradê Direita para Esquerda e Cima para Baixo */}
       <motion.div
@@ -67,15 +67,13 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="https://wa.me/5511988389974"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a
+                href="#whatsapp"
                 className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 font-bold text-white shadow-[0_4px_14px_rgba(156,192,38,0.4)] transition-all hover:-translate-y-1 hover:bg-primary-dark hover:shadow-[0_6px_20px_rgba(156,192,38,0.6)]"
               >
                 Falar com Especialista B2B{' '}
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
               <Link
                 href="/sobre-nos"
                 className="inline-flex items-center justify-center rounded-md border border-slate-200 bg-white px-8 py-4 font-bold text-slate-700 shadow-sm transition-colors hover:-translate-y-1 hover:bg-slate-50"
@@ -101,6 +99,32 @@ export default function Hero() {
                 em todo país.
               </p>
             </div>
+          </motion.div>
+
+          {/* Robô GTech — lado direito, acima do design verde */}
+          <motion.div
+            initial={{ opacity: 0, x: 60, y: 20 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
+            className="relative z-10 hidden items-center justify-center lg:col-span-4 lg:flex"
+          >
+            <motion.img
+              src="/images/robo_gtech.png"
+              alt="Robô GTech — tecnologia e inovação na gestão de resíduos"
+              className="w-full drop-shadow-2xl"
+              style={{
+                marginTop: '-100px',
+                marginBottom: '-100px',
+                maxWidth: '520px',
+              }}
+              animate={{ y: [0, -16, 0] }}
+              transition={{
+                duration: 4,
+                ease: 'easeInOut',
+                repeat: Infinity,
+                repeatType: 'loop',
+              }}
+            />
           </motion.div>
         </div>
       </div>

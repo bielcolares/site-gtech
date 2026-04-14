@@ -47,16 +47,11 @@ export default function Header() {
             >
               Contato
             </Link>
-            <Link
-              href="https://wa.me/5511988389974"
-              passHref
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="#whatsapp">
               <button className="cursor-pointer rounded bg-primary px-5 py-2.5 font-semibold text-white shadow-[0_4px_14px_rgba(156,192,38,0.3)] transition-all hover:-translate-y-1 hover:bg-primary-dark hover:shadow-[0_6px_20px_rgba(156,192,38,0.4)]">
                 Falar com Especialista
               </button>
-            </Link>
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -108,17 +103,15 @@ export default function Header() {
               Contato
             </Link>
             <div className="px-3 pt-2">
-              <Link
-                href="https://wa.me/5511988389974"
+              <a
+                href="#whatsapp"
                 onClick={() => setIsOpen(false)}
-                passHref
-                target="_blank"
                 className="block w-full"
               >
                 <button className="w-full rounded bg-primary px-4 py-2 font-semibold text-white transition hover:bg-primary-dark active:scale-95">
                   Falar com Especialista
                 </button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
