@@ -44,7 +44,7 @@ export default function Features() {
       icon: <Recycle className="h-8 w-8 text-primary-dark" />,
       title: 'Logística reversa implacável',
       description:
-        'Atendimentos em todo território nacional com agendamento em até 48h. Frota impecável < 5 anos (Sider, Julieta 40t, Caminhão Garra e Rolon).',
+        'Oferecemos soluções completas de logística reversa, incluindo a coleta, transporte e armazenagem temporária de resíduos, garantindo a destinação final ambientalmente adequada. Nossa infraestrutura permite o gerenciamento de grandes volumes de materiais com total segurança e controle.',
     },
   ];
 

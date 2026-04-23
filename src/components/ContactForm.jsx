@@ -176,6 +176,22 @@ ${formData.mensagem}`);
                 </div>
               </motion.div>
             </div>
+
+            <motion.div
+              variants={itemVariants}
+              className="mt-10 h-64 w-full overflow-hidden rounded-2xl border border-slate-200 shadow-sm lg:h-80"
+            >
+              <iframe
+                title="Mapa de Localização GTech"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Rua+Kanebo+175,+Distrito+Industrial,+Jundia%C3%AD+-+S%C3%A3o+Paulo,+Brasil&output=embed"
+              ></iframe>
+            </motion.div>
           </div>
 
           <motion.div

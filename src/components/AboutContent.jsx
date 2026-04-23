@@ -100,49 +100,82 @@ export default function AboutContent() {
           </motion.div>
 
           <motion.div
-            variants={containerVariants}
-            className="grid grid-cols-2 gap-4"
+            variants={itemVariants}
+            className="relative flex h-full flex-col justify-center overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-xl lg:p-12"
           >
-            <motion.div
-              variants={popVariants}
-              className="hover:border-primary/40 flex flex-col items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
-            >
-              <span className="mb-2 text-5xl font-black text-primary-dark">
-                &gt;95%
-              </span>
-              <span className="text-sm font-bold uppercase tracking-wide text-slate-500">
-                De Reaproveitamento
-              </span>
-            </motion.div>
-            <motion.div
-              variants={popVariants}
-              className="hover:border-primary/40 flex flex-col items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
-            >
-              <span className="mb-2 text-5xl font-black text-slate-800">
-                Total
-              </span>
-              <span className="text-sm font-bold uppercase tracking-wide text-slate-500">
-                Rastreabilidade
-              </span>
-            </motion.div>
-            <motion.div
-              variants={popVariants}
-              className="col-span-2 flex flex-col items-center justify-center rounded-2xl border-2 border-primary bg-white p-8 text-center shadow-[0_4px_20px_rgba(156,192,38,0.15)] transition-transform hover:-translate-y-1"
-            >
-              <img
-                src="/images/R2v3-selo.png"
-                alt="Selo R2v3"
-                className="mb-4 h-20 w-auto object-contain drop-shadow-sm"
-              />
-              <span className="mb-2 text-3xl font-black text-slate-800">
-                Certificação R2v3
-              </span>
-              <span className="font-bold text-slate-600">
-                Padrão Ouro Global na Gestão de Eletrônicos
-              </span>
-            </motion.div>
+            {/* Textura de fundo sutil */}
+            <div className="bg-primary/5 pointer-events-none absolute -right-10 -top-10 h-64 w-64 rounded-full blur-3xl"></div>
+            <div className="relative z-10">
+              <div className="bg-primary/10 mb-6 inline-flex items-center gap-3 rounded-full px-4 py-2 text-xs font-extrabold uppercase tracking-widest text-primary-dark sm:text-sm">
+                <div className="h-2 w-2 animate-pulse rounded-full bg-primary"></div>
+                Serviço em Destaque
+              </div>
+              <h3 className="mb-6 text-3xl font-extrabold leading-tight text-slate-800 sm:text-4xl">
+                Logística Reversa
+              </h3>
+              <p className="text-lg leading-relaxed text-slate-600">
+                Oferecemos soluções completas de logística reversa, incluindo a
+                coleta, transporte e armazenagem temporária de resíduos,
+                garantindo a destinação final ambientalmente adequada. Nossa
+                infraestrutura permite o gerenciamento de grandes volumes de
+                materiais com total segurança e controle.
+              </p>
+            </div>
           </motion.div>
         </div>
+
+        {/* Galeria Institucional em Grid (Bento Box) */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          variants={containerVariants}
+          className="mt-20 grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 lg:mt-28"
+        >
+          {[
+            {
+              src: '/images/fundo-gtech.png',
+              span: 'sm:col-span-2 sm:row-span-2',
+            },
+            {
+              src: '/images/fundo-gtech-2.png',
+              span: 'sm:col-span-1 sm:row-span-1',
+            },
+            {
+              src: '/images/fundo-gtech-3.png',
+              span: 'sm:col-span-1 sm:row-span-1',
+            },
+            {
+              src: '/images/fundo-gtech-4.png',
+              span: 'sm:col-span-1 sm:row-span-1',
+            },
+            {
+              src: '/images/fundo-gtech-5.png',
+              span: 'sm:col-span-1 sm:row-span-1',
+            },
+            {
+              src: '/images/fundo-gtech-6.png',
+              span: 'sm:col-span-1 sm:row-span-1',
+            },
+          ].map((img, idx) => (
+            <motion.div
+              key={idx}
+              variants={itemVariants}
+              className={`group relative w-full overflow-hidden rounded-3xl shadow-md transition-shadow hover:shadow-xl ${img.span} ${
+                idx === 0
+                  ? 'aspect-video sm:aspect-auto'
+                  : 'aspect-[4/3] sm:aspect-square'
+              }`}
+            >
+              <img
+                src={img.src}
+                alt={`Operação Gtech ${idx + 1}`}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="bg-primary-dark/10 absolute inset-0 transition-colors group-hover:bg-transparent"></div>
+            </motion.div>
+          ))}
+        </motion.div>
 
         <motion.div
           initial="hidden"
@@ -249,7 +282,24 @@ export default function AboutContent() {
               de excelência internacional.
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-2 lg:grid-cols-4">
+            {/* Certificação R2v3 movida para cá */}
+            <motion.div
+              variants={itemVariants}
+              className="group flex h-full flex-col items-center justify-center rounded-xl border-2 border-primary bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+            >
+              <img
+                src="/images/R2v3-selo.png"
+                alt="Selo R2v3"
+                className="mb-6 h-24 w-auto object-contain transition-transform group-hover:scale-105"
+              />
+              <p className="mb-1 text-sm font-black uppercase tracking-widest text-slate-800">
+                Certificação R2v3
+              </p>
+              <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                Padrão Ouro Global
+              </p>
+            </motion.div>
             <motion.div
               variants={itemVariants}
               className="group flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"

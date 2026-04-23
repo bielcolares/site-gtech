@@ -201,7 +201,7 @@ export default function ServicosContent() {
                 {/* Bg Box / Texture (fundo-gtech) */}
                 <div className="absolute inset-4 flex items-center justify-center overflow-hidden rounded-3xl border border-slate-200 shadow-inner sm:inset-10">
                   <img
-                    src="/images/fundo-gtech.jpeg"
+                    src="/images/fundo-gtech-2.png"
                     alt="Operação GTech"
                     className="absolute h-full w-full object-cover"
                   />
@@ -287,6 +287,10 @@ export default function ServicosContent() {
           >
             {[
               {
+                title: 'Logística Reversa',
+                desc: 'Oferecemos soluções completas de logística reversa, incluindo a coleta, transporte e armazenagem temporária de resíduos, garantindo a destinação final ambientalmente adequada. Nossa infraestrutura permite o gerenciamento de grandes volumes de materiais com total segurança e controle.',
+              },
+              {
                 title: 'Desmobilização',
                 desc: 'Com a nossa equipe fazemos desmobilização de unidades dos clientes de maneira correta e organizada.',
               },
@@ -307,7 +311,7 @@ export default function ServicosContent() {
                 desc: 'Serviço de inventário, separação de equipamentos (A/B/C), segregação de peças, lista técnica detalhada e acondicionamento.',
               },
               {
-                title: 'Warehouse',
+                title: 'Armazenamento Temporário',
                 desc: 'Maneira correta de armazenamento de mercadorias temporárias para clientes, em local dedicado, posições fechadas e controladas.',
               },
               {
@@ -319,19 +323,39 @@ export default function ServicosContent() {
                 desc: 'Tecnologia para recuperar diversos materiais (ex: plásticos técnicos), voltando a ser fornecido. Novo de novo. Economia Circular.',
               },
               {
-                title: 'Compra de Lotes',
-                desc: 'Compra de lotes de descarte de empresas, produtos de informática ou items impróprios para venda, garantindo sanitização.',
+                title: 'Compra de Ativos de T.I',
+                desc: 'Compra de lotes corporativos. Compramos servidores, desktops, notebooks, switches e periféricos de grandes empresas.',
+              },
+              {
+                title: 'Data Wipe',
+                desc: 'Sanitização lógica irreversível com tecnologia Blancco que elimina definitivamente dados sem recuperação. Destruição física para hardwares corrompidos. Válido para auditoria e LGPD.',
               },
             ].map((svc, i) => (
               <motion.div
                 variants={fadeUp}
                 key={i}
-                className="group rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-lg"
+                className={`group flex flex-col rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-lg ${
+                  i === 0
+                    ? 'border-primary/30 items-center justify-center bg-gradient-to-br from-slate-50 to-white p-8 text-center shadow-sm md:col-span-2 lg:col-span-3 lg:p-12'
+                    : 'items-start border-slate-200 bg-white p-8 text-left'
+                } ${svc.title === 'Data Wipe' ? 'lg:col-start-2' : ''}`}
               >
-                <div className="bg-primary/10 border-primary/20 mb-4 inline-flex rounded border px-3 py-1 text-sm font-extrabold uppercase tracking-wider text-primary-dark transition-colors group-hover:bg-primary group-hover:text-white">
+                <div
+                  className={`mb-4 inline-flex rounded border px-3 py-1 text-sm font-extrabold uppercase tracking-wider transition-colors ${
+                    i === 0
+                      ? 'border-primary bg-primary text-white'
+                      : 'bg-primary/10 border-primary/20 text-primary-dark group-hover:bg-primary group-hover:text-white'
+                  }`}
+                >
                   {svc.title}
                 </div>
-                <p className="text-sm font-medium leading-relaxed text-slate-600">
+                <p
+                  className={`font-medium leading-relaxed ${
+                    i === 0
+                      ? 'mx-auto max-w-5xl text-base text-slate-700 md:text-lg'
+                      : 'text-sm text-slate-600'
+                  }`}
+                >
                   {svc.desc}
                 </p>
               </motion.div>
