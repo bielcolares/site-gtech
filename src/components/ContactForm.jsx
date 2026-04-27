@@ -18,43 +18,39 @@ export default function ContactForm() {
   });
   const [status, setStatus] = useState('idle');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('loading');
 
-    const assunto = encodeURIComponent(
-      `Contato Comercial Site: ${formData.empresa} - ${formData.nome}`
-    );
-    const corpo = encodeURIComponent(`Nome: ${formData.nome}
-Cargo: ${formData.cargo}
-Empresa: ${formData.empresa}
-Email corporativo: ${formData.email}
-Telefone: ${formData.telefone}
-
-Tipo de Resíduo: ${formData.tipo}
-Volume Estimado: ${formData.volume}
-Localização da Coleta: ${formData.local}
-
-Mensagem Adicional / Necessidade:
-${formData.mensagem}`);
-
-    window.location.href = `mailto:comercial@gtech.com.br?subject=${assunto}&body=${corpo}`;
-
-    setTimeout(() => {
-      setStatus('success');
-      setFormData({
-        nome: '',
-        cargo: '',
-        empresa: '',
-        email: '',
-        telefone: '',
-        tipo: '',
-        volume: '',
-        local: '',
-        mensagem: '',
+    try {
+      const res = await fetch('/api/contato', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
-      setTimeout(() => setStatus('idle'), 3000);
-    }, 1500);
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus('success');
+        setFormData({
+          nome: '',
+          cargo: '',
+          empresa: '',
+          email: '',
+          telefone: '',
+          tipo: '',
+          volume: '',
+          local: '',
+          mensagem: '',
+        });
+        setTimeout(() => setStatus('idle'), 3000);
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   const containerVariants = {
@@ -76,7 +72,6 @@ ${formData.mensagem}`);
       id="contact"
       className="relative w-full overflow-hidden bg-slate-50 pb-16 pt-32 lg:pb-24 lg:pt-[136px]"
     >
-      {/* Design Verde — Lado Esquerdo, Degradê Esquerda para Direita e Cima para Baixo */}
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
@@ -349,14 +344,16 @@ ${formData.mensagem}`);
 
               <button
                 type="submit"
-                disabled={status === 'loading'}
+                disabled={status === 'loading' || status === 'success'}
                 className="w-full rounded-lg bg-primary py-4 font-bold text-white shadow-[0_4px_14px_rgba(156,192,38,0.4)] transition-all hover:-translate-y-1 hover:bg-primary-dark disabled:opacity-70"
               >
                 {status === 'loading'
-                  ? 'Preparando e-mail...'
+                  ? 'Enviando...'
                   : status === 'success'
-                    ? 'Preparando Formulário!'
-                    : 'Solicitar Contato Especializado'}
+                    ? '✅ Mensagem enviada com sucesso!'
+                    : status === 'error'
+                      ? '❌ Erro ao enviar. Tente novamente.'
+                      : 'Solicitar Contato Especializado'}
               </button>
             </form>
           </motion.div>
