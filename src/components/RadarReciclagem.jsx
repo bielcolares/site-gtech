@@ -5,12 +5,12 @@ import { motion } from 'framer-motion';
 
 const metrics = [
   {
-    title: 'Quantidade total de materiais processados | KG',
-    value: '1.610.657,10',
+    title: 'Total de materiais processados | Toneladas',
+    value: '5.000',
   },
   {
     title: 'Quantidade de matéria prima poupada com a reciclagem | KG',
-    value: '1.143.961,60',
+    value: '+1,1 milhão',
   },
   {
     title: 'Quantidade de CO2 evitado com o processamento | KG',

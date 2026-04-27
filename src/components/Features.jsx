@@ -26,11 +26,16 @@ export default function Features() {
             alt="ISO 45001"
             className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
           />
+          <img
+            src="/images/R2v3-selo.png"
+            alt="R2v3"
+            className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
+          />
         </div>
       ),
-      title: 'SGI & certificados',
+      title: 'SGI & R2v3',
       description:
-        'Sistema de Gestão Integrado (SGI). ISO 9001, 14001 e 45001. Todo fluxo atende as minúcias da Política Nacional de Resíduos Sólidos (PNRS).',
+        'Sistema de Gestão Integrado (SGI). ISO 9001, 14001 e 45001. Todo fluxo atende as minúcias da Política Nacional de Resíduos Sólidos (PNRS). E a certificação R2v3 (Responsible Recycling, versão 3) é a mais rigorosa norma internacional específica para reciclagem de eletrônicos.',
     },
     {
       id: 2,
