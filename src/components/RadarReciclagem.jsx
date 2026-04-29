@@ -64,6 +64,29 @@ export default function RadarReciclagem() {
             Métricas oficiais e auditadas de nosso impacto ambiental contínuo,
             transformando resíduos em matrizes seguras e circulares.
           </motion.p>
+
+          {/* Badge 2025 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mt-8 inline-flex flex-col items-center gap-2"
+          >
+            <div className="flex items-center gap-3 rounded-2xl border-2 border-green-400 bg-green-400/20 px-8 py-4 shadow-[0_0_30px_rgba(74,222,128,0.3)] backdrop-blur-sm">
+              <span className="relative flex h-3 w-3">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-green-400"></span>
+              </span>
+              <span className="text-base font-extrabold uppercase tracking-widest text-green-300">
+                Números Auditados
+              </span>
+              <span className="h-4 w-px bg-green-400/50"></span>
+              <span className="text-base font-extrabold uppercase tracking-widest text-white">
+                em 2025
+              </span>
+            </div>
+          </motion.div>
         </div>
 
         <motion.div
