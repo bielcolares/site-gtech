@@ -2,8 +2,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 export default function AboutContent() {
+  const { lang } = useLanguage();
+  const tx = translations.about;
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
@@ -18,18 +23,9 @@ export default function AboutContent() {
     },
   };
 
-  const popVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, type: 'spring', bounce: 0.4 },
-    },
-  };
-
   return (
     <div className="relative flex-grow overflow-hidden bg-slate-50 pb-16 pt-32 lg:pb-24 lg:pt-[136px]">
-      {/* Design Verde — Lado Esquerdo, Degradê Esquerda para Direita e Cima para Baixo */}
+      {/* Design Verde — Lado Esquerdo */}
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
@@ -58,73 +54,88 @@ export default function AboutContent() {
         variants={containerVariants}
         className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
       >
+        {/* Hero text */}
         <motion.div
           variants={itemVariants}
           className="mb-24 max-w-3xl border-l-4 border-primary pl-6 text-left"
         >
           <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-slate-800 sm:text-6xl">
-            A conformidade como vantagem competitiva
+            {t(tx.hero_title, lang)}
           </h1>
           <p className="text-xl text-slate-600">
-            Transformamos o descarte eletrônico em um ativo estratégico que
-            protege sua marca.
+            {t(tx.hero_description, lang)}
           </p>
         </motion.div>
 
         <div className="grid items-start gap-16 lg:grid-cols-2">
+          {/* Essência */}
           <motion.div variants={itemVariants}>
             <h2 className="mb-4 text-sm font-black uppercase tracking-widest text-primary-dark">
-              Nossa essência
+              {t(tx.essence_eyebrow, lang)}
             </h2>
             <div className="space-y-6 text-balance text-lg leading-relaxed text-slate-600">
               <p>
-                Por meio da <strong>Mineração Urbana</strong> e da{' '}
-                <strong>Economia Circular</strong>, garantimos mais de 95% de
-                reaproveitamento de resíduos eletrônicos, promovendo
-                sustentabilidade de forma altamente eficiente.
+                {lang === 'pt' ? (
+                  <>
+                    Por meio da <strong>Mineração Urbana</strong> e da{' '}
+                    <strong>Economia Circular</strong>, garantimos mais de 95%
+                    de reaproveitamento de resíduos eletrônicos, promovendo
+                    sustentabilidade de forma altamente eficiente.
+                  </>
+                ) : (
+                  <>
+                    Through <strong>Urban Mining</strong> and the{' '}
+                    <strong>Circular Economy</strong>, we ensure over 95% reuse
+                    of electronic waste, promoting sustainability in a highly
+                    efficient way.
+                  </>
+                )}
               </p>
               <p>
-                Oferecemos{' '}
-                <strong>segurança jurídica e rastreabilidade total</strong> em
-                todo o processo, protegendo a reputação e a integridade da sua
-                marca contra riscos ambientais e vazamento de dados
-                corporativos.
+                {lang === 'pt' ? (
+                  <>
+                    Oferecemos{' '}
+                    <strong>segurança jurídica e rastreabilidade total</strong>{' '}
+                    em todo o processo, protegendo a reputação e a integridade
+                    da sua marca contra riscos ambientais e vazamento de dados
+                    corporativos.
+                  </>
+                ) : (
+                  <>
+                    We provide{' '}
+                    <strong>legal security and full traceability</strong>{' '}
+                    throughout the process, protecting your brand reputation and
+                    integrity against environmental risks and corporate data
+                    leaks.
+                  </>
+                )}
               </p>
-              <p>
-                Atuamos no gerenciamento especializado de resíduos eletrônicos,
-                eletroeletrônicos e materiais não ferrosos em escala industrial.
-                Na Gtech, garantimos governança sólida e inquestionável para a
-                sua empresa.
-              </p>
+              <p>{t(tx.essence_p3, lang)}</p>
             </div>
           </motion.div>
 
+          {/* Card Logística Reversa */}
           <motion.div
             variants={itemVariants}
             className="relative flex h-full flex-col justify-center overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-xl lg:p-12"
           >
-            {/* Textura de fundo sutil */}
             <div className="bg-primary/5 pointer-events-none absolute -right-10 -top-10 h-64 w-64 rounded-full blur-3xl"></div>
             <div className="relative z-10">
               <div className="bg-primary/10 mb-6 inline-flex items-center gap-3 rounded-full px-4 py-2 text-xs font-extrabold uppercase tracking-widest text-primary-dark sm:text-sm">
                 <div className="h-2 w-2 animate-pulse rounded-full bg-primary"></div>
-                Serviço em Destaque
+                {t(tx.featured_badge, lang)}
               </div>
               <h3 className="mb-6 text-3xl font-extrabold leading-tight text-slate-800 sm:text-4xl">
-                Logística Reversa
+                {t(tx.featured_title, lang)}
               </h3>
               <p className="text-lg leading-relaxed text-slate-600">
-                Oferecemos soluções completas de logística reversa, incluindo a
-                coleta, transporte e armazenagem temporária de resíduos,
-                garantindo a destinação final ambientalmente adequada. Nossa
-                infraestrutura permite o gerenciamento de grandes volumes de
-                materiais com total segurança e controle.
+                {t(tx.featured_description, lang)}
               </p>
             </div>
           </motion.div>
         </div>
 
-        {/* Galeria Institucional em Grid (Bento Box) */}
+        {/* Galeria */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -169,7 +180,7 @@ export default function AboutContent() {
             >
               <img
                 src={img.src}
-                alt={`Operação Gtech ${idx + 1}`}
+                alt={`${t(tx.gallery_alt, lang)} ${idx + 1}`}
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="bg-primary-dark/10 absolute inset-0 transition-colors group-hover:bg-transparent"></div>
@@ -177,6 +188,7 @@ export default function AboutContent() {
           ))}
         </motion.div>
 
+        {/* Ação Climática */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -187,55 +199,74 @@ export default function AboutContent() {
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <motion.div variants={itemVariants}>
               <h2 className="mb-2 text-3xl font-extrabold tracking-tight text-slate-800 lg:text-5xl">
-                Resolução de ação climática
+                {t(tx.climate_title, lang)}
               </h2>
               <p className="mb-8 text-lg font-medium text-slate-600">
-                Análise gravimétrica de redução de emissões
+                {t(tx.climate_description, lang)}
               </p>
 
               <div className="space-y-6">
-                <div className="rounded-r-xl border-l-4 border-primary bg-white p-6 shadow-sm transition-transform hover:-translate-y-1">
-                  <span className="mb-1 block text-4xl font-black tracking-tighter text-primary-dark">
-                    580.252,00 kg
-                  </span>
-                  <p className="font-medium text-slate-600">
-                    Aproximadamente de matérias primas de{' '}
-                    <strong className="text-slate-800">eletrônicos</strong>{' '}
-                    foram poupadas de ser extraídas.
-                  </p>
-                </div>
-                <div className="rounded-r-xl border-l-4 border-slate-400 bg-white p-6 shadow-sm transition-transform hover:-translate-y-1">
-                  <span className="mb-1 block text-4xl font-black tracking-tighter text-slate-700">
-                    225.555,70 kg
-                  </span>
-                  <p className="font-medium text-slate-600">
-                    Aproximadamente de matérias primas de{' '}
-                    <strong className="text-slate-800">
-                      metais ferrosos e não ferrosos
-                    </strong>{' '}
-                    foram poupadas de ser extraídas.
-                  </p>
-                </div>
-                <div className="border-primary-light rounded-r-xl border-l-4 bg-white p-6 shadow-sm transition-transform hover:-translate-y-1">
-                  <span className="mb-1 block text-4xl font-black tracking-tighter text-primary">
-                    338.152,00 kg
-                  </span>
-                  <p className="font-medium text-slate-600">
-                    Aproximadamente de matérias primas de{' '}
-                    <strong className="text-slate-800">
-                      resíduos diversos
-                    </strong>{' '}
-                    foram poupadas de ser extraídas.
-                  </p>
-                </div>
+                {[
+                  {
+                    value: '580.252,00 kg',
+                    borderClass: 'border-primary',
+                    textClass: 'text-primary-dark',
+                    idx: 0,
+                  },
+                  {
+                    value: '225.555,70 kg',
+                    borderClass: 'border-slate-400',
+                    textClass: 'text-slate-700',
+                    idx: 1,
+                  },
+                  {
+                    value: '338.152,00 kg',
+                    borderClass: 'border-primary-light',
+                    textClass: 'text-primary',
+                    idx: 2,
+                  },
+                ].map(({ value, borderClass, textClass, idx }) => {
+                  const item = tx.climate_items[idx];
+                  return (
+                    <div
+                      key={idx}
+                      className={`rounded-r-xl border-l-4 ${borderClass} bg-white p-6 shadow-sm transition-transform hover:-translate-y-1`}
+                    >
+                      <span
+                        className={`mb-1 block text-4xl font-black tracking-tighter ${textClass}`}
+                      >
+                        {value}
+                      </span>
+                      <p className="font-medium text-slate-600">
+                        {lang === 'pt' ? (
+                          <>
+                            Aproximadamente de matérias primas de{' '}
+                            <strong className="text-slate-800">
+                              {item.strong_pt}
+                            </strong>{' '}
+                            foram poupadas de ser extraídas.
+                          </>
+                        ) : (
+                          <>
+                            Approximately of{' '}
+                            <strong className="text-slate-800">
+                              {item.strong_en}
+                            </strong>{' '}
+                            raw materials were saved from extraction.
+                          </>
+                        )}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             </motion.div>
 
+            {/* Card compromisso */}
             <motion.div
               variants={itemVariants}
               className="relative flex h-full min-h-[400px] flex-col justify-center overflow-hidden rounded-3xl bg-primary-deep p-10 shadow-xl lg:p-16"
             >
-              {/* Design branco como textura decorativa no card verde escuro */}
               <div className="pointer-events-none absolute inset-0 select-none opacity-[0.06]">
                 <img
                   src="/images/design branco.png"
@@ -247,11 +278,10 @@ export default function AboutContent() {
               <div className="pointer-events-none absolute bottom-0 left-0 h-80 w-80 rounded-full bg-white/5 blur-[80px]"></div>
               <div className="relative z-10">
                 <h3 className="mb-6 text-3xl font-extrabold leading-tight text-white lg:text-4xl">
-                  Novo compromisso ambicioso
+                  {t(tx.commitment_title, lang)}
                 </h3>
                 <p className="mb-10 text-xl leading-relaxed text-white/90">
-                  Estabelecemos a meta de redução ambiental em total alinhamento
-                  com a diretriz mundial{' '}
+                  {t(tx.commitment_description, lang)}{' '}
                   <strong className="decoration-primary/50 px-1 text-2xl font-black text-primary underline underline-offset-4">
                     Science Based Targets (SBT)
                   </strong>
@@ -259,13 +289,14 @@ export default function AboutContent() {
                 </p>
                 <div className="inline-flex items-center gap-3 rounded-xl border border-white/20 bg-white/10 px-6 py-3 font-bold text-white shadow-lg">
                   <div className="h-3 w-3 animate-pulse rounded-full bg-primary"></div>
-                  Otimização de Energias Renováveis
+                  {t(tx.commitment_badge, lang)}
                 </div>
               </div>
             </motion.div>
           </div>
         </motion.div>
 
+        {/* Certificações */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -275,15 +306,12 @@ export default function AboutContent() {
         >
           <motion.div variants={itemVariants} className="mb-16 text-center">
             <h2 className="mb-4 text-2xl font-extrabold text-slate-800">
-              Nossos alicerces de excelência
+              {t(tx.certs_title, lang)}
             </h2>
-            <p className="text-slate-600">
-              Auditorias rigorosas comprovam nossa capacidade de gestão a nível
-              de excelência internacional.
-            </p>
+            <p className="text-slate-600">{t(tx.certs_description, lang)}</p>
           </motion.div>
           <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-2 lg:grid-cols-4">
-            {/* Certificação R2v3 movida para cá */}
+            {/* R2v3 */}
             <motion.div
               variants={itemVariants}
               className="group flex h-full flex-col items-center justify-center rounded-xl border-2 border-primary bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
@@ -294,12 +322,17 @@ export default function AboutContent() {
                 className="mb-6 h-24 w-auto object-contain transition-transform group-hover:scale-105"
               />
               <p className="mb-1 text-sm font-black uppercase tracking-widest text-slate-800">
-                Certificação R2v3
+                {tx.certs[0].label_pt && lang === 'pt'
+                  ? tx.certs[0].label_pt
+                  : tx.certs[0].label_en}
               </p>
               <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                Padrão Ouro Global
+                {tx.certs[0].sub_pt && lang === 'pt'
+                  ? tx.certs[0].sub_pt
+                  : tx.certs[0].sub_en}
               </p>
             </motion.div>
+            {/* ISO 9001 */}
             <motion.div
               variants={itemVariants}
               className="group flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
@@ -310,9 +343,10 @@ export default function AboutContent() {
                 className="mb-6 h-28 w-auto object-contain transition-transform group-hover:scale-105"
               />
               <p className="text-sm font-bold uppercase tracking-widest text-slate-600">
-                Sistema de Gestão da Qualidade
+                {lang === 'pt' ? tx.certs[1].label_pt : tx.certs[1].label_en}
               </p>
             </motion.div>
+            {/* ISO 14001 */}
             <motion.div
               variants={itemVariants}
               className="group flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
@@ -323,9 +357,10 @@ export default function AboutContent() {
                 className="mb-6 h-28 w-auto object-contain transition-transform group-hover:scale-105"
               />
               <p className="text-sm font-bold uppercase tracking-widest text-slate-600">
-                Sistema de Gestão Ambiental
+                {lang === 'pt' ? tx.certs[2].label_pt : tx.certs[2].label_en}
               </p>
             </motion.div>
+            {/* ISO 45001 */}
             <motion.div
               variants={itemVariants}
               className="group flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
@@ -336,7 +371,7 @@ export default function AboutContent() {
                 className="mb-6 h-28 w-auto object-contain transition-transform group-hover:scale-105"
               />
               <p className="text-sm font-bold uppercase tracking-widest text-slate-600">
-                Saúde e Segurança Ocupacional
+                {lang === 'pt' ? tx.certs[3].label_pt : tx.certs[3].label_en}
               </p>
             </motion.div>
           </div>

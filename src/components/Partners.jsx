@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 const partners = [
   { name: 'Atlas Schindler', logo: '/images/atlas-schindler-logo.jpg' },
@@ -19,11 +21,14 @@ const partners = [
 const infinitePartners = [...partners, ...partners];
 
 export default function Partners() {
+  const { lang } = useLanguage();
+  const tx = translations.partners;
+
   return (
     <section className="overflow-hidden border-y border-slate-200 bg-white py-16">
       <div className="mx-auto mb-8 max-w-7xl px-4 text-center sm:px-6 lg:px-8">
         <h3 className="text-sm font-bold uppercase tracking-widest text-slate-500">
-          Confira alguns parceiros Gtech
+          {t(tx.title, lang)}
         </h3>
       </div>
 

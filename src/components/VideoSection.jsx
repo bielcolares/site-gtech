@@ -1,19 +1,22 @@
 'use client';
 
 import React from 'react';
-import { PlayCircle } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 export default function VideoSection() {
+  const { lang } = useLanguage();
+  const tx = translations.video;
+
   return (
     <section className="w-full overflow-hidden bg-white py-20 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-slate-800 lg:text-5xl">
-            Assista a Gtech em ação
+            {t(tx.title, lang)}
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-slate-500">
-            Por dentro da nossa mineração urbana. Veja como a tecnologia somada
-            a processos auditados garante segurança e rentabilidade.
+            {t(tx.description, lang)}
           </p>
         </div>
 
@@ -21,7 +24,7 @@ export default function VideoSection() {
           <iframe
             className="pointer-events-none absolute inset-0 h-full w-full scale-[1.02]"
             src="https://www.youtube.com/embed/lUbX9tHuUyQ?autoplay=1&mute=1&loop=1&playlist=lUbX9tHuUyQ&controls=0&showinfo=0&rel=0&modestbranding=1"
-            title="Vídeo Institucional GTech"
+            title="GTech Institutional Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

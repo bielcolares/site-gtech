@@ -4,8 +4,13 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 export default function Hero() {
+  const { lang } = useLanguage();
+  const tx = translations.hero;
+
   return (
     <section
       id="hero"
@@ -35,7 +40,7 @@ export default function Hero() {
       <div className="bg-primary/20 pointer-events-none absolute right-0 top-0 -mr-40 -mt-40 h-[600px] w-[600px] rounded-full blur-[100px]"></div>
       <div className="pointer-events-none absolute bottom-0 left-0 -mb-40 -ml-40 h-[500px] w-[500px] rounded-full bg-slate-100 blur-[100px]"></div>
 
-      {/* Robô GTech — absolute, fora do fluxo, não afeta a altura da section */}
+      {/* Robô GTech */}
       <motion.div
         initial={{ opacity: 0, x: 80 }}
         animate={{ opacity: 1, x: 0 }}
@@ -57,7 +62,7 @@ export default function Hero() {
         />
       </motion.div>
 
-      {/* Conteúdo principal — texto fica em 7 colunas, robô flutua por cima nas outras */}
+      {/* Conteúdo principal */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center lg:grid-cols-12">
           <motion.div
@@ -74,19 +79,17 @@ export default function Hero() {
             >
               <ShieldCheck className="h-4 w-4 text-primary-dark" />
               <span className="text-xs font-bold uppercase tracking-wider text-slate-600">
-                Conformidade e Segurança Jurídica
+                {t(tx.badge, lang)}
               </span>
             </motion.div>
 
             <h1 className="mb-6 text-balance text-4xl font-extrabold leading-tight tracking-tight text-slate-800 sm:text-5xl lg:text-7xl">
-              Recuperamos valor,{' '}
-              <span className="text-primary-dark">protegemos marcas</span> e
-              preservamos o futuro.
+              {t(tx.headline1, lang)}{' '}
+              <span className="text-primary-dark">{t(tx.headline2, lang)}</span>{' '}
+              {t(tx.headline3, lang)}
             </h1>
             <p className="mb-10 max-w-2xl text-balance text-lg text-slate-500 sm:text-xl">
-              Transformamos o descarte eletrônico corporativo em um ativo
-              estratégico. Promovemos a economia circular com mais de 95% de
-              reaproveitamento, garantindo governança inquestionável.
+              {t(tx.description, lang)}
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -94,14 +97,14 @@ export default function Hero() {
                 href="#whatsapp"
                 className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 font-bold text-white shadow-[0_4px_14px_rgba(156,192,38,0.4)] transition-all hover:-translate-y-1 hover:bg-primary-dark hover:shadow-[0_6px_20px_rgba(156,192,38,0.6)]"
               >
-                Falar com Especialista B2B{' '}
+                {t(tx.cta_primary, lang)}{' '}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
               <Link
                 href="/sobre-nos"
                 className="inline-flex items-center justify-center rounded-md border border-slate-200 bg-white px-8 py-4 font-bold text-slate-700 shadow-sm transition-colors hover:-translate-y-1 hover:bg-slate-50"
               >
-                Conheça a Gtech
+                {t(tx.cta_secondary, lang)}
               </Link>
             </div>
 
@@ -115,11 +118,11 @@ export default function Hero() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-primary font-bold text-white shadow-sm"></div>
               </div>
               <p className="text-sm font-medium text-slate-500">
-                Operação validada por{' '}
+                {t(tx.social_proof, lang)}{' '}
                 <span className="font-extrabold tracking-wide text-slate-800">
-                  + de 400 clientes
+                  {t(tx.social_proof_highlight, lang)}
                 </span>{' '}
-                em todo país.
+                {t(tx.social_proof_suffix, lang)}
               </p>
             </div>
           </motion.div>

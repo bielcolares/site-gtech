@@ -2,27 +2,20 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-
-const metrics = [
-  {
-    title: 'Total de materiais processados | Toneladas',
-    value: '5.000',
-  },
-  {
-    title: 'Quantidade de matéria prima poupada com a reciclagem | KG',
-    value: '+1,1 milhão',
-  },
-  {
-    title: 'Quantidade de CO2 evitado com o processamento | KG',
-    value: '3.973.485,00',
-  },
-  {
-    title: 'CO2 emitido através do transporte considerado | KG',
-    value: '59.762,30',
-  },
-];
+import { useLanguage } from '@/context/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 export default function RadarReciclagem() {
+  const { lang } = useLanguage();
+  const tx = translations.radar;
+
+  const metrics = [
+    { title: t(tx.metrics[0], lang), value: '5.000' },
+    { title: t(tx.metrics[1], lang), value: '+1,1 milhão' },
+    { title: t(tx.metrics[2], lang), value: '3.973.485,00' },
+    { title: t(tx.metrics[3], lang), value: '59.762,30' },
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
@@ -52,7 +45,7 @@ export default function RadarReciclagem() {
             viewport={{ once: true }}
             className="mb-4 text-4xl font-extrabold tracking-tight text-white md:text-5xl"
           >
-            Radar de Reciclagem
+            {t(tx.title, lang)}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -61,8 +54,7 @@ export default function RadarReciclagem() {
             transition={{ delay: 0.1 }}
             className="mx-auto max-w-2xl text-lg font-medium text-white/80 sm:text-xl"
           >
-            Métricas oficiais e auditadas de nosso impacto ambiental contínuo,
-            transformando resíduos em matrizes seguras e circulares.
+            {t(tx.description, lang)}
           </motion.p>
 
           {/* Badge 2025 */}
@@ -79,7 +71,7 @@ export default function RadarReciclagem() {
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-green-400"></span>
               </span>
               <span className="text-base font-extrabold uppercase tracking-widest text-green-300">
-                Números Auditados
+                {t(tx.audited, lang)}
               </span>
               <span className="h-4 w-px bg-green-400/50"></span>
               <span className="text-base font-extrabold uppercase tracking-widest text-white">

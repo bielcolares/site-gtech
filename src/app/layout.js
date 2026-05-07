@@ -14,6 +14,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppFloating from '@/components/WhatsAppFloating';
 import WhatsAppModal from '@/components/WhatsAppModal';
+import { LanguageProvider } from '@/context/LanguageContext';
 
 export default function RootLayout({ children }) {
   return (
@@ -21,11 +22,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} flex min-h-screen flex-col bg-white text-slate-800 antialiased`}
       >
-        <Header />
-        <main className="flex-grow pt-20">{children}</main>
-        <Footer />
-        <WhatsAppFloating />
-        <WhatsAppModal />
+        <LanguageProvider>
+          <Header />
+          <main className="flex-grow pt-20">{children}</main>
+          <Footer />
+          <WhatsAppFloating />
+          <WhatsAppModal />
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>

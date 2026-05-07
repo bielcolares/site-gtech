@@ -1,13 +1,21 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 export default function Footer() {
+  const { lang } = useLanguage();
+  const tx = translations.footer;
+  const nav = tx.nav;
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-8">
+          {/* Brand col */}
           <div className="col-span-1 md:col-span-5">
             <Link
               href="/"
@@ -20,9 +28,7 @@ export default function Footer() {
               />
             </Link>
             <p className="mb-6 max-w-md text-balance text-sm leading-relaxed text-slate-600">
-              Recuperamos valor, protegemos marcas e preservamos o futuro.
-              Especialistas em gestão de resíduos eletroeletrônicos e economia
-              circular com governança sólida para a sua empresa.
+              {t(tx.tagline, lang)}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="rounded border border-slate-200 bg-white px-3 py-1 text-xs font-bold tracking-wide text-primary shadow-sm">
@@ -40,9 +46,10 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Company col */}
           <div className="col-span-1 md:col-span-2">
             <h4 className="mb-4 text-sm font-bold uppercase tracking-widest text-slate-900">
-              Empresa
+              {t(tx.company_col, lang)}
             </h4>
             <ul className="space-y-3 text-sm text-slate-600">
               <li>
@@ -50,7 +57,7 @@ export default function Footer() {
                   href="/sobre-nos"
                   className="transition hover:text-primary"
                 >
-                  Sobre Nós
+                  {t(nav.about, lang)}
                 </Link>
               </li>
               <li>
@@ -58,7 +65,7 @@ export default function Footer() {
                   href="/servicos"
                   className="transition hover:text-primary"
                 >
-                  Serviços
+                  {t(nav.services, lang)}
                 </Link>
               </li>
               <li>
@@ -66,32 +73,35 @@ export default function Footer() {
                   href="/fale-conosco"
                   className="transition hover:text-primary"
                 >
-                  Contato
+                  {t(nav.contact, lang)}
                 </Link>
               </li>
             </ul>
           </div>
 
+          {/* Specialties col */}
           <div className="col-span-1 md:col-span-2">
             <h4 className="mb-4 text-sm font-bold uppercase tracking-widest text-slate-900">
-              Especialidades
+              {t(tx.specialties_col, lang)}
             </h4>
             <ul className="space-y-3 text-sm text-slate-600">
-              <li className="cursor-default">Mineração Urbana</li>
-              <li className="cursor-default">Economia Circular</li>
-              <li className="cursor-default">Rastreabilidade Total</li>
-              <li className="cursor-default">Descarte Responsável</li>
+              {tx.specialties.map((item, idx) => (
+                <li key={idx} className="cursor-default">
+                  {t(item, lang)}
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* B2B col */}
           <div className="col-span-1 md:col-span-3">
             <h4 className="mb-4 text-sm font-bold uppercase tracking-widest text-slate-900">
-              Atendimento B2B
+              {t(tx.b2b_col, lang)}
             </h4>
             <ul className="space-y-3 text-sm text-slate-600">
               <li>
                 <p className="mb-1 block font-medium text-slate-500">
-                  WhatsApp Comercial
+                  {t(tx.whatsapp_label, lang)}
                 </p>
                 <a
                   href="https://wa.me/5511988389974"
@@ -102,7 +112,7 @@ export default function Footer() {
               </li>
               <li>
                 <p className="mb-1 mt-4 block font-medium text-slate-500">
-                  Email Corporativo
+                  {t(tx.email_label, lang)}
                 </p>
                 <a
                   href="mailto:comercial@gtech.com.br"
@@ -113,7 +123,7 @@ export default function Footer() {
               </li>
               <li>
                 <p className="mb-1 mt-4 block font-medium text-slate-500">
-                  Matriz Operacional
+                  {t(tx.address_label, lang)}
                 </p>
                 <p className="font-medium text-slate-800">
                   Rua Kanebo 175, Distrito Industrial, Jundiaí - SP, Brasil
@@ -125,8 +135,7 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col items-center justify-between border-t border-slate-200 pt-6 md:flex-row">
           <p className="text-sm text-slate-500">
-            &copy; {currentYear} Gtech Soluções Ambientais. Todos os direitos
-            reservados.
+            &copy; {currentYear} Gtech Soluções Ambientais. {t(tx.rights, lang)}
           </p>
         </div>
       </div>

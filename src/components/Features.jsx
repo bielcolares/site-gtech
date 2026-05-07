@@ -2,10 +2,15 @@
 
 import React from 'react';
 import Card from './Card';
-import { ShieldAlert, Recycle, Award } from 'lucide-react';
+import { Award, Recycle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 export default function Features() {
+  const { lang } = useLanguage();
+  const tx = translations.features;
+
   const features = [
     {
       id: 1,
@@ -33,23 +38,20 @@ export default function Features() {
           />
         </div>
       ),
-      title: 'SGI & R2v3',
-      description:
-        'Sistema de Gestão Integrado (SGI). ISO 9001, 14001 e 45001. Todo fluxo atende as minúcias da Política Nacional de Resíduos Sólidos (PNRS). E a certificação R2v3 (Responsible Recycling, versão 3) é a mais rigorosa norma internacional específica para reciclagem de eletrônicos.',
+      title: t(tx.items[0].title, lang),
+      description: t(tx.items[0].description, lang),
     },
     {
       id: 2,
       icon: <Award className="h-8 w-8 text-primary-dark" />,
-      title: 'Emissão de laudos de destruição',
-      description:
-        'Após o processo limpo e rastreável, disponibilizamos ao cliente o Certificado de Destinação Final (CDF) acompanhado do Laudo de Destruição Fotográfico.',
+      title: t(tx.items[1].title, lang),
+      description: t(tx.items[1].description, lang),
     },
     {
       id: 3,
       icon: <Recycle className="h-8 w-8 text-primary-dark" />,
-      title: 'Logística reversa implacável',
-      description:
-        'Oferecemos soluções completas de logística reversa, incluindo a coleta, transporte e armazenagem temporária de resíduos, garantindo a destinação final ambientalmente adequada. Nossa infraestrutura permite o gerenciamento de grandes volumes de materiais com total segurança e controle.',
+      title: t(tx.items[2].title, lang),
+      description: t(tx.items[2].description, lang),
     },
   ];
 
@@ -57,9 +59,7 @@ export default function Features() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.2 },
     },
   };
 
@@ -77,14 +77,13 @@ export default function Features() {
       id="features"
       className="relative overflow-hidden border-t border-slate-200 py-24 lg:py-32"
     >
-      {/* Background Imagem Galpão (Clean + Nítido) */}
+      {/* Background Imagem Galpão */}
       <div className="absolute inset-0 z-0 opacity-40">
         <img
           src="/images/fundo-gtech.jpeg"
           alt="Galpão Corporativo GTech"
           className="h-full w-full object-cover grayscale"
         />
-        {/* Camada branca limpa apenas para contraste, sem blur */}
         <div className="absolute inset-0 bg-white/60"></div>
       </div>
 
@@ -97,15 +96,13 @@ export default function Features() {
           className="mx-auto mb-20 max-w-3xl text-center"
         >
           <h2 className="mb-3 text-sm font-black uppercase tracking-widest text-primary-dark">
-            Vantagem competitiva
+            {t(tx.eyebrow, lang)}
           </h2>
           <p className="mt-2 text-balance text-3xl font-extrabold leading-snug tracking-tight text-slate-800 sm:text-5xl">
-            Elevando o padrão do descarte corporativo
+            {t(tx.title, lang)}
           </p>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
-            Na Gtech, o compliance deixa de ser um custo obrigatório para se
-            tornar uma certificação de excelência que valoriza a imagem e
-            protege a reputação da sua marca.
+            {t(tx.description, lang)}
           </p>
         </motion.div>
 
