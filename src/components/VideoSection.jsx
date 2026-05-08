@@ -21,6 +21,8 @@ export default function VideoSection() {
         </div>
 
         <div className="group relative flex aspect-video items-center justify-center overflow-hidden rounded-3xl border-4 border-white bg-slate-100 shadow-xl">
+          {/* VÍDEO TEMPORARIAMENTE OCULTO: Descomente e altere o src quando o novo vídeo chegar */}
+          {/*
           <iframe
             className="pointer-events-none absolute inset-0 h-full w-full scale-[1.02]"
             src="https://www.youtube.com/embed/lUbX9tHuUyQ?autoplay=1&mute=1&loop=1&playlist=lUbX9tHuUyQ&controls=0&showinfo=0&rel=0&modestbranding=1"
@@ -29,6 +31,14 @@ export default function VideoSection() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+          */}
+
+          {/* Imagem estática temporária */}
+          <img
+            src="/images/fundo-gtech.png"
+            alt="GTech Operation"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+          />
 
           <div className="pointer-events-none absolute inset-0 bg-slate-900/10 transition-colors duration-500 group-hover:bg-slate-900/0"></div>
 
