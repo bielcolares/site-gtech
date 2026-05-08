@@ -81,7 +81,6 @@ export default function Features() {
       <div className="absolute inset-0 z-0 opacity-40">
         <img
           src="/images/fundo-gtech.jpeg"
-          alt="Galpão Corporativo GTech"
           className="h-full w-full object-cover grayscale"
         />
         <div className="absolute inset-0 bg-white/60"></div>

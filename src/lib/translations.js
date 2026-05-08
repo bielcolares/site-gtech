@@ -75,7 +75,7 @@ export const translations = {
 
   // ─── Video Section ─────────────────────────────────────────────────────────
   video: {
-    title: { pt: 'Assista a Gtech em ação', en: 'Watch Gtech in action' },
+    title: { pt: 'Gtech em ação', en: 'Gtech in action' },
     description: {
       pt: 'Por dentro da nossa mineração urbana. Veja como a tecnologia somada a processos auditados garante segurança e rentabilidade.',
       en: 'Inside our urban mining operation. See how technology combined with audited processes ensures safety and profitability.',
