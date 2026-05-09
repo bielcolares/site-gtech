@@ -8,6 +8,9 @@ export const metadata = {
   title: 'GTech Soluções Ambientais | Mineração Urbana e ESG',
   description:
     'Recuperamos valor, protegemos marcas e preservamos o futuro. Gestão de resíduos eletroeletrônicos, economia circular e compliance B2B.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 import Header from '@/components/Header';
