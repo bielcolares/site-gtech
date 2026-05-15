@@ -305,6 +305,7 @@ export default function AboutContent() {
 
         {/* Certificações */}
         <motion.div
+          id="certificacoes"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}

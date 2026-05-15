@@ -16,6 +16,7 @@ export const metadata = {
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppFloating from '@/components/WhatsAppFloating';
+import CertificationsFloating from '@/components/CertificationsFloating';
 import WhatsAppModal from '@/components/WhatsAppModal';
 import { LanguageProvider } from '@/context/LanguageContext';
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
           <main className="flex-grow pt-20">{children}</main>
           <Footer />
           <WhatsAppFloating />
+          <CertificationsFloating />
           <WhatsAppModal />
         </LanguageProvider>
         <Analytics />
