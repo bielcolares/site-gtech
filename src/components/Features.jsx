@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Card from './Card';
 import { Award, Recycle } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -16,24 +17,32 @@ export default function Features() {
       id: 1,
       icon: (
         <div className="flex items-center gap-3">
-          <img
-            src="/images/iso-9001.png"
+          <Image
+            src="/images/iso-9001.webp"
             alt="ISO 9001"
+            width={40}
+            height={40}
             className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
           />
-          <img
-            src="/images/iso-14001.png"
+          <Image
+            src="/images/iso-14001.webp"
             alt="ISO 14001"
+            width={40}
+            height={40}
             className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
           />
-          <img
-            src="/images/iso-45001.png"
+          <Image
+            src="/images/iso-45001.webp"
             alt="ISO 45001"
+            width={40}
+            height={40}
             className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
           />
-          <img
+          <Image
             src="/images/R2v3-selo.png"
             alt="R2v3"
+            width={40}
+            height={40}
             className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
           />
         </div>
@@ -79,9 +88,12 @@ export default function Features() {
     >
       {/* Background Imagem Galpão */}
       <div className="absolute inset-0 z-0 opacity-40">
-        <img
-          src="/images/fundo-gtech.jpeg"
-          className="h-full w-full object-cover grayscale"
+        <Image
+          src="/images/fundo-gtech.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover grayscale"
         />
         <div className="absolute inset-0 bg-white/60"></div>
       </div>

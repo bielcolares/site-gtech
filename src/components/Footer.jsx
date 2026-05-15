@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
@@ -21,9 +22,11 @@ export default function Footer() {
               href="/"
               className="mb-6 block transition-opacity hover:opacity-80"
             >
-              <img
+              <Image
                 src="/images/selo 10 anos gtech.png"
                 alt="GTech Soluções Ambientais - 10 Anos"
+                width={64}
+                height={64}
                 className="h-16 w-auto"
               />
             </Link>

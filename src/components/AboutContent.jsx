@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
@@ -38,10 +39,12 @@ export default function AboutContent() {
             'radial-gradient(ellipse at top left, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 70%)',
         }}
       >
-        <img
-          src="/images/design verde.png"
+        <Image
+          src="/images/design verde.webp"
           alt=""
-          className="h-full w-full object-cover object-left-top opacity-[0.15] mix-blend-multiply"
+          fill
+          sizes="50vw"
+          className="object-cover object-left-top opacity-[0.15] mix-blend-multiply"
         />
       </motion.div>
       {/* Glow bg */}
@@ -145,27 +148,27 @@ export default function AboutContent() {
         >
           {[
             {
-              src: '/images/fundo-gtech.png',
+              src: '/images/fundo-gtech.webp',
               span: 'sm:col-span-2 sm:row-span-2',
             },
             {
-              src: '/images/fundo-gtech-2.png',
+              src: '/images/fundo-gtech-2.webp',
               span: 'sm:col-span-1 sm:row-span-1',
             },
             {
-              src: '/images/fundo-gtech-3.png',
+              src: '/images/fundo-gtech-3.webp',
               span: 'sm:col-span-1 sm:row-span-1',
             },
             {
-              src: '/images/fundo-gtech-4.png',
+              src: '/images/fundo-gtech-4.webp',
               span: 'sm:col-span-1 sm:row-span-1',
             },
             {
-              src: '/images/fundo-gtech-5.png',
+              src: '/images/fundo-gtech-5.webp',
               span: 'sm:col-span-1 sm:row-span-1',
             },
             {
-              src: '/images/fundo-gtech-6.png',
+              src: '/images/fundo-gtech-6.webp',
               span: 'sm:col-span-1 sm:row-span-1',
             },
           ].map((img, idx) => (
@@ -178,10 +181,12 @@ export default function AboutContent() {
                   : 'aspect-[4/3] sm:aspect-square'
               }`}
             >
-              <img
+              <Image
                 src={img.src}
                 alt={`${t(tx.gallery_alt, lang)} ${idx + 1}`}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="bg-primary-dark/10 absolute inset-0 transition-colors group-hover:bg-transparent"></div>
             </motion.div>
@@ -268,10 +273,12 @@ export default function AboutContent() {
               className="relative flex h-full min-h-[400px] flex-col justify-center overflow-hidden rounded-3xl bg-primary-deep p-10 shadow-xl lg:p-16"
             >
               <div className="pointer-events-none absolute inset-0 select-none opacity-[0.06]">
-                <img
-                  src="/images/design branco.png"
+                <Image
+                  src="/images/design branco.webp"
                   alt=""
-                  className="h-full w-full object-cover"
+                  fill
+                  sizes="50vw"
+                  className="object-cover"
                 />
               </div>
               <div className="bg-primary/20 pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full blur-[60px]"></div>
@@ -316,9 +323,11 @@ export default function AboutContent() {
               variants={itemVariants}
               className="group flex h-full flex-col items-center justify-center rounded-xl border-2 border-primary bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
             >
-              <img
+              <Image
                 src="/images/R2v3-selo.png"
                 alt="Selo R2v3"
+                width={96}
+                height={96}
                 className="mb-6 h-24 w-auto object-contain transition-transform group-hover:scale-105"
               />
               <p className="mb-1 text-sm font-black uppercase tracking-widest text-slate-800">
@@ -337,9 +346,11 @@ export default function AboutContent() {
               variants={itemVariants}
               className="group flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
             >
-              <img
-                src="/images/iso-9001.png"
+              <Image
+                src="/images/iso-9001.webp"
                 alt="ISO 9001"
+                width={112}
+                height={112}
                 className="mb-6 h-28 w-auto object-contain transition-transform group-hover:scale-105"
               />
               <p className="text-sm font-bold uppercase tracking-widest text-slate-600">
@@ -351,9 +362,11 @@ export default function AboutContent() {
               variants={itemVariants}
               className="group flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
             >
-              <img
-                src="/images/iso-14001.png"
+              <Image
+                src="/images/iso-14001.webp"
                 alt="ISO 14001"
+                width={112}
+                height={112}
                 className="mb-6 h-28 w-auto object-contain transition-transform group-hover:scale-105"
               />
               <p className="text-sm font-bold uppercase tracking-widest text-slate-600">
@@ -365,9 +378,11 @@ export default function AboutContent() {
               variants={itemVariants}
               className="group flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
             >
-              <img
-                src="/images/iso-45001.png"
+              <Image
+                src="/images/iso-45001.webp"
                 alt="ISO 45001"
+                width={112}
+                height={112}
                 className="mb-6 h-28 w-auto object-contain transition-transform group-hover:scale-105"
               />
               <p className="text-sm font-bold uppercase tracking-widest text-slate-600">

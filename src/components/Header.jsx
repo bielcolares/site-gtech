@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
@@ -42,10 +43,13 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           <div className="flex flex-shrink-0 items-center transition-opacity hover:opacity-80">
             <Link href="/">
-              <img
+              <Image
                 src="/images/selo 10 anos gtech.png"
                 alt="GTech Soluções Ambientais - 10 Anos"
+                width={64}
+                height={64}
                 className="h-16 w-auto"
+                priority
               />
             </Link>
           </div>

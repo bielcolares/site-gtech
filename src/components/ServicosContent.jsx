@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
@@ -67,10 +68,12 @@ export default function ServicosContent() {
               'radial-gradient(ellipse at top right, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%)',
           }}
         >
-          <img
-            src="/images/design verde.png"
+          <Image
+            src="/images/design verde.webp"
             alt=""
-            className="h-full w-full object-cover object-right-top opacity-[0.15] mix-blend-multiply"
+            fill
+            sizes="50vw"
+            className="object-cover object-right-top opacity-[0.15] mix-blend-multiply"
           />
         </motion.div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
@@ -160,10 +163,12 @@ export default function ServicosContent() {
             >
               <div className="relative flex h-[450px] w-full items-center justify-center">
                 <div className="absolute inset-4 flex items-center justify-center overflow-hidden rounded-3xl border border-slate-200 shadow-inner sm:inset-10">
-                  <img
-                    src="/images/fundo-gtech-2.png"
+                  <Image
+                    src="/images/fundo-gtech-2.webp"
                     alt="Operação GTech"
-                    className="absolute h-full w-full object-cover"
+                    fill
+                    sizes="50vw"
+                    className="object-cover"
                   />
                   <div className="absolute inset-0 bg-slate-900/60"></div>
                 </div>
@@ -218,9 +223,11 @@ export default function ServicosContent() {
           >
             <h2 className="mb-6 inline-flex flex-wrap items-center justify-center gap-4 text-3xl font-extrabold tracking-tight text-white lg:text-5xl">
               {t(tx.catalog_title, lang)}
-              <img
+              <Image
                 src="/images/logo branco.png"
                 alt="Gtech"
+                width={56}
+                height={56}
                 className="h-10 w-auto object-contain lg:h-14"
               />
             </h2>
@@ -421,9 +428,11 @@ export default function ServicosContent() {
                 onClick={() => setActiveCert(cert)}
                 className="group flex w-full flex-col items-center rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg focus:outline-none"
               >
-                <img
+                <Image
                   src={cert.logo}
                   alt={cert.alt}
+                  width={96}
+                  height={96}
                   className="mb-6 h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
                 <span className="text-sm font-bold text-slate-700">
@@ -470,9 +479,11 @@ export default function ServicosContent() {
             </div>
             <div className="px-8 py-8">
               <div className="mb-6 flex items-center gap-6">
-                <img
+                <Image
                   src={activeCert.logo}
                   alt={activeCert.alt}
+                  width={80}
+                  height={80}
                   className="h-20 w-auto flex-shrink-0 object-contain"
                 />
                 <div>

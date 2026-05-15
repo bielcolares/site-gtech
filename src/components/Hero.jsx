@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -29,10 +30,13 @@ export default function Hero() {
             'radial-gradient(ellipse at top right, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%)',
         }}
       >
-        <img
-          src="/images/design verde.png"
+        <Image
+          src="/images/design verde.webp"
           alt=""
-          className="h-full w-full object-cover object-right-top opacity-[0.15] mix-blend-multiply"
+          fill
+          sizes="50vw"
+          className="object-cover object-right-top opacity-[0.15] mix-blend-multiply"
+          priority
         />
       </motion.div>
 
@@ -48,10 +52,8 @@ export default function Hero() {
         className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 hidden items-center justify-end pr-4 lg:flex xl:pr-8"
         style={{ width: '44%' }}
       >
-        <motion.img
-          src="/images/robo_gtech.png"
-          alt="Robô GTech — tecnologia e inovação na gestão de resíduos"
-          className="h-[115%] w-auto object-contain object-center drop-shadow-2xl"
+        <motion.div
+          className="relative h-[115%] w-full"
           animate={{ y: [0, -16, 0] }}
           transition={{
             duration: 4,
@@ -59,7 +61,16 @@ export default function Hero() {
             repeat: Infinity,
             repeatType: 'loop',
           }}
-        />
+        >
+          <Image
+            src="/images/robo_gtech.webp"
+            alt="Robô GTech — tecnologia e inovação na gestão de resíduos"
+            fill
+            sizes="44vw"
+            className="object-contain object-center drop-shadow-2xl"
+            priority
+          />
+        </motion.div>
       </motion.div>
 
       {/* Conteúdo principal */}

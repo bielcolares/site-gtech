@@ -1,20 +1,21 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
 
 const partners = [
-  { name: 'Atlas Schindler', logo: '/images/atlas-schindler-logo.jpg' },
-  { name: 'Ipiranga', logo: '/images/Ipiranga_logo.png' },
-  { name: 'Flex', logo: '/images/Flex_logo.png' },
+  { name: 'Atlas Schindler', logo: '/images/atlas-schindler-logo.webp' },
+  { name: 'Ipiranga', logo: '/images/Ipiranga_logo.webp' },
+  { name: 'Flex', logo: '/images/Flex_logo.webp' },
   { name: 'OAB', logo: '/images/OAB_logo.png' },
   { name: 'Verifone', logo: '/images/verifone-logo.png' },
-  { name: 'Toyota', logo: '/images/Toyota.png' },
-  { name: 'Serasa Experian', logo: '/images/serasa_logo.png' },
-  { name: 'Samsung', logo: '/images/samsung_logo.jpg' },
-  { name: 'Volkswagen', logo: '/images/Volkswagen_logo.png' },
+  { name: 'Toyota', logo: '/images/Toyota.webp' },
+  { name: 'Serasa Experian', logo: '/images/serasa_logo.webp' },
+  { name: 'Samsung', logo: '/images/samsung_logo.webp' },
+  { name: 'Volkswagen', logo: '/images/Volkswagen_logo.webp' },
 ];
 
 // Duplicating the array to create a seamless infinite loop
@@ -47,11 +48,15 @@ export default function Partners() {
               key={index}
               className="mx-8 flex h-12 w-32 items-center justify-center opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 lg:h-16 lg:w-48"
             >
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className="max-h-full max-w-full object-contain mix-blend-multiply"
-              />
+              <div className="relative h-full w-full">
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  fill
+                  sizes="192px"
+                  className="object-contain mix-blend-multiply"
+                />
+              </div>
             </div>
           ))}
         </motion.div>

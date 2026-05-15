@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -60,11 +61,15 @@ export default function ManifestoSection() {
             className="relative flex items-center justify-center bg-slate-50 p-8 lg:p-16"
           >
             <div className="from-primary/5 to-primary-dark/10 pointer-events-none absolute inset-0 bg-gradient-to-br via-transparent" />
-            <img
-              src="/images/design verde.png"
-              alt="Tecnologia e Natureza — GTech"
-              className="relative z-10 w-full max-w-xl drop-shadow-sm"
-            />
+            <div className="relative h-full min-h-[300px] w-full">
+              <Image
+                src="/images/design verde.webp"
+                alt="Tecnologia e Natureza — GTech"
+                fill
+                sizes="50vw"
+                className="object-contain drop-shadow-sm"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -81,11 +86,15 @@ export default function ManifestoSection() {
             className="relative order-2 flex items-center justify-center p-8 lg:order-1 lg:p-16"
           >
             <div className="from-primary/10 pointer-events-none absolute inset-0 bg-gradient-to-tr via-transparent to-white/5" />
-            <img
-              src="/images/design branco.png"
-              alt="Economia Circular — GTech"
-              className="relative z-10 w-full max-w-xl opacity-80"
-            />
+            <div className="relative h-full min-h-[300px] w-full">
+              <Image
+                src="/images/design branco.webp"
+                alt="Economia Circular — GTech"
+                fill
+                sizes="50vw"
+                className="object-contain opacity-80"
+              />
+            </div>
           </motion.div>
 
           {/* Coluna Direita: Texto */}

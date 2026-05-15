@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
 
@@ -34,10 +35,13 @@ export default function VideoSection() {
           */}
 
           {/* Imagem estática temporária */}
-          <img
-            src="/images/fundo-gtech.png"
+          <Image
+            src="/images/fundo-gtech.webp"
             alt="GTech Operation"
-            className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
           />
 
           <div className="pointer-events-none absolute inset-0 bg-slate-900/10 transition-colors duration-500 group-hover:bg-slate-900/0"></div>

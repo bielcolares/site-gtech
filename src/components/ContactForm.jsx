@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
@@ -93,10 +94,12 @@ export default function ContactForm() {
             'radial-gradient(ellipse at top left, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%)',
         }}
       >
-        <img
-          src="/images/design verde.png"
+        <Image
+          src="/images/design verde.webp"
           alt=""
-          className="h-full w-full object-cover object-left-top opacity-[0.15] mix-blend-multiply"
+          fill
+          sizes="50vw"
+          className="object-cover object-left-top opacity-[0.15] mix-blend-multiply"
         />
       </motion.div>
 
