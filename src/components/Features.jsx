@@ -18,25 +18,28 @@ export default function Features() {
       icon: (
         <div className="flex items-center gap-3">
           <Image
-            src="/images/iso-9001.webp"
+            src="/images/iso-9001.png"
             alt="ISO 9001"
             width={40}
             height={40}
             className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
+            unoptimized
           />
           <Image
-            src="/images/iso-14001.webp"
+            src="/images/iso-14001.png"
             alt="ISO 14001"
             width={40}
             height={40}
             className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
+            unoptimized
           />
           <Image
-            src="/images/iso-45001.webp"
+            src="/images/iso-45001.png"
             alt="ISO 45001"
             width={40}
             height={40}
             className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
+            unoptimized
           />
           <Image
             src="/images/R2v3-selo.png"
@@ -44,6 +47,7 @@ export default function Features() {
             width={40}
             height={40}
             className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
+            unoptimized
           />
         </div>
       ),

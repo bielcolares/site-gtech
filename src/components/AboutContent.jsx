@@ -329,6 +329,7 @@ export default function AboutContent() {
                 width={96}
                 height={96}
                 className="mb-6 h-24 w-auto object-contain transition-transform group-hover:scale-105"
+                unoptimized
               />
               <p className="mb-1 text-sm font-black uppercase tracking-widest text-slate-800">
                 {tx.certs[0].label_pt && lang === 'pt'
@@ -347,11 +348,12 @@ export default function AboutContent() {
               className="group flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
             >
               <Image
-                src="/images/iso-9001.webp"
+                src="/images/iso-9001.png"
                 alt="ISO 9001"
                 width={112}
                 height={112}
                 className="mb-6 h-28 w-auto object-contain transition-transform group-hover:scale-105"
+                unoptimized
               />
               <p className="text-sm font-bold uppercase tracking-widest text-slate-600">
                 {lang === 'pt' ? tx.certs[1].label_pt : tx.certs[1].label_en}
@@ -363,11 +365,12 @@ export default function AboutContent() {
               className="group flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
             >
               <Image
-                src="/images/iso-14001.webp"
+                src="/images/iso-14001.png"
                 alt="ISO 14001"
                 width={112}
                 height={112}
                 className="mb-6 h-28 w-auto object-contain transition-transform group-hover:scale-105"
+                unoptimized
               />
               <p className="text-sm font-bold uppercase tracking-widest text-slate-600">
                 {lang === 'pt' ? tx.certs[2].label_pt : tx.certs[2].label_en}
@@ -379,11 +382,12 @@ export default function AboutContent() {
               className="group flex h-full flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
             >
               <Image
-                src="/images/iso-45001.webp"
+                src="/images/iso-45001.png"
                 alt="ISO 45001"
                 width={112}
                 height={112}
                 className="mb-6 h-28 w-auto object-contain transition-transform group-hover:scale-105"
+                unoptimized
               />
               <p className="text-sm font-bold uppercase tracking-widest text-slate-600">
                 {lang === 'pt' ? tx.certs[3].label_pt : tx.certs[3].label_en}

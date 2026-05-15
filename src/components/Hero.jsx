@@ -63,12 +63,13 @@ export default function Hero() {
           }}
         >
           <Image
-            src="/images/robo_gtech.webp"
+            src="/images/robo_gtech.png"
             alt="Robô GTech — tecnologia e inovação na gestão de resíduos"
             fill
             sizes="44vw"
             className="object-contain object-center drop-shadow-2xl"
             priority
+            unoptimized
           />
         </motion.div>
       </motion.div>

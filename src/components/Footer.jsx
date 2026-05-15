@@ -28,6 +28,7 @@ export default function Footer() {
                 width={64}
                 height={64}
                 className="h-16 w-auto"
+                unoptimized
               />
             </Link>
             <p className="mb-6 max-w-md text-balance text-sm leading-relaxed text-slate-600">

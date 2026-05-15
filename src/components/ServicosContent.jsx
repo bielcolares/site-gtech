@@ -229,6 +229,7 @@ export default function ServicosContent() {
                 width={56}
                 height={56}
                 className="h-10 w-auto object-contain lg:h-14"
+                unoptimized
               />
             </h2>
             <p className="mx-auto max-w-2xl text-balance text-lg text-slate-200">
@@ -434,6 +435,7 @@ export default function ServicosContent() {
                   width={96}
                   height={96}
                   className="mb-6 h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  unoptimized
                 />
                 <span className="text-sm font-bold text-slate-700">
                   {cert.alt}
@@ -485,6 +487,7 @@ export default function ServicosContent() {
                   width={80}
                   height={80}
                   className="h-20 w-auto flex-shrink-0 object-contain"
+                  unoptimized
                 />
                 <div>
                   <h3 className="text-xl font-extrabold leading-tight text-slate-800">
