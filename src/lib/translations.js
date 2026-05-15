@@ -302,12 +302,12 @@ export const translations = {
     whatsapp_label: { pt: 'WhatsApp Comercial', en: 'Business WhatsApp' },
     address_label: { pt: 'Matriz Operacional', en: 'Headquarters' },
     form: {
-      name: { pt: 'Nome completo *', en: 'Full name *' },
+      name: { pt: 'Nome completo', en: 'Full name' },
       role: { pt: 'Cargo na empresa', en: 'Job title' },
-      company: { pt: 'Nome da Empresa *', en: 'Company Name *' },
+      company: { pt: 'Nome da Empresa', en: 'Company Name' },
       email: { pt: 'E-mail corporativo', en: 'Corporate email' },
-      phone: { pt: 'Telefone / WhatsApp *', en: 'Phone / WhatsApp *' },
-      waste_type: { pt: 'Tipo de resíduo *', en: 'Waste type *' },
+      phone: { pt: 'Telefone / WhatsApp', en: 'Phone / WhatsApp' },
+      waste_type: { pt: 'Tipo de resíduo', en: 'Waste type' },
       waste_placeholder: { pt: 'Selecione...', en: 'Select...' },
       waste_options: [
         {
@@ -342,8 +342,8 @@ export const translations = {
         en: 'E.g.: 500 kg, 20 Lots...',
       },
       location: {
-        pt: 'Estado e cidade para logística *',
-        en: 'State and city for logistics *',
+        pt: 'Estado e cidade para logística',
+        en: 'State and city for logistics',
       },
       location_placeholder: {
         pt: 'Ex: São Paulo - SP',

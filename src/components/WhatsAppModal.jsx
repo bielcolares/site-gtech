@@ -8,15 +8,14 @@ import { useLanguage } from '@/context/LanguageContext';
 const waTx = {
   title: { pt: 'Fale com um Especialista', en: 'Talk to a Specialist' },
   description: {
-    pt: 'Para um atendimento consultivo mais ágil, você pode nos informar alguns detalhes abaixo. O consultor receberá essas informações direto no WhatsApp. Se preferir, você pode pular essa etapa.',
-    en: 'For faster consultative service, you can share some details below. The consultant will receive this information directly on WhatsApp. If you prefer, you can skip this step.',
+    pt: 'Para um atendimento mais ágil, você pode nos informar alguns detalhes abaixo (opcional). Se preferir, você pode pular esta etapa e seguir direto para o WhatsApp a qualquer momento.',
+    en: 'For faster service, you can share some details below (optional). If you prefer, you can skip this step and go straight to WhatsApp at any time.',
   },
-  name: { pt: 'Nome completo *', en: 'Full name *' },
-  role: { pt: 'Cargo na empresa', en: 'Job title' },
-  company: { pt: 'Nome da empresa *', en: 'Company name *' },
-  phone: { pt: 'Telefone / celular *', en: 'Phone / mobile *' },
+  name: { pt: 'Nome completo', en: 'Full name' },
+  company: { pt: 'Nome da empresa', en: 'Company name' },
+  phone: { pt: 'Telefone / celular', en: 'Phone / mobile' },
   email: { pt: 'E-mail corporativo', en: 'Corporate email' },
-  waste: { pt: 'Tipo de resíduo *', en: 'Waste type *' },
+  waste: { pt: 'Tipo de resíduo', en: 'Waste type' },
   wasteOpts: [
     { value: '', pt: 'Selecione...', en: 'Select...' },
     {
@@ -48,8 +47,8 @@ const waTx = {
   volume: { pt: 'Volume estimado', en: 'Estimated volume' },
   volumePh: { pt: 'Ex: 500 kg, 20 Lotes...', en: 'E.g.: 500 kg, 20 Lots...' },
   location: {
-    pt: 'Estado e cidade para logística *',
-    en: 'State and city for logistics *',
+    pt: 'Estado e cidade para logística',
+    en: 'State and city for logistics',
   },
   locationPh: { pt: 'Ex: São Paulo - SP', en: 'E.g.: São Paulo - SP' },
   message: { pt: 'Mensagem adicional', en: 'Additional message' },
@@ -177,7 +176,6 @@ export default function WhatsAppModal() {
                   <div>
                     <label className={labelClass}>{tx('name', lang)}</label>
                     <input
-                      required
                       type="text"
                       name="nome"
                       value={formData.nome}
@@ -185,20 +183,9 @@ export default function WhatsAppModal() {
                       className={inputClass}
                     />
                   </div>
-                  <div>
-                    <label className={labelClass}>{tx('role', lang)}</label>
-                    <input
-                      type="text"
-                      name="cargo"
-                      value={formData.cargo}
-                      onChange={handleChange}
-                      className={inputClass}
-                    />
-                  </div>
-                  <div className="sm:col-span-2">
+                  <div className="sm:col-span-1">
                     <label className={labelClass}>{tx('company', lang)}</label>
                     <input
-                      required
                       type="text"
                       name="empresa"
                       value={formData.empresa}
@@ -209,7 +196,6 @@ export default function WhatsAppModal() {
                   <div>
                     <label className={labelClass}>{tx('phone', lang)}</label>
                     <input
-                      required
                       type="text"
                       name="telefone"
                       value={formData.telefone}
@@ -230,7 +216,6 @@ export default function WhatsAppModal() {
                   <div>
                     <label className={labelClass}>{tx('waste', lang)}</label>
                     <select
-                      required
                       name="tipo"
                       value={formData.tipo}
                       onChange={handleChange}
@@ -257,7 +242,6 @@ export default function WhatsAppModal() {
                   <div className="sm:col-span-2">
                     <label className={labelClass}>{tx('location', lang)}</label>
                     <input
-                      required
                       type="text"
                       name="local"
                       placeholder={tx('locationPh', lang)}
@@ -285,7 +269,7 @@ export default function WhatsAppModal() {
               <button
                 type="button"
                 onClick={handlePular}
-                className="text-sm font-semibold text-slate-500 hover:text-slate-700 hover:underline"
+                className="rounded-lg border border-slate-200 px-6 py-3 text-sm font-bold text-slate-500 transition-all hover:bg-slate-100 hover:text-slate-700"
               >
                 {tx('skip', lang)}
               </button>

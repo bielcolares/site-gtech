@@ -219,7 +219,6 @@ export default function ContactForm() {
                     {t(f.name, lang)}
                   </label>
                   <input
-                    required
                     type="text"
                     className={inputClass}
                     value={formData.nome}
@@ -230,23 +229,9 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-bold text-slate-700">
-                    {t(f.role, lang)}
-                  </label>
-                  <input
-                    type="text"
-                    className={inputClass}
-                    value={formData.cargo}
-                    onChange={(e) =>
-                      setFormData({ ...formData, cargo: e.target.value })
-                    }
-                  />
-                </div>
-                <div className="sm:col-span-2">
-                  <label className="mb-2 block text-sm font-bold text-slate-700">
                     {t(f.company, lang)}
                   </label>
                   <input
-                    required
                     type="text"
                     className={inputClass}
                     value={formData.empresa}
@@ -273,7 +258,6 @@ export default function ContactForm() {
                     {t(f.phone, lang)}
                   </label>
                   <input
-                    required
                     type="tel"
                     className={inputClass}
                     value={formData.telefone}
@@ -287,7 +271,6 @@ export default function ContactForm() {
                     {t(f.waste_type, lang)}
                   </label>
                   <select
-                    required
                     className={inputClass}
                     value={formData.tipo}
                     onChange={(e) =>
@@ -321,7 +304,6 @@ export default function ContactForm() {
                     {t(f.location, lang)}
                   </label>
                   <input
-                    required
                     type="text"
                     placeholder={t(f.location_placeholder, lang)}
                     className={inputClass}
