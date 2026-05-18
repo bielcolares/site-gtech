@@ -41,6 +41,7 @@ export default function Features() {
             className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
             unoptimized
           />
+          {/*
           <Image
             src="/images/R2v3-selo.png"
             alt="R2v3"
@@ -49,6 +50,7 @@ export default function Features() {
             className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
             unoptimized
           />
+          */}
         </div>
       ),
       title: t(tx.items[0].title, lang),

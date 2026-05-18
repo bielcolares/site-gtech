@@ -47,7 +47,7 @@ export default function CertificationsFloating() {
             className="h-8 w-auto object-contain transition-transform group-hover:scale-110"
             unoptimized
           />
-          <div className="h-6 w-[1px] bg-slate-200" />
+          {/* <div className="h-6 w-[1px] bg-slate-200" />
           <Image
             src="/images/R2v3-selo.png"
             alt="R2v3"
@@ -55,7 +55,7 @@ export default function CertificationsFloating() {
             height={32}
             className="h-8 w-auto object-contain transition-transform group-hover:scale-110"
             unoptimized
-          />
+          /> */}
         </div>
 
         <div className="pointer-events-none absolute bottom-full left-1/2 mb-4 -translate-x-1/2 whitespace-nowrap rounded-xl border border-slate-100 bg-white px-4 py-2 text-xs font-bold text-slate-800 opacity-0 shadow-lg transition-all group-hover:opacity-100">

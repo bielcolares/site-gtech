@@ -318,8 +318,8 @@ export default function AboutContent() {
             </h2>
             <p className="text-slate-600">{t(tx.certs_description, lang)}</p>
           </motion.div>
-          <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-2 lg:grid-cols-4">
-            {/* R2v3 */}
+          <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-3 lg:grid-cols-3">
+            {/* R2v3
             <motion.div
               variants={itemVariants}
               className="group flex h-full flex-col items-center justify-center rounded-xl border-2 border-primary bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
@@ -343,6 +343,7 @@ export default function AboutContent() {
                   : tx.certs[0].sub_en}
               </p>
             </motion.div>
+            */}
             {/* ISO 9001 */}
             <motion.div
               variants={itemVariants}

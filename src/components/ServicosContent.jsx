@@ -296,12 +296,12 @@ export default function ServicosContent() {
                     <SearchCheck className="h-5 w-5 text-primary-dark" />
                   </div>
                 ))}
-                <div className="relative z-10 flex w-full scale-105 transform items-center justify-between rounded-xl bg-primary p-4 shadow-[0_4px_15px_rgba(156,192,38,0.4)]">
+                {/* <div className="relative z-10 flex w-full scale-105 transform items-center justify-between rounded-xl bg-primary p-4 shadow-[0_4px_15px_rgba(156,192,38,0.4)]">
                   <span className="font-black text-white">
                     {lang === 'pt' ? 'Certificação R2v3' : 'R2v3 Certification'}
                   </span>
                   <Shield className="h-5 w-5 text-white" />
-                </div>
+                </div> */}
               </div>
             </motion.div>
 

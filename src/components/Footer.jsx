@@ -35,9 +35,9 @@ export default function Footer() {
               {t(tx.tagline, lang)}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <div className="rounded border border-slate-200 bg-white px-3 py-1 text-xs font-bold tracking-wide text-primary shadow-sm">
+              {/* <div className="rounded border border-slate-200 bg-white px-3 py-1 text-xs font-bold tracking-wide text-primary shadow-sm">
                 R2v3
-              </div>
+              </div> */}
               <div className="rounded border border-slate-200 bg-white px-3 py-1 text-xs font-semibold tracking-wide text-slate-500 shadow-sm">
                 ISO 9001
               </div>

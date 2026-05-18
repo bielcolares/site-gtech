@@ -46,10 +46,10 @@ export default function VideoSection() {
 
           <div className="pointer-events-none absolute inset-0 bg-slate-900/10 transition-colors duration-500 group-hover:bg-slate-900/0"></div>
 
-          <div className="pointer-events-none absolute bottom-6 left-6 flex items-center gap-2 rounded-lg bg-white/90 px-4 py-2 text-sm font-bold text-slate-800 shadow-md backdrop-blur">
+          {/* <div className="pointer-events-none absolute bottom-6 left-6 flex items-center gap-2 rounded-lg bg-white/90 px-4 py-2 text-sm font-bold text-slate-800 shadow-md backdrop-blur">
             <div className="h-2 w-2 animate-pulse rounded-full bg-primary"></div>
             R2v3 Certified Process
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

@@ -92,9 +92,9 @@ export default function RadarReciclagem() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-primary-dark/80 border-primary/30 group flex flex-col items-center justify-center rounded-2xl border p-8 text-center shadow-xl backdrop-blur transition-all hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(63,171,54,0.3)] lg:p-10"
+              className="bg-primary-dark/80 border-primary/30 xs:p-6 group flex flex-col items-center justify-center rounded-2xl border p-4 text-center shadow-xl backdrop-blur transition-all hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(63,171,54,0.3)] sm:p-8 lg:p-10"
             >
-              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-white/90 transition-colors group-hover:text-white md:text-base">
+              <h3 className="mb-6 whitespace-nowrap text-[9px] font-bold uppercase tracking-wider text-white/90 transition-colors group-hover:text-white min-[375px]:text-[10px] min-[425px]:text-xs sm:text-sm md:text-xs lg:text-sm xl:text-base">
                 {metric.title}
               </h3>
               <div className="text-5xl font-black tracking-tighter text-white drop-shadow-md md:text-6xl lg:text-7xl">

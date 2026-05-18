@@ -95,10 +95,10 @@ export const translations = {
     },
     items: [
       {
-        title: { pt: 'SGI & R2v3', en: 'IMS & R2v3' },
+        title: { pt: 'SGI', en: 'IMS' },
         description: {
-          pt: 'Sistema de Gestão Integrado (SGI). ISO 9001, 14001 e 45001. Todo fluxo atende as minúcias da Política Nacional de Resíduos Sólidos (PNRS). E a certificação R2v3 (Responsible Recycling, versão 3) é a mais rigorosa norma internacional específica para reciclagem de eletrônicos.',
-          en: 'Integrated Management System (IMS). ISO 9001, 14001 and 45001. Every step complies with Brazilian Solid Waste Policy (PNRS). The R2v3 (Responsible Recycling, version 3) certification is the most rigorous international standard specific to electronics recycling.',
+          pt: 'Sistema de Gestão Integrado (SGI). ISO 9001, 14001 e 45001. Todo fluxo atende as minúcias da Política Nacional de Resíduos Sólidos (PNRS).',
+          en: 'Integrated Management System (IMS). ISO 9001, 14001 and 45001. Every step complies with Brazilian Solid Waste Policy (PNRS).',
         },
       },
       {
@@ -172,7 +172,7 @@ export const translations = {
           label: { pt: 'Empresas atendidas', en: 'Companies served' },
         },
         {
-          value: 'R2v3',
+          value: 'ISO',
           label: { pt: 'Certificação Global', en: 'Global Certification' },
         },
         { value: '95%+', label: { pt: 'Reaproveitamento', en: 'Reuse Rate' } },
@@ -521,8 +521,8 @@ export const translations = {
       en: 'Every corporate step is audited end-to-end.',
     },
     s2_quote: {
-      pt: '"Somos referência nacional portando a seleta certificação R2v3, o principal benchmark global que comprova a responsabilidade na destruição de dados e gestão integral de eletrônicos."',
-      en: '"We are a national reference holding the select R2v3 certification, the leading global benchmark proving responsibility in data destruction and comprehensive electronics management."',
+      pt: '"Somos referência nacional portando as certificações ISO, o principal benchmark que comprova a responsabilidade na destruição de dados e gestão integral de eletrônicos."',
+      en: '"We are a national reference holding ISO certifications, the leading benchmark proving responsibility in data destruction and comprehensive electronics management."',
     },
     s2_suffix: {
       pt: 'Além das ISOs 9001 (Qualidade), 14001 (Meio Ambiente) e 45001 (Saúde e Segurança).',
@@ -622,7 +622,7 @@ export const translations = {
         badge: { pt: 'ESG Verificado', en: 'ESG Verified' },
         badgeColor: 'bg-orange-100 text-orange-800',
       },
-      {
+      /* {
         id: 'r2v3',
         logo: '/images/R2v3-selo.png',
         alt: 'R2v3',
@@ -643,7 +643,7 @@ export const translations = {
           en: 'International ITAD Standard',
         },
         badgeColor: 'bg-violet-100 text-violet-800',
-      },
+      }, */
     ],
     modal_footer: {
       pt: 'Gtech — Conformidade de ponta',
