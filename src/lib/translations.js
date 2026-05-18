@@ -59,7 +59,7 @@ export const translations = {
         en: 'Total materials processed | Tons',
       },
       {
-        pt: 'Quantidade de matéria prima poupada com a reciclagem | KG',
+        pt: 'Quantidade de matéria prima poupada | KG',
         en: 'Raw material saved through recycling | KG',
       },
       {
