@@ -59,7 +59,14 @@ const waTx = {
 function tx(key, lang) {
   return waTx[key]?.[lang] ?? waTx[key]?.pt ?? '';
 }
-
+const trackWhatsAppLead = (tipo) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'whatsapp_lead', {
+      event_category: 'Lead',
+      event_label: tipo,
+    });
+  }
+};
 export default function WhatsAppModal() {
   const { lang } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
@@ -102,6 +109,7 @@ export default function WhatsAppModal() {
   };
 
   const enviarWhatsApp = (dados) => {
+    trackWhatsAppLead('Formulario WhatsApp');
     const textoBase = `*Contato GTech B2B*\n\n*Nome:* ${dados.nome}\n*Cargo/Empresa:* ${dados.cargo ? dados.cargo + ' / ' : ''}${dados.empresa}\n*E-mail:* ${dados.email}\n*Telefone:* ${dados.telefone}\n*Tipo de Resíduo:* ${dados.tipo}\n*Volume:* ${dados.volume}\n*Localização:* ${dados.local}\n*Mensagem:* ${dados.mensagem}`;
     const url = `https://api.whatsapp.com/send/?phone=${whatsappNumber}&text=${encodeURIComponent(textoBase)}&type=phone_number&app_absent=0`;
     window.open(url, '_blank');
@@ -109,6 +117,7 @@ export default function WhatsAppModal() {
   };
 
   const handlePular = () => {
+    trackWhatsAppLead('Pular Formulario');
     window.open(`https://wa.me/${whatsappNumber}`, '_blank');
     fecharModal();
   };
