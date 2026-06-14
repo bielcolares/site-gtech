@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { trackCtaClick } from '@/lib/analytics';
 import { MessageCircle } from 'lucide-react';
 
 export default function WhatsAppFloating() {
@@ -11,6 +14,9 @@ export default function WhatsAppFloating() {
   return (
     <a
       href={wpLink}
+      onClick={() =>
+        trackCtaClick('floating_button', 'Falar com Especialista B2B')
+      }
       className="group fixed bottom-6 right-6 z-50 flex cursor-pointer items-center"
     >
       <div className="pointer-events-none absolute right-full mr-4 hidden whitespace-nowrap rounded-xl border border-slate-100 bg-white px-4 py-2 text-sm font-bold text-slate-800 opacity-0 shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-opacity duration-300 group-hover:opacity-100 md:block">

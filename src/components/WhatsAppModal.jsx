@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { X, ArrowRight, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
+import { trackModalOpened, trackWhatsAppLead } from '@/lib/analytics';
 
 const waTx = {
   title: { pt: 'Fale com um Especialista', en: 'Talk to a Specialist' },
@@ -59,14 +60,7 @@ const waTx = {
 function tx(key, lang) {
   return waTx[key]?.[lang] ?? waTx[key]?.pt ?? '';
 }
-const trackWhatsAppLead = (tipo) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'whatsapp_lead', {
-      event_category: 'Lead',
-      event_label: tipo,
-    });
-  }
-};
+// trackWhatsAppLead is now imported from @/lib/analytics
 export default function WhatsAppModal() {
   const { lang } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
@@ -89,6 +83,7 @@ export default function WhatsAppModal() {
       if (window.location.hash === '#whatsapp') {
         setIsOpen(true);
         document.body.style.overflow = 'hidden';
+        trackModalOpened();
       } else {
         setIsOpen(false);
         document.body.style.overflow = 'unset';
@@ -109,7 +104,7 @@ export default function WhatsAppModal() {
   };
 
   const enviarWhatsApp = (dados) => {
-    trackWhatsAppLead('Formulario WhatsApp');
+    trackWhatsAppLead('form_submit');
     const textoBase = `*Contato GTech B2B*\n\n*Nome:* ${dados.nome}\n*Cargo/Empresa:* ${dados.cargo ? dados.cargo + ' / ' : ''}${dados.empresa}\n*E-mail:* ${dados.email}\n*Telefone:* ${dados.telefone}\n*Tipo de Resíduo:* ${dados.tipo}\n*Volume:* ${dados.volume}\n*Localização:* ${dados.local}\n*Mensagem:* ${dados.mensagem}`;
     const url = `https://api.whatsapp.com/send/?phone=${whatsappNumber}&text=${encodeURIComponent(textoBase)}&type=phone_number&app_absent=0`;
     window.open(url, '_blank');
@@ -117,7 +112,7 @@ export default function WhatsAppModal() {
   };
 
   const handlePular = () => {
-    trackWhatsAppLead('Pular Formulario');
+    trackWhatsAppLead('skip_form');
     window.open(`https://wa.me/${whatsappNumber}`, '_blank');
     fecharModal();
   };

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
+import { trackCtaClick } from '@/lib/analytics';
 
 export default function Footer() {
   const { lang } = useLanguage();
@@ -108,7 +109,8 @@ export default function Footer() {
                   {t(tx.whatsapp_label, lang)}
                 </p>
                 <a
-                  href="https://wa.me/5511988389974"
+                  href="#whatsapp"
+                  onClick={() => trackCtaClick('footer', '+55 11 98838-9974')}
                   className="font-medium text-slate-800 transition hover:text-primary"
                 >
                   +55 11 98838-9974

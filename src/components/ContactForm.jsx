@@ -6,6 +6,7 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
+import { trackCtaClick, trackContactFormLead } from '@/lib/analytics';
 
 export default function ContactForm() {
   const { lang } = useLanguage();
@@ -39,6 +40,7 @@ export default function ContactForm() {
       const data = await res.json();
 
       if (data.success) {
+        trackContactFormLead();
         setStatus('success');
         setFormData({
           nome: '',
@@ -159,7 +161,10 @@ export default function ContactForm() {
                     {t(tx.whatsapp_label, lang)}
                   </p>
                   <a
-                    href="https://wa.me/5511988389974"
+                    href="#whatsapp"
+                    onClick={() =>
+                      trackCtaClick('contact_page', '+55 11 98838-9974')
+                    }
                     className="text-lg font-medium transition hover:text-primary-dark"
                   >
                     +55 11 98838-9974

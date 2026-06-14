@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
+import { trackCtaClick } from '@/lib/analytics';
 
 export default function ServicosContent() {
   const { lang } = useLanguage();
@@ -508,7 +509,10 @@ export default function ServicosContent() {
               </span>
               <a
                 href="#whatsapp"
-                onClick={() => setActiveCert(null)}
+                onClick={() => {
+                  trackCtaClick('servicos_cert_modal', t(tx.modal_cta, lang));
+                  setActiveCert(null);
+                }}
                 className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white transition hover:bg-primary-dark"
               >
                 {t(tx.modal_cta, lang)}

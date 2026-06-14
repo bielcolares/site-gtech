@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
+import { trackCtaClick } from '@/lib/analytics';
 
 function LangToggle({ className = '' }) {
   const { lang, setLang } = useLanguage();
@@ -82,7 +83,10 @@ export default function Header() {
               {t(nav.contact, lang)}
             </Link>
 
-            <a href="#whatsapp">
+            <a
+              href="#whatsapp"
+              onClick={() => trackCtaClick('header', t(cta, lang))}
+            >
               <button className="cursor-pointer rounded bg-primary px-5 py-2.5 font-semibold text-white shadow-[0_4px_14px_rgba(156,192,38,0.3)] transition-all hover:-translate-y-1 hover:bg-primary-dark hover:shadow-[0_6px_20px_rgba(156,192,38,0.4)]">
                 {t(cta, lang)}
               </button>
@@ -144,7 +148,10 @@ export default function Header() {
             <div className="px-3 pt-2">
               <a
                 href="#whatsapp"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  trackCtaClick('header', t(cta, lang));
+                }}
                 className="block w-full"
               >
                 <button className="w-full rounded bg-primary px-4 py-2 font-semibold text-white transition hover:bg-primary-dark active:scale-95">
