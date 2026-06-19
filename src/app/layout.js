@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
         <Analytics />
       </body>
       <GoogleAnalytics gaId="G-J88G8H0RZY" />
-      <GoogleTagManager gtmId="GTM-WB97D6PC" />
+      <GoogleTagManager gtmId="GTM-T7HQQSL9" />
     </html>
   );
 }
