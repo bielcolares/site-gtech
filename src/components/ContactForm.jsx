@@ -163,11 +163,11 @@ export default function ContactForm() {
                   <a
                     href="#whatsapp"
                     onClick={() =>
-                      trackCtaClick('contact_page', '+55 11 98838-9974')
+                      trackCtaClick('contact_page', '+55 11 99380-8385')
                     }
                     className="text-lg font-medium transition hover:text-primary-dark"
                   >
-                    +55 11 98838-9974
+                    +55 11 99380-8385
                   </a>
                 </div>
               </motion.div>

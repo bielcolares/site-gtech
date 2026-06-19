@@ -110,10 +110,10 @@ export default function Footer() {
                 </p>
                 <a
                   href="#whatsapp"
-                  onClick={() => trackCtaClick('footer', '+55 11 98838-9974')}
+                  onClick={() => trackCtaClick('footer', '+55 11 99380-8385')}
                   className="font-medium text-slate-800 transition hover:text-primary"
                 >
-                  +55 11 98838-9974
+                  +55 11 99380-8385
                 </a>
               </li>
               <li>

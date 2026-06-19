@@ -64,7 +64,7 @@ function tx(key, lang) {
 export default function WhatsAppModal() {
   const { lang } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
-  const whatsappNumber = '5511988389974';
+  const whatsappNumber = '5511993808385';
 
   const [formData, setFormData] = useState({
     nome: '',

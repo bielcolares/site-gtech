@@ -5,7 +5,7 @@ import { trackCtaClick } from '@/lib/analytics';
 import { MessageCircle } from 'lucide-react';
 
 export default function WhatsAppFloating() {
-  const phoneNumber = '5511988389974'; // Número da GTech
+  const phoneNumber = '5511993808385'; // Número da GTech
   const message =
     'Olá! Gostaria de falar com um especialista sobre a gestão correta de resíduos eletrônicos para a minha empresa.';
 
