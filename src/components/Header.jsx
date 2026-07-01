@@ -6,7 +6,7 @@ import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
-import { trackCtaClick } from '@/lib/analytics';
+import { trackCtaClick, trackWhatsAppLead } from '@/lib/analytics';
 
 function LangToggle({ className = '' }) {
   const { lang, setLang } = useLanguage();
@@ -84,8 +84,13 @@ export default function Header() {
             </Link>
 
             <a
-              href="#whatsapp"
-              onClick={() => trackCtaClick('header', t(cta, lang))}
+              href="https://wa.me/5511993808385?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20conversar%20com%20um%20especialista."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                trackCtaClick('header', t(cta, lang));
+                trackWhatsAppLead('direct');
+              }}
             >
               <button className="cursor-pointer rounded bg-primary px-5 py-2.5 font-semibold text-white shadow-[0_4px_14px_rgba(156,192,38,0.3)] transition-all hover:-translate-y-1 hover:bg-primary-dark hover:shadow-[0_6px_20px_rgba(156,192,38,0.4)]">
                 {t(cta, lang)}
@@ -147,10 +152,13 @@ export default function Header() {
             </Link>
             <div className="px-3 pt-2">
               <a
-                href="#whatsapp"
+                href="https://wa.me/5511993808385?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20conversar%20com%20um%20especialista."
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => {
                   setIsOpen(false);
                   trackCtaClick('header', t(cta, lang));
+                  trackWhatsAppLead('direct');
                 }}
                 className="block w-full"
               >

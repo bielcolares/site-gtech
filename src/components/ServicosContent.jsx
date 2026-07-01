@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
-import { trackCtaClick } from '@/lib/analytics';
+import { trackCtaClick, trackWhatsAppLead } from '@/lib/analytics';
 
 export default function ServicosContent() {
   const { lang } = useLanguage();
@@ -508,9 +508,12 @@ export default function ServicosContent() {
                 {t(tx.modal_footer, lang)}
               </span>
               <a
-                href="#whatsapp"
+                href="https://wa.me/5511993808385?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20conversar%20com%20um%20especialista."
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => {
                   trackCtaClick('servicos_cert_modal', t(tx.modal_cta, lang));
+                  trackWhatsAppLead('direct');
                   setActiveCert(null);
                 }}
                 className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white transition hover:bg-primary-dark"

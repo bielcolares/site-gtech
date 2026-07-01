@@ -7,7 +7,7 @@ import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
-import { trackCtaClick } from '@/lib/analytics';
+import { trackCtaClick, trackWhatsAppLead } from '@/lib/analytics';
 
 export default function Hero() {
   const { lang } = useLanguage();
@@ -107,8 +107,13 @@ export default function Hero() {
 
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
-                href="#whatsapp"
-                onClick={() => trackCtaClick('hero', t(tx.cta_primary, lang))}
+                href="https://wa.me/5511993808385?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20conversar%20com%20um%20especialista."
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  trackCtaClick('hero', t(tx.cta_primary, lang));
+                  trackWhatsAppLead('direct');
+                }}
                 className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 font-bold text-white shadow-[0_4px_14px_rgba(156,192,38,0.4)] transition-all hover:-translate-y-1 hover:bg-primary-dark hover:shadow-[0_6px_20px_rgba(156,192,38,0.6)]"
               >
                 {t(tx.cta_primary, lang)}{' '}

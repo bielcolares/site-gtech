@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
-import { trackCtaClick } from '@/lib/analytics';
+import { trackCtaClick, trackWhatsAppLead } from '@/lib/analytics';
 
 export default function Footer() {
   const { lang } = useLanguage();
@@ -109,8 +109,13 @@ export default function Footer() {
                   {t(tx.whatsapp_label, lang)}
                 </p>
                 <a
-                  href="#whatsapp"
-                  onClick={() => trackCtaClick('footer', '+55 11 99380-8385')}
+                  href="https://wa.me/5511993808385?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20conversar%20com%20um%20especialista."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    trackCtaClick('footer', '+55 11 99380-8385');
+                    trackWhatsAppLead('direct');
+                  }}
                   className="font-medium text-slate-800 transition hover:text-primary"
                 >
                   +55 11 99380-8385

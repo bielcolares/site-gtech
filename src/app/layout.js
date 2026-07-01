@@ -20,7 +20,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppFloating from '@/components/WhatsAppFloating';
 import CertificationsFloating from '@/components/CertificationsFloating';
-import WhatsAppModal from '@/components/WhatsAppModal';
 import { LanguageProvider } from '@/context/LanguageContext';
 
 export default function RootLayout({ children }) {
@@ -35,7 +34,6 @@ export default function RootLayout({ children }) {
           <Footer />
           <WhatsAppFloating />
           <CertificationsFloating />
-          <WhatsAppModal />
         </LanguageProvider>
         <Analytics />
         <Script id="meta-pixel" strategy="afterInteractive">
