@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
           />
         </noscript>
       </body>
-      <GoogleAnalytics gaId="G-J88G8H0RZY" />
+      <GoogleAnalytics gaId="G-HBFW0D3QJW" />
       <GoogleTagManager gtmId="GTM-T7HQQSL9" />
     </html>
   );
