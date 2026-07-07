@@ -25,6 +25,8 @@ import { LanguageProvider } from '@/context/LanguageContext';
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
+      <GoogleAnalytics gaId="G-HBFW0D3QJW" />
+      <GoogleTagManager gtmId="GTM-T7HQQSL9" />
       <body
         className={`${inter.className} flex min-h-screen flex-col bg-white text-slate-800 antialiased`}
       >
@@ -61,8 +63,6 @@ export default function RootLayout({ children }) {
           />
         </noscript>
       </body>
-      <GoogleAnalytics gaId="G-HBFW0D3QJW" />
-      <GoogleTagManager gtmId="GTM-T7HQQSL9" />
     </html>
   );
 }
