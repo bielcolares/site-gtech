@@ -95,3 +95,25 @@ Caso ocorra futuras manutenções na estrutura visual ou textual, guie-se por es
 
 ---
 **Documentação Estruturada por Engenharia de Software B2B projetada para alta disponibilidade e padronização ESG.**
+
+
+---
+
+## 📊 Regras de Rastreamento, Analytics e CTA (Instruções Importantes)
+
+Para manter a integridade dos dados de marketing e tráfego, as seguintes regras são **obrigatórias** para qualquer alteração futura no código:
+
+1. **Google Analytics e GTM**:
+   - **NÃO REMOVER** o Google Analytics (GA4: G-HBFW0D3QJW).
+   - **NÃO REMOVER** o Google Tag Manager (GTM: GTM-T7HQQSL9).
+   - Ambos estão injetados nativamente via @next/third-parties/google no início da tag <html> em src/app/layout.js. Essa estrutura deve ser mantida para evitar falhas de validação.
+   - **NÃO ALTERAR** a estrutura existente de eventos GA4 centralizada em src/lib/analytics.js.
+
+2. **Meta Pixel**:
+   - ID do Pixel: 317156430061443.
+   - O Meta Pixel foi instalado de forma **independente** via <Script> do Next.js. **NÃO** remova e **NÃO** tente instalar esse mesmo Pixel por dentro do GTM, para evitar duplicação.
+
+3. **Eventos e CTAs do WhatsApp**:
+   - O telefone oficial para redirecionamentos é **11 99380-8385**.
+   - Os CTAs devem redirecionar diretamente para a URL do WhatsApp (wa.me). **NÃO** reintroduzir modais de pré-formulário antes do clique.
+   - Ao redirecionar, assegure-se de que os cliques disparem os eventos de rastreio configurados (como whatsapp_cta_click).
