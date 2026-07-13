@@ -1,0 +1,371 @@
+﻿'use client';
+
+import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { Download, Shield, ClipboardList, Mail, Award } from 'lucide-react';
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
+
+const isoCerts = [
+  {
+    image: '/images/iso-9001.png',
+    alt: 'ISO 9001',
+    name: 'ISO 9001',
+    description:
+      'Sistema de Gestão da Qualidade — garante processos padronizados e melhoria contínua em todas as operações.',
+    file: '/Arquivos/iso-9001.pdf',
+  },
+  {
+    image: '/images/iso-14001.png',
+    alt: 'ISO 14001',
+    name: 'ISO 14001',
+    description:
+      'Sistema de Gestão Ambiental — assegura conformidade com legislação ambiental e redução de impactos.',
+    file: '/Arquivos/iso-14001.pdf',
+  },
+  {
+    image: '/images/iso-45001.png',
+    alt: 'ISO 45001',
+    name: 'ISO 45001',
+    description:
+      'Saúde e Segurança Ocupacional — protege colaboradores com os mais altos padrões de segurança do trabalho.',
+    file: '/Arquivos/iso-45001.pdf',
+  },
+];
+
+const institutionalDocs = [
+  {
+    icon: Shield,
+    title: 'Código de Ética',
+    description:
+      'Define os princípios e valores que orientam a conduta de todos os colaboradores e parceiros da GTech em suas relações profissionais.',
+    file: '/Arquivos/codigo-de-etica.pdf',
+  },
+  {
+    icon: ClipboardList,
+    title: 'Política Integrada',
+    description:
+      'Documento que consolida nossas diretrizes de Qualidade, Meio Ambiente e Saúde & Segurança em um único compromisso formal e auditável.',
+    file: '/Arquivos/politica-integrada.pdf',
+  },
+];
+
+export default function ComplianceContent() {
+  return (
+    <div className="relative flex-grow overflow-hidden bg-white">
+      {/* =================== HERO =================== */}
+      <div className="relative overflow-hidden bg-slate-50 pb-20 pt-32 lg:pb-28 lg:pt-[136px]">
+        {/* Design Verde — Lado Esquerdo */}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 2, ease: 'easeOut' }}
+          className="pointer-events-none absolute left-0 top-0 z-[1] h-[700px] w-full max-w-[70%] select-none lg:h-[800px] lg:max-w-[50%]"
+          style={{
+            maskImage:
+              'radial-gradient(ellipse at top left, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 70%)',
+            WebkitMaskImage:
+              'radial-gradient(ellipse at top left, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 70%)',
+          }}
+        >
+          <Image
+            src="/images/design verde.webp"
+            alt=""
+            fill
+            sizes="50vw"
+            className="object-cover object-left-top opacity-[0.15] mix-blend-multiply"
+          />
+        </motion.div>
+
+        {/* Glow bg */}
+        <div className="bg-primary/5 pointer-events-none absolute left-1/4 top-0 h-96 w-96 -translate-x-1/2 rounded-full blur-3xl" />
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+          className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+        >
+          <div className="max-w-3xl">
+            <motion.span
+              variants={itemVariants}
+              className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary"
+            >
+              TRANSPARÊNCIA E GOVERNANÇA
+            </motion.span>
+            <motion.h1
+              variants={itemVariants}
+              className="mb-6 text-4xl font-extrabold leading-tight text-slate-900 lg:text-6xl"
+            >
+              Compliance &{' '}
+              <span className="relative">
+                <span className="relative z-10 text-primary">
+                  Certificações
+                </span>
+                <span className="bg-primary/30 absolute -bottom-1 left-0 right-0 h-1 rounded-full" />
+              </span>
+            </motion.h1>
+            <motion.p
+              variants={itemVariants}
+              className="max-w-2xl text-lg leading-relaxed text-slate-600 lg:text-xl"
+            >
+              Nossos padrões de excelência são auditados, certificados e
+              disponíveis para consulta. Governança que protege sua marca e a
+              nossa.
+            </motion.p>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* =================== SEÇÃO CERTIFICAÇÕES =================== */}
+      <section className="bg-white py-24">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          variants={containerVariants}
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+        >
+          {/* Section Header */}
+          <motion.div variants={itemVariants} className="mb-16 text-center">
+            <span className="mb-3 inline-block text-sm font-bold uppercase tracking-widest text-primary">
+              AUDITORIAS INTERNACIONAIS
+            </span>
+            <h2 className="mb-4 text-3xl font-extrabold text-slate-900 lg:text-4xl">
+              Certificações Internacionais
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-slate-600">
+              Auditorias rigorosas que comprovam nossa capacidade de gestão a
+              nível de excelência internacional.
+            </p>
+          </motion.div>
+
+          {/* ISO Cards — grid 3 colunas */}
+          <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+            {isoCerts.map((cert, idx) => (
+              <motion.div
+                key={idx}
+                variants={itemVariants}
+                className="hover:border-primary/30 group flex flex-col items-center rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-2 hover:shadow-lg"
+              >
+                <div className="mb-6 flex h-32 items-center justify-center">
+                  <Image
+                    src={cert.image}
+                    alt={cert.alt}
+                    width={110}
+                    height={110}
+                    className="h-28 w-auto object-contain transition-transform group-hover:scale-105"
+                    unoptimized
+                  />
+                </div>
+                <h3 className="mb-3 text-xl font-extrabold text-slate-900">
+                  {cert.name}
+                </h3>
+                <p className="mb-8 flex-1 text-center text-sm leading-relaxed text-slate-600">
+                  {cert.description}
+                </p>
+                <a
+                  href={cert.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:shadow-primary/20 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-md"
+                >
+                  <Download className="h-4 w-4" />
+                  Baixar Certificado
+                </a>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* R2v3 — Card destaque centralizado */}
+          <motion.div
+            variants={itemVariants}
+            className="group relative mx-auto max-w-3xl overflow-hidden rounded-3xl border-2 border-primary bg-gradient-to-br from-slate-900 to-primary-deep p-10 shadow-2xl lg:p-14"
+          >
+            {/* Glow decorativo */}
+            <div className="bg-primary/20 pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full blur-[60px]" />
+            <div className="pointer-events-none absolute bottom-0 left-0 h-48 w-48 rounded-full bg-white/5 blur-[50px]" />
+
+            <div className="relative z-10 flex flex-col items-center text-center">
+              {/* Badge */}
+              <span className="border-primary/40 bg-primary/20 mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-bold uppercase tracking-widest text-primary">
+                <Award className="h-4 w-4" />
+                Padrão Ouro Global
+              </span>
+
+              {/* Selo */}
+              <div className="mb-6 flex h-36 items-center justify-center">
+                <Image
+                  src="/images/R2v3-selo.png"
+                  alt="Selo R2v3"
+                  width={120}
+                  height={120}
+                  className="h-32 w-auto object-contain transition-transform group-hover:scale-105"
+                  unoptimized
+                />
+              </div>
+
+              <h3 className="mb-4 text-3xl font-extrabold text-white lg:text-4xl">
+                Certificação R2v3
+              </h3>
+              <p className="mb-10 max-w-xl text-lg leading-relaxed text-white/80">
+                O Responsible Recycling v3 é a norma internacional mais rigorosa
+                para reciclagem de eletrônicos. Exige rastreabilidade total,
+                segurança de dados e conformidade ambiental em cada etapa do
+                processo.
+              </p>
+
+              {/* Botão desabilitado */}
+              <button
+                disabled
+                className="inline-flex cursor-not-allowed items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-8 py-3.5 font-semibold text-white/50 opacity-50"
+              >
+                <Download className="h-4 w-4" />
+                Certificado em breve
+              </button>
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* =================== SEÇÃO DOCUMENTOS INSTITUCIONAIS =================== */}
+      <section className="bg-slate-50 py-24">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          variants={containerVariants}
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+        >
+          {/* Section Header */}
+          <motion.div variants={itemVariants} className="mb-16 text-center">
+            <span className="mb-3 inline-block text-sm font-bold uppercase tracking-widest text-primary">
+              GOVERNANÇA E ÉTICA
+            </span>
+            <h2 className="mb-4 text-3xl font-extrabold text-slate-900 lg:text-4xl">
+              Documentos Institucionais
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-slate-600">
+              Nossos compromissos éticos e operacionais formalizados e
+              disponíveis para consulta.
+            </p>
+          </motion.div>
+
+          {/* 2 cards lado a lado */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {institutionalDocs.map((doc, idx) => {
+              const Icon = doc.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  variants={itemVariants}
+                  className="hover:border-primary/30 group flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg lg:p-10"
+                >
+                  {/* Ícone */}
+                  <div className="bg-primary/10 mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                    <Icon className="h-7 w-7" />
+                  </div>
+
+                  <h3 className="mb-3 text-xl font-extrabold text-slate-900">
+                    {doc.title}
+                  </h3>
+                  <p className="mb-8 flex-1 leading-relaxed text-slate-600">
+                    {doc.description}
+                  </p>
+
+                  <a
+                    href={doc.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:shadow-primary/20 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-md"
+                  >
+                    <Download className="h-4 w-4" />
+                    Baixar Documento
+                  </a>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* =================== SEÇÃO CANAL DE COMUNICAÇÃO =================== */}
+      <section
+        className="relative overflow-hidden py-24"
+        style={{ backgroundColor: '#015637' }}
+      >
+        {/* Glow decorativo */}
+        <div className="pointer-events-none absolute right-0 top-0 h-96 w-96 rounded-full bg-white/5 blur-[80px]" />
+        <div className="bg-primary/20 pointer-events-none absolute bottom-0 left-0 h-80 w-80 rounded-full blur-[60px]" />
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          variants={containerVariants}
+          className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8"
+        >
+          <motion.span
+            variants={itemVariants}
+            className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary"
+          >
+            TRANSPARÊNCIA ATIVA
+          </motion.span>
+
+          <motion.h2
+            variants={itemVariants}
+            className="mb-8 text-3xl font-extrabold text-white lg:text-5xl"
+          >
+            Canal de Comunicação
+          </motion.h2>
+
+          <motion.div
+            variants={itemVariants}
+            className="mx-auto mb-10 max-w-2xl rounded-xl border-l-4 border-primary bg-white/5 p-8 backdrop-blur-sm"
+          >
+            <p className="text-lg leading-relaxed text-white/90">
+              Caso você queira reportar algo relacionado à{' '}
+              <strong className="font-bold text-primary">
+                comportamento ético
+              </strong>
+              , <strong className="font-bold text-primary">conduta</strong>,{' '}
+              <strong className="font-bold text-primary">integridade</strong>,{' '}
+              <strong className="font-bold text-primary">assédio</strong> ou
+              qualquer outro tema em desconformidade com nossos princípios,
+              entre em contato:
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col items-center gap-4"
+          >
+            <a
+              href="mailto:rh@gtechsolucoes.com.br"
+              className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-8 py-4 text-lg font-bold text-primary-deep shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/20"
+            >
+              <Mail className="h-5 w-5 transition-transform group-hover:scale-110" />
+              rh@gtechsolucoes.com.br
+            </a>
+            <span className="text-sm text-white/50">
+              rh@gtechsolucoes.com.br
+            </span>
+          </motion.div>
+        </motion.div>
+      </section>
+    </div>
+  );
+}

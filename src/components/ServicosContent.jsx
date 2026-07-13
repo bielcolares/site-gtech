@@ -453,6 +453,49 @@ export default function ServicosContent() {
         </div>
       </section>
 
+      {/* ─── CTA Compliance ─── */}
+      <section className="border-t border-slate-100 bg-slate-50 py-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8"
+        >
+          <p className="mb-2 text-sm font-bold uppercase tracking-widest text-primary">
+            QUER SABER MAIS?
+          </p>
+          <h3 className="mb-3 text-2xl font-extrabold text-slate-800">
+            Consulte nossos certificados e documentos institucionais
+          </h3>
+          <p className="mb-8 text-slate-500">
+            Acesse a página de Compliance para baixar certificados, o Código de
+            Ética e a Política Integrada da GTech.
+          </p>
+          <Link
+            href="/compliance"
+            className="hover:shadow-primary/20 group inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 font-bold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-lg"
+          >
+            Acessar Compliance
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="transition-transform group-hover:translate-x-1"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </Link>
+        </motion.div>
+      </section>
+
       {/* ─── Cert Modal ─── */}
       {activeCert && (
         <div

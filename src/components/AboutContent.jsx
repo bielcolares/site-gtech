@@ -1,7 +1,9 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
+import { Mail } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
@@ -395,6 +397,34 @@ export default function AboutContent() {
               </p>
             </motion.div>
           </div>
+        </motion.div>
+
+        {/* CTA Compliance */}
+        <motion.div
+          variants={itemVariants}
+          className="mt-12 flex justify-center"
+        >
+          <Link
+            href="/compliance"
+            className="border-primary/30 group inline-flex items-center gap-2 rounded-full border bg-white px-6 py-3 text-sm font-semibold text-primary shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:text-white hover:shadow-md"
+          >
+            Ver certificados e documentos institucionais
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="transition-transform group-hover:translate-x-1"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </Link>
         </motion.div>
       </motion.div>
     </div>

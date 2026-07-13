@@ -3,7 +3,8 @@
 import React from 'react';
 import Image from 'next/image';
 import Card from './Card';
-import { Award, Recycle } from 'lucide-react';
+import { Award, Recycle, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
@@ -145,6 +146,23 @@ export default function Features() {
               </p>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* CTA Compliance */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-14 flex justify-center"
+        >
+          <Link
+            href="/compliance"
+            className="border-primary/30 group inline-flex items-center gap-2 rounded-full border bg-white px-6 py-3 text-sm font-semibold text-primary shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary hover:shadow-md"
+          >
+            Ver certificações e documentos completos
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
         </motion.div>
       </div>
     </section>

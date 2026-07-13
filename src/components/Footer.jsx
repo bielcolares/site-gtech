@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React from 'react';
 import Image from 'next/image';
@@ -71,6 +71,14 @@ export default function Footer() {
                   className="transition hover:text-primary"
                 >
                   {t(nav.services, lang)}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/compliance"
+                  className="transition hover:text-primary"
+                >
+                  Compliance
                 </Link>
               </li>
               <li>
