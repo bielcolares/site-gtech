@@ -228,14 +228,15 @@ export default function ComplianceContent() {
                 processo.
               </p>
 
-              {/* Botão desabilitado */}
-              <button
-                disabled
-                className="inline-flex cursor-not-allowed items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-8 py-3.5 font-semibold text-white/50 opacity-50"
+              <a
+                href="/Arquivos/r2v3-certificado.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:shadow-primary/20 inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3.5 font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-md"
               >
                 <Download className="h-4 w-4" />
-                Certificado em breve
-              </button>
+                Baixar Certificado
+              </a>
             </div>
           </motion.div>
         </motion.div>

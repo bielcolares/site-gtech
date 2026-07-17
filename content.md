@@ -18,7 +18,7 @@ O projeto segue uma arquitetura modular baseada em componentes.
 *   `/` (Home): Foco B2B com Hero dinâmico, Radar de Reciclagem (dados dinâmicos auditados), Vídeo Institucional, Diferenciais e Parceiros.
 *   `/sobre-nos`: Foco em governança, sustentabilidade corporativa, métricas de ESG (Science Based Targets) e galeria da operação. Termina com os 4 selos de certificação (ISO 9001/14001/45001 + R2v3) e um CTA para `/compliance`.
 *   `/servicos`: Grade detalhada de todas as frentes de mineração urbana e economia circular. Selos clicáveis que abrem popup (modal) com detalhes de cada certificação. Ao final da página, seção CTA direcionando para `/compliance`.
-*   `/compliance`: Página dedicada a Compliance & Certificações. Contém hero institucional, cards das 3 ISOs com botões de download de PDF, card destaque do R2v3 (botão desabilitado "em breve"), 2 cards de documentos institucionais (Código de Ética e Política Integrada com download), e seção Canal de Comunicação com fundo verde escuro (`#015637`).
+*   `/compliance`: Página dedicada a Compliance & Certificações. Contém hero institucional, cards das 3 ISOs com botões de download de PDF, card destaque do R2v3 (com botão para baixar o certificado), 2 cards de documentos institucionais (Código de Ética e Política Integrada com download), e seção Canal de Comunicação com fundo verde escuro (`#015637`).
 *   `/fale-conosco`: Formulário de contato B2B integrado diretamente com o e-mail comercial (`mailto:`) e mapa da matriz.
 
 **Componentes Principais (`src/components/`):**
@@ -47,7 +47,7 @@ Ordem dos itens: **Início | Sobre Nós | Serviços | Compliance | Contato | [Bo
 ## 📦 Arquivos Públicos (`public/`)
 *   `/images/` — Todos os ativos visuais (selos, fotos, design patterns)
 *   `/Arquivos/` — PDFs para download na página de Compliance:
-    *   `iso-9001.pdf`, `iso-14001.pdf`, `iso-45001.pdf`
+    *   `iso-9001.pdf`, `iso-14001.pdf`, `iso-45001.pdf`, `r2v3-certificado.pdf`
     *   `codigo-de-etica.pdf`
     *   `politica-integrada.pdf`
 
