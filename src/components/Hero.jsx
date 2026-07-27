@@ -132,7 +132,6 @@ export default function Hero() {
   const tx = translations.hero;
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef(null);
 
   const goTo = useCallback((index) => {
@@ -152,13 +151,9 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    if (isPaused) {
-      clearInterval(intervalRef.current);
-      return;
-    }
     intervalRef.current = setInterval(goNext, AUTOPLAY_MS);
     return () => clearInterval(intervalRef.current);
-  }, [isPaused, activeIndex, goNext]);
+  }, [activeIndex, goNext]);
 
   const slide = heroSlides[activeIndex];
 
@@ -166,8 +161,6 @@ export default function Hero() {
     <section
       id="hero"
       className="group relative overflow-hidden bg-slate-50 pb-16 pt-32 lg:pb-24 lg:pt-[136px]"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
     >
       {/* ── Fundo dinâmico abstrato (lado direito) ── */}
       <AnimatePresence mode="wait">
@@ -457,20 +450,18 @@ export default function Hero() {
                       />
                     ))}
 
-                    {!isPaused && (
-                      <div className="ml-2 h-0.5 w-16 overflow-hidden rounded-full bg-slate-200">
-                        <motion.div
-                          key={'progress-' + activeIndex}
-                          className="h-full bg-primary"
-                          initial={{ width: '0%' }}
-                          animate={{ width: '100%' }}
-                          transition={{
-                            duration: AUTOPLAY_MS / 1000,
-                            ease: 'linear',
-                          }}
-                        />
-                      </div>
-                    )}
+                    <div className="ml-2 h-0.5 w-16 overflow-hidden rounded-full bg-slate-200">
+                      <motion.div
+                        key={'progress-' + activeIndex}
+                        className="h-full bg-primary"
+                        initial={{ width: '0%' }}
+                        animate={{ width: '100%' }}
+                        transition={{
+                          duration: AUTOPLAY_MS / 1000,
+                          ease: 'linear',
+                        }}
+                      />
+                    </div>
                   </div>
 
                   <button
