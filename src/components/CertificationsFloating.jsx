@@ -48,14 +48,21 @@ export default function CertificationsFloating() {
             unoptimized
           />
           <div className="h-6 w-[1px] bg-slate-200" />
-          <Image
-            src="/images/R2v3-selo.png"
-            alt="R2v3"
-            width={32}
-            height={32}
-            className="h-8 w-auto object-contain transition-transform group-hover:scale-110"
-            unoptimized
-          />
+          <a
+            href="https://sustainableelectronics.org/r2/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contents"
+          >
+            <Image
+              src="/images/R2v3-selo.png"
+              alt="R2v3"
+              width={32}
+              height={32}
+              className="h-8 w-auto object-contain transition-transform group-hover:scale-110"
+              unoptimized
+            />
+          </a>
         </div>
 
         <div className="pointer-events-none absolute bottom-full left-1/2 mb-4 -translate-x-1/2 whitespace-nowrap rounded-xl border border-slate-100 bg-white px-4 py-2 text-xs font-bold text-slate-800 opacity-0 shadow-lg transition-all group-hover:opacity-100">

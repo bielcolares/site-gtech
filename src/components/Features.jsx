@@ -42,14 +42,21 @@ export default function Features() {
             className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
             unoptimized
           />
-          <Image
-            src="/images/R2v3-selo.png"
-            alt="R2v3"
-            width={40}
-            height={40}
-            className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
-            unoptimized
-          />
+          <a
+            href="https://sustainableelectronics.org/r2/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contents"
+          >
+            <Image
+              src="/images/R2v3-selo.png"
+              alt="R2v3"
+              width={40}
+              height={40}
+              className="h-10 w-auto object-contain mix-blend-multiply drop-shadow-sm"
+              unoptimized
+            />
+          </a>
         </div>
       ),
       title: t(tx.items[0].title, lang),

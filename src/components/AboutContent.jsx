@@ -326,14 +326,21 @@ export default function AboutContent() {
               variants={itemVariants}
               className="group flex h-full flex-col items-center justify-center rounded-xl border-2 border-primary bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
             >
-              <Image
-                src="/images/R2v3-selo.png"
-                alt="Selo R2v3"
-                width={96}
-                height={96}
-                className="mb-6 h-24 w-auto object-contain transition-transform group-hover:scale-105"
-                unoptimized
-              />
+              <a
+                href="https://sustainableelectronics.org/r2/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contents"
+              >
+                <Image
+                  src="/images/R2v3-selo.png"
+                  alt="Selo R2v3"
+                  width={96}
+                  height={96}
+                  className="mb-6 h-24 w-auto object-contain transition-transform group-hover:scale-105"
+                  unoptimized
+                />
+              </a>
               <p className="mb-1 text-sm font-black uppercase tracking-widest text-slate-800">
                 {tx.certs[0].label_pt && lang === 'pt'
                   ? tx.certs[0].label_pt

@@ -208,14 +208,21 @@ export default function ComplianceContent() {
 
               {/* Selo */}
               <div className="mb-6 flex h-36 items-center justify-center">
-                <Image
-                  src="/images/R2v3-selo.png"
-                  alt="Selo R2v3"
-                  width={120}
-                  height={120}
-                  className="h-32 w-auto object-contain transition-transform group-hover:scale-105"
-                  unoptimized
-                />
+                <a
+                  href="https://sustainableelectronics.org/r2/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contents"
+                >
+                  <Image
+                    src="/images/R2v3-selo.png"
+                    alt="Selo R2v3"
+                    width={120}
+                    height={120}
+                    className="h-32 w-auto object-contain transition-transform group-hover:scale-105"
+                    unoptimized
+                  />
+                </a>
               </div>
 
               <h3 className="mb-4 text-3xl font-extrabold text-white lg:text-4xl">
