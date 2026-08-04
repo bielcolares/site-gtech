@@ -64,7 +64,7 @@ const slideConfig = [
     ctaPrimaryIsWhatsApp: true,
     ctaSecondaryHref: '/sobre-nos',
     ctaSecondaryIsWhatsApp: false,
-    bgImage: '/images/fundo-gtech.png',
+    bgImage: '/images/fundo-gtech.webp',
     bgType: 'full',
     sideImage: null,
     sideImageType: null,
