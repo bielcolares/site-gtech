@@ -8,6 +8,10 @@ import {
   ShieldCheck,
   ChevronLeft,
   ChevronRight,
+  Wrench,
+  Truck,
+  Filter,
+  CheckSquare,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
@@ -49,8 +53,8 @@ const slideConfig = [
     ctaSecondaryIsWhatsApp: true,
     bgImage: '/images/design verde.webp',
     bgType: 'abstract',
-    sideImage: '/images/processo-reciclagem.png',
-    sideImageType: 'photo',
+    sideImage: null,
+    sideImageType: 'process_diagram',
     bgAlt:
       'Processo de reciclagem eletrônica GTech — rastreabilidade MTR, CADRI e CDF',
     statsBlockValue: null,
@@ -60,11 +64,11 @@ const slideConfig = [
     ctaPrimaryIsWhatsApp: true,
     ctaSecondaryHref: '/sobre-nos',
     ctaSecondaryIsWhatsApp: false,
-    bgImage: '/images/design verde.webp',
-    bgType: 'abstract',
+    bgImage: '/images/fundo-gtech.png',
+    bgType: 'full',
     sideImage: null,
     sideImageType: null,
-    bgAlt: 'Design verde GTech — gestão ambiental',
+    bgAlt: 'Fundo GTech — gestão ambiental',
     statsBlockValue: null,
   },
 ];
@@ -251,6 +255,80 @@ export default function Hero() {
                   className="object-contain object-center"
                   unoptimized
                 />
+              </div>
+            </div>
+          </motion.div>
+        )}
+        {slide.sideImageType === 'process_diagram' && (
+          <motion.div
+            key="process_diagram"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 50 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="absolute bottom-0 right-0 top-0 z-10 hidden items-center justify-end pr-4 lg:flex xl:pr-10"
+            style={{ width: '45%' }}
+          >
+            <div className="relative flex h-auto w-full max-w-[850px] flex-col justify-center rounded-[40px] rounded-tl-[100px] bg-[#1a5f32] p-8 text-white shadow-2xl lg:p-10">
+              <div className="relative z-10 grid grid-cols-4 gap-4 md:gap-6">
+                {/* SETAS DE CONEXÃO (Absolute/background) */}
+                <div className="pointer-events-none absolute left-0 top-[40px] z-0 flex w-full justify-between px-[12%] opacity-50">
+                  <ArrowRight className="h-8 w-8 text-white/50 md:h-10 md:w-10" />
+                  <ArrowRight className="h-8 w-8 text-white/50 md:h-10 md:w-10" />
+                  <ArrowRight className="h-8 w-8 text-white/50 md:h-10 md:w-10" />
+                </div>
+
+                {/* STEP 1 */}
+                <div className="relative z-10 flex flex-col items-center text-center">
+                  <div className="mb-4 text-white">
+                    <Wrench className="h-12 w-12 md:h-16 md:w-16" />
+                  </div>
+                  <h3 className="mb-3 text-lg font-bold md:text-xl">
+                    {t(tx.process_diagram.step1_title, lang)}
+                  </h3>
+                  <p className="max-w-[140px] text-xs text-green-50/80 md:text-sm">
+                    {t(tx.process_diagram.step1_desc, lang)}
+                  </p>
+                </div>
+
+                {/* STEP 2 */}
+                <div className="relative z-10 flex flex-col items-center text-center">
+                  <div className="mb-4 text-white">
+                    <Truck className="h-12 w-12 md:h-16 md:w-16" />
+                  </div>
+                  <h3 className="mb-3 text-lg font-bold md:text-xl">
+                    {t(tx.process_diagram.step2_title, lang)}
+                  </h3>
+                  <p className="max-w-[140px] text-xs text-green-50/80 md:text-sm">
+                    {t(tx.process_diagram.step2_desc, lang)}
+                  </p>
+                </div>
+
+                {/* STEP 3 */}
+                <div className="relative z-10 flex flex-col items-center text-center">
+                  <div className="mb-4 text-white">
+                    <Filter className="h-12 w-12 md:h-16 md:w-16" />
+                  </div>
+                  <h3 className="mb-3 text-lg font-bold md:text-xl">
+                    {t(tx.process_diagram.step3_title, lang)}
+                  </h3>
+                  <p className="max-w-[140px] text-xs text-green-50/80 md:text-sm">
+                    {t(tx.process_diagram.step3_desc, lang)}
+                  </p>
+                </div>
+
+                {/* STEP 4 */}
+                <div className="relative z-10 flex flex-col items-center text-center">
+                  <div className="mb-4 inline-flex rounded-xl bg-white p-1 text-white">
+                    <CheckSquare className="h-10 w-10 text-[#1a5f32] md:h-14 md:w-14" />
+                  </div>
+                  <h3 className="mb-3 mt-1 text-lg font-bold md:text-xl">
+                    {t(tx.process_diagram.step4_title, lang)}
+                  </h3>
+                  <p className="max-w-[140px] text-xs text-green-50/80 md:text-sm">
+                    {t(tx.process_diagram.step4_desc, lang)}
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>

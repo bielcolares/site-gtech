@@ -138,6 +138,28 @@ export const translations = {
       pt: 'em todo país.',
       en: 'across the country.',
     },
+    process_diagram: {
+      step1_title: { pt: 'Coleta', en: 'Collection' },
+      step1_desc: {
+        pt: 'Recolhimento com manifesto (MTR) e rastreabilidade de origem',
+        en: 'Collection with manifest (MTR) and origin traceability',
+      },
+      step2_title: { pt: 'Triagem', en: 'Sorting' },
+      step2_desc: {
+        pt: 'Classificação por tipo: placas, plástico, metal, cabos, baterias',
+        en: 'Classification by type: boards, plastic, metal, cables, batteries',
+      },
+      step3_title: { pt: 'Desmontagem', en: 'Dismantling' },
+      step3_desc: {
+        pt: 'Separação manual componente a componente por técnicos especializados',
+        en: 'Manual component-by-component separation by specialized technicians',
+      },
+      step4_title: { pt: 'Destinação', en: 'Disposal' },
+      step4_desc: {
+        pt: 'Cada fração encaminhada ao reciclador licenciado com CDF',
+        en: 'Each fraction sent to a licensed recycler with a CDF',
+      },
+    },
   },
 
   // ─── Radar de Reciclagem ───────────────────────────────────────────────────
