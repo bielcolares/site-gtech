@@ -12,25 +12,120 @@ export const translations = {
 
   // ─── Hero ──────────────────────────────────────────────────────────────────
   hero: {
-    badge: {
-      pt: 'Conformidade e Segurança Jurídica',
-      en: 'Compliance & Legal Security',
-    },
-    headline1: { pt: 'Recuperamos valor,', en: 'We recover value,' },
-    headline2: { pt: 'protegemos marcas', en: 'protect brands' },
-    headline3: {
-      pt: 'e preservamos o futuro.',
-      en: 'and preserve the future.',
-    },
-    description: {
-      pt: 'Transformamos o descarte eletrônico corporativo em um ativo estratégico. Promovemos a economia circular com mais de 95% de reaproveitamento, garantindo governança inquestionável.',
-      en: 'We transform corporate electronic disposal into a strategic asset. We promote the circular economy with over 95% reuse, ensuring unquestionable governance.',
-    },
-    cta_primary: {
-      pt: 'Falar com Especialista B2B',
-      en: 'Talk to a B2B Specialist',
-    },
-    cta_secondary: { pt: 'Conheça a Gtech', en: 'Discover Gtech' },
+    slides: [
+      {
+        id: 'marca',
+        eyebrow: {
+          pt: 'Conformidade e Segurança Jurídica',
+          en: 'Compliance & Legal Security',
+        },
+        title: {
+          pt: 'Recuperamos valor, protegemos marcas e preservamos o futuro.',
+          en: 'We recover value, protect brands, and preserve the future.',
+        },
+        titleHighlight: { pt: 'protegemos marcas', en: 'protect brands' },
+        subtitle: {
+          pt: 'Transformamos o descarte eletrônico corporativo em um ativo estratégico. Promovemos a economia circular com mais de 95% de reaproveitamento, garantindo governança inquestionável.',
+          en: 'We transform corporate electronic disposal into a strategic asset. We promote the circular economy with over 95% reuse, ensuring unquestionable governance.',
+        },
+        ctaPrimaryLabel: {
+          pt: 'Falar com Especialista B2B',
+          en: 'Talk to a B2B Specialist',
+        },
+        ctaSecondaryLabel: { pt: 'Conheça a Gtech', en: 'Discover Gtech' },
+      },
+      {
+        id: 'seguranca',
+        eyebrow: {
+          pt: 'Segurança Física e Proteção de Dados',
+          en: 'Physical Security & Data Protection',
+        },
+        title: {
+          pt: 'Seus dados e ativos protegidos do início ao fim do processo.',
+          en: 'Your data and assets protected from start to finish.',
+        },
+        titleHighlight: { pt: 'protegidos', en: 'protected' },
+        subtitle: {
+          pt: 'Hub de 9.300m² em Jundiaí com segurança armada 24/7, CFTV com backup de 60 dias e controle total de acesso. Realizamos Data Wipe e destruição de mídias em conformidade com a LGPD.',
+          en: '9,300m² Hub in Jundiaí with 24/7 armed security, CCTV with 60-day backup, and total access control. We perform Data Wipe and media destruction in compliance with GDPR/LGPD.',
+        },
+        ctaPrimaryLabel: {
+          pt: 'Conhecer nossa estrutura',
+          en: 'Discover our structure',
+        },
+        ctaSecondaryLabel: {
+          pt: 'Falar com Especialista',
+          en: 'Talk to a Specialist',
+        },
+        customSocialProofSuffix: {
+          pt: 'com dados e ativos protegidos.',
+          en: 'with protected data and assets.',
+        },
+        statsBlockLabel: {
+          pt: 'Hub de armazenamento seguro',
+          en: 'Secure storage hub',
+        },
+      },
+      {
+        id: 'esg-fiscal',
+        eyebrow: {
+          pt: 'Rastreabilidade Total e Resultado Mensurável',
+          en: 'Full Traceability & Measurable Results',
+        },
+        title: {
+          pt: 'De resíduo a resultado: conformidade que gera valor ESG e fiscal.',
+          en: 'From waste to result: compliance that generates ESG and fiscal value.',
+        },
+        titleHighlight: {
+          pt: 'valor ESG e fiscal',
+          en: 'ESG and fiscal value',
+        },
+        subtitle: {
+          pt: 'Todo material passa por Coleta, Triagem, Desmontagem e Destinação rastreadas via MTR, CADRI e CDF.',
+          en: 'All material goes through Collection, Triage, Dismantling, and Disposal tracked via MTR, CADRI, and CDF.',
+        },
+        ctaPrimaryLabel: {
+          pt: 'Ver certificações completas',
+          en: 'See full certifications',
+        },
+        ctaSecondaryLabel: {
+          pt: 'Falar com Especialista',
+          en: 'Talk to a Specialist',
+        },
+        customSocialProofSuffix: {
+          pt: 'com processo 100% rastreável.',
+          en: 'with a 100% traceable process.',
+        },
+      },
+      {
+        id: 'gerenciadora',
+        eyebrow: {
+          pt: 'Gestão Ambiental Integrada',
+          en: 'Integrated Environmental Management',
+        },
+        title: {
+          pt: 'SOMOS UMA GERENCIADORA AMBIENTAL',
+          en: 'WE ARE AN ENVIRONMENTAL MANAGEMENT COMPANY',
+        },
+        titleHighlight: {
+          pt: 'GERENCIADORA AMBIENTAL',
+          en: 'ENVIRONMENTAL MANAGEMENT',
+        },
+        subtitle: {
+          pt: 'Especializada em Gestão Integrada de Resíduos, Logística Reversa, ESG, Valorização de Ativos e Soluções Ambientais para empresas de todo o Brasil. Transformamos desafios ambientais em valor para o seu negócio.',
+          en: 'Specialized in Integrated Waste Management, Reverse Logistics, ESG, Asset Valorization, and Environmental Solutions for companies across Brazil. We transform environmental challenges into value for your business.',
+        },
+        ctaPrimaryLabel: {
+          pt: 'Falar com Especialista',
+          en: 'Talk to a Specialist',
+        },
+        ctaSecondaryLabel: { pt: 'Conheça a Gtech', en: 'Discover Gtech' },
+        customSocialProofSuffix: {
+          pt: 'em todo país.',
+          en: 'across the country.',
+        },
+      },
+    ],
     social_proof: {
       pt: 'Operação validada por',
       en: 'Operation validated by',

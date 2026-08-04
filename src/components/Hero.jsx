@@ -18,84 +18,54 @@ import { trackCtaClick, trackWhatsAppLead } from '@/lib/analytics';
 const WA_LINK =
   'https://wa.me/5511993808385?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20conversar%20com%20um%20especialista.';
 
-const heroSlides = [
+const slideConfig = [
   {
-    id: 'marca',
-    eyebrow: 'Conformidade e Segurança Jurídica',
-    title: 'Recuperamos valor, protegemos marcas e preservamos o futuro.',
-    titleHighlight: 'protegemos marcas',
-    subtitle:
-      'Transformamos o descarte eletrônico corporativo em um ativo estratégico. Promovemos a economia circular com mais de 95% de reaproveitamento, garantindo governança inquestionável.',
-    ctaPrimary: {
-      label: 'Falar com Especialista B2B',
-      href: WA_LINK,
-      isWhatsApp: true,
-    },
-    ctaSecondary: {
-      label: 'Conheça a Gtech',
-      href: '/sobre-nos',
-      isWhatsApp: false,
-    },
+    ctaPrimaryHref: WA_LINK,
+    ctaPrimaryIsWhatsApp: true,
+    ctaSecondaryHref: '/sobre-nos',
+    ctaSecondaryIsWhatsApp: false,
     bgImage: '/images/design verde.webp',
     bgType: 'abstract',
     sideImage: '/images/robo_gtech.png',
     sideImageType: 'robot',
     bgAlt: 'Design verde GTech — conformidade e segurança jurídica',
-    customSocialProofSuffix: null,
-    statsBlock: null,
+    statsBlockValue: null,
   },
   {
-    id: 'seguranca',
-    eyebrow: 'Segurança Física e Proteção de Dados',
-    title: 'Seus dados e ativos protegidos do início ao fim do processo.',
-    titleHighlight: 'protegidos',
-    subtitle:
-      'Hub de 9.300m² em Jundiaí com segurança armada 24/7, CFTV com backup de 60 dias e controle total de acesso. Realizamos Data Wipe e destruição de mídias em conformidade com a LGPD.',
-    ctaPrimary: {
-      label: 'Conhecer nossa estrutura',
-      href: '/sobre-nos',
-      isWhatsApp: false,
-    },
-    ctaSecondary: {
-      label: 'Falar com Especialista',
-      href: WA_LINK,
-      isWhatsApp: true,
-    },
+    ctaPrimaryHref: '/sobre-nos',
+    ctaPrimaryIsWhatsApp: false,
+    ctaSecondaryHref: WA_LINK,
+    ctaSecondaryIsWhatsApp: true,
     bgImage: '/images/hub-jundiai-aereo.png',
     bgType: 'full',
     sideImage: null,
     bgAlt: 'Vista aérea do Hub GTech em Jundiaí — 9.300m² de operação segura',
-    customSocialProofSuffix: 'com dados e ativos protegidos.',
-    statsBlock: {
-      value: '9.300m²',
-      label: 'Hub de armazenamento seguro',
-    },
+    statsBlockValue: '9.300m²',
   },
   {
-    id: 'esg-fiscal',
-    eyebrow: 'Rastreabilidade Total e Resultado Mensurável',
-    title: 'De resíduo a resultado: conformidade que gera valor ESG e fiscal.',
-    titleHighlight: 'valor ESG e fiscal',
-    subtitle:
-      'Todo material passa por Coleta, Triagem, Desmontagem e Destinação rastreadas via MTR, CADRI e CDF.',
-    ctaPrimary: {
-      label: 'Ver certificações completas',
-      href: '/compliance',
-      isWhatsApp: false,
-    },
-    ctaSecondary: {
-      label: 'Falar com Especialista',
-      href: WA_LINK,
-      isWhatsApp: true,
-    },
+    ctaPrimaryHref: '/compliance',
+    ctaPrimaryIsWhatsApp: false,
+    ctaSecondaryHref: WA_LINK,
+    ctaSecondaryIsWhatsApp: true,
     bgImage: '/images/design verde.webp',
     bgType: 'abstract',
     sideImage: '/images/processo-reciclagem.png',
     sideImageType: 'photo',
     bgAlt:
       'Processo de reciclagem eletrônica GTech — rastreabilidade MTR, CADRI e CDF',
-    customSocialProofSuffix: 'com processo 100% rastreável.',
-    statsBlock: null,
+    statsBlockValue: null,
+  },
+  {
+    ctaPrimaryHref: WA_LINK,
+    ctaPrimaryIsWhatsApp: true,
+    ctaSecondaryHref: '/sobre-nos',
+    ctaSecondaryIsWhatsApp: false,
+    bgImage: '/images/design verde.webp',
+    bgType: 'abstract',
+    sideImage: null,
+    sideImageType: null,
+    bgAlt: 'Design verde GTech — gestão ambiental',
+    statsBlockValue: null,
   },
 ];
 
@@ -131,22 +101,53 @@ export default function Hero() {
   const { lang } = useLanguage();
   const tx = translations.hero;
 
+  const heroSlides = tx.slides.map((tSlide, index) => {
+    const conf = slideConfig[index];
+    return {
+      ...conf,
+      id: tSlide.id,
+      eyebrow: t(tSlide.eyebrow, lang),
+      title: t(tSlide.title, lang),
+      titleHighlight: t(tSlide.titleHighlight, lang),
+      subtitle: t(tSlide.subtitle, lang),
+      ctaPrimary: {
+        label: t(tSlide.ctaPrimaryLabel, lang),
+        href: conf.ctaPrimaryHref,
+        isWhatsApp: conf.ctaPrimaryIsWhatsApp,
+      },
+      ctaSecondary: {
+        label: t(tSlide.ctaSecondaryLabel, lang),
+        href: conf.ctaSecondaryHref,
+        isWhatsApp: conf.ctaSecondaryIsWhatsApp,
+      },
+      customSocialProofSuffix: tSlide.customSocialProofSuffix
+        ? t(tSlide.customSocialProofSuffix, lang)
+        : null,
+      statsBlock: conf.statsBlockValue
+        ? {
+            value: conf.statsBlockValue,
+            label: t(tSlide.statsBlockLabel, lang),
+          }
+        : null,
+    };
+  });
+
   const [activeIndex, setActiveIndex] = useState(0);
   const intervalRef = useRef(null);
 
   const goTo = useCallback((index) => {
     setActiveIndex(
-      ((index % heroSlides.length) + heroSlides.length) % heroSlides.length
+      ((index % slideConfig.length) + slideConfig.length) % slideConfig.length
     );
   }, []);
 
   const goNext = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % heroSlides.length);
+    setActiveIndex((prev) => (prev + 1) % slideConfig.length);
   }, []);
 
   const goPrev = useCallback(() => {
     setActiveIndex(
-      (prev) => (prev - 1 + heroSlides.length) % heroSlides.length
+      (prev) => (prev - 1 + slideConfig.length) % slideConfig.length
     );
   }, []);
 
