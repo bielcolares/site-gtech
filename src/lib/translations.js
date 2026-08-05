@@ -769,6 +769,116 @@ export const translations = {
     modal_cta: { pt: 'Falar com Especialista', en: 'Talk to a Specialist' },
   },
 
+  // ─── Compliance ──────────────────────────────────────────────────────────
+  compliance: {
+    hero_eyebrow: {
+      pt: 'TRANSPARÊNCIA E GOVERNANÇA',
+      en: 'TRANSPARENCY & GOVERNANCE',
+    },
+    hero_title: { pt: 'Compliance &', en: 'Compliance &' },
+    hero_title_highlight: { pt: 'Certificações', en: 'Certifications' },
+    hero_description: {
+      pt: 'Nossos padrões de excelência são auditados, certificados e disponíveis para consulta. Governança que protege sua marca e a nossa.',
+      en: 'Our standards of excellence are audited, certified, and available for review. Governance that protects your brand and ours.',
+    },
+    certs_eyebrow: {
+      pt: 'AUDITORIAS INTERNACIONAIS',
+      en: 'INTERNATIONAL AUDITS',
+    },
+    certs_title: {
+      pt: 'Certificações Internacionais',
+      en: 'International Certifications',
+    },
+    certs_description: {
+      pt: 'Auditorias rigorosas que comprovam nossa capacidade de gestão a nível de excelência internacional.',
+      en: 'Rigorous audits proving our management capability at an international level of excellence.',
+    },
+    download_cert: { pt: 'Baixar Certificado', en: 'Download Certificate' },
+    iso_certs: [
+      {
+        name: 'ISO 9001',
+        description: {
+          pt: 'Sistema de Gestão da Qualidade — garante processos padronizados e melhoria contínua em todas as operações.',
+          en: 'Quality Management System — ensures standardized processes and continuous improvement across all operations.',
+        },
+      },
+      {
+        name: 'ISO 14001',
+        description: {
+          pt: 'Sistema de Gestão Ambiental — assegura conformidade com legislação ambiental e redução de impactos.',
+          en: 'Environmental Management System — ensures compliance with environmental legislation and impact reduction.',
+        },
+      },
+      {
+        name: 'ISO 45001',
+        description: {
+          pt: 'Saúde e Segurança Ocupacional — protege colaboradores com os mais altos padrões de segurança do trabalho.',
+          en: 'Occupational Health and Safety — protects employees with the highest workplace safety standards.',
+        },
+      },
+    ],
+    r2v3_badge: { pt: 'Padrão Ouro Global', en: 'Global Gold Standard' },
+    r2v3_title: { pt: 'Certificação R2v3', en: 'R2v3 Certification' },
+    r2v3_description: {
+      pt: 'O Responsible Recycling v3 é a norma internacional mais rigorosa para reciclagem de eletrônicos. Exige rastreabilidade total, segurança de dados e conformidade ambiental em cada etapa do processo.',
+      en: 'Responsible Recycling v3 is the most rigorous international standard for electronics recycling. It requires full traceability, data security, and environmental compliance at every stage of the process.',
+    },
+    docs_eyebrow: { pt: 'GOVERNANÇA E ÉTICA', en: 'GOVERNANCE & ETHICS' },
+    docs_title: {
+      pt: 'Documentos Institucionais',
+      en: 'Institutional Documents',
+    },
+    docs_description: {
+      pt: 'Nossos compromissos éticos e operacionais formalizados e disponíveis para consulta.',
+      en: 'Our ethical and operational commitments formalized and available for review.',
+    },
+    download_doc: { pt: 'Baixar Documento', en: 'Download Document' },
+    institutional_docs: [
+      {
+        title: { pt: 'Código de Ética', en: 'Code of Ethics' },
+        description: {
+          pt: 'Define os princípios e valores que orientam a conduta de todos os colaboradores e parceiros da GTech em suas relações profissionais.',
+          en: 'Defines the principles and values that guide the conduct of all GTech employees and partners in their professional relationships.',
+        },
+      },
+      {
+        title: { pt: 'Política Integrada', en: 'Integrated Policy' },
+        description: {
+          pt: 'Documento que consolida nossas diretrizes de Qualidade, Meio Ambiente e Saúde & Segurança em um único compromisso formal e auditável.',
+          en: 'Document consolidating our Quality, Environmental, and Health & Safety guidelines into a single formal, auditable commitment.',
+        },
+      },
+    ],
+    channel_eyebrow: { pt: 'TRANSPARÊNCIA ATIVA', en: 'ACTIVE TRANSPARENCY' },
+    channel_title: { pt: 'Canal de Comunicação', en: 'Communication Channel' },
+    channel_description_prefix: {
+      pt: 'Caso você queira reportar algo relacionado à',
+      en: 'If you wish to report something related to',
+    },
+    channel_ethical: { pt: 'comportamento ético', en: 'ethical behavior' },
+    channel_conduct: { pt: 'conduta', en: 'conduct' },
+    channel_integrity: { pt: 'integridade', en: 'integrity' },
+    channel_harassment: { pt: 'assédio', en: 'harassment' },
+    channel_description_suffix: {
+      pt: 'ou qualquer outro tema em desconformidade com nossos princípios, entre em contato:',
+      en: 'or any other matter not in line with our principles, please contact us:',
+    },
+  },
+
+  // ─── Services CTA ─────────────────────────────────────────────────────
+  services_cta: {
+    eyebrow: { pt: 'QUER SABER MAIS?', en: 'WANT TO KNOW MORE?' },
+    title: {
+      pt: 'Consulte nossos certificados e documentos institucionais',
+      en: 'Check our certificates and institutional documents',
+    },
+    description: {
+      pt: 'Acesse a página de Compliance para baixar certificados, o Código de Ética e a Política Integrada da GTech.',
+      en: 'Visit the Compliance page to download certificates, the Code of Ethics, and the GTech Integrated Policy.',
+    },
+    cta: { pt: 'Acessar Compliance', en: 'Access Compliance' },
+  },
+
   // ─── Footer ──────────────────────────────────────────────────────────────
   footer: {
     tagline: {

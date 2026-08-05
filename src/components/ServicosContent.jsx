@@ -19,6 +19,7 @@ import { trackCtaClick, trackWhatsAppLead } from '@/lib/analytics';
 export default function ServicosContent() {
   const { lang } = useLanguage();
   const tx = translations.services;
+  const txCta = translations.services_cta;
   const [activeCert, setActiveCert] = useState(null);
 
   const containerVariants = {
@@ -463,20 +464,17 @@ export default function ServicosContent() {
           className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8"
         >
           <p className="mb-2 text-sm font-bold uppercase tracking-widest text-primary">
-            QUER SABER MAIS?
+            {t(txCta.eyebrow, lang)}
           </p>
           <h3 className="mb-3 text-2xl font-extrabold text-slate-800">
-            Consulte nossos certificados e documentos institucionais
+            {t(txCta.title, lang)}
           </h3>
-          <p className="mb-8 text-slate-500">
-            Acesse a página de Compliance para baixar certificados, o Código de
-            Ética e a Política Integrada da GTech.
-          </p>
+          <p className="mb-8 text-slate-500">{t(txCta.description, lang)}</p>
           <Link
             href="/compliance"
             className="hover:shadow-primary/20 group inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 font-bold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-lg"
           >
-            Acessar Compliance
+            {t(txCta.cta, lang)}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"

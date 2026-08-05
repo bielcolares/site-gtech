@@ -1,9 +1,11 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Download, Shield, ClipboardList, Mail, Award } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations, t } from '@/lib/translations';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -19,51 +21,47 @@ const itemVariants = {
   },
 };
 
-const isoCerts = [
+const ISO_IMAGES = [
   {
     image: '/images/iso-9001.png',
     alt: 'ISO 9001',
-    name: 'ISO 9001',
-    description:
-      'Sistema de Gestão da Qualidade — garante processos padronizados e melhoria contínua em todas as operações.',
     file: '/Arquivos/iso-9001.pdf',
   },
   {
     image: '/images/iso-14001.png',
     alt: 'ISO 14001',
-    name: 'ISO 14001',
-    description:
-      'Sistema de Gestão Ambiental — assegura conformidade com legislação ambiental e redução de impactos.',
     file: '/Arquivos/iso-14001.pdf',
   },
   {
     image: '/images/iso-45001.png',
     alt: 'ISO 45001',
-    name: 'ISO 45001',
-    description:
-      'Saúde e Segurança Ocupacional — protege colaboradores com os mais altos padrões de segurança do trabalho.',
     file: '/Arquivos/iso-45001.pdf',
   },
 ];
 
-const institutionalDocs = [
-  {
-    icon: Shield,
-    title: 'Código de Ética',
-    description:
-      'Define os princípios e valores que orientam a conduta de todos os colaboradores e parceiros da GTech em suas relações profissionais.',
-    file: '/Arquivos/codigo-de-etica.pdf',
-  },
-  {
-    icon: ClipboardList,
-    title: 'Política Integrada',
-    description:
-      'Documento que consolida nossas diretrizes de Qualidade, Meio Ambiente e Saúde & Segurança em um único compromisso formal e auditável.',
-    file: '/Arquivos/politica-integrada.pdf',
-  },
+const DOC_ICONS = [Shield, ClipboardList];
+const DOC_FILES = [
+  '/Arquivos/codigo-de-etica.pdf',
+  '/Arquivos/politica-integrada.pdf',
 ];
 
 export default function ComplianceContent() {
+  const { lang } = useLanguage();
+  const tx = translations.compliance;
+
+  const isoCerts = tx.iso_certs.map((cert, i) => ({
+    ...cert,
+    ...ISO_IMAGES[i],
+    description: t(cert.description, lang),
+  }));
+
+  const institutionalDocs = tx.institutional_docs.map((doc, i) => ({
+    icon: DOC_ICONS[i],
+    title: t(doc.title, lang),
+    description: t(doc.description, lang),
+    file: DOC_FILES[i],
+  }));
+
   return (
     <div className="relative flex-grow overflow-hidden bg-white">
       {/* =================== HERO =================== */}
@@ -104,16 +102,16 @@ export default function ComplianceContent() {
               variants={itemVariants}
               className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary"
             >
-              TRANSPARÊNCIA E GOVERNANÇA
+              {t(tx.hero_eyebrow, lang)}
             </motion.span>
             <motion.h1
               variants={itemVariants}
               className="mb-6 text-4xl font-extrabold leading-tight text-slate-900 lg:text-6xl"
             >
-              Compliance &{' '}
+              {t(tx.hero_title, lang)}{' '}
               <span className="relative">
                 <span className="relative z-10 text-primary">
-                  Certificações
+                  {t(tx.hero_title_highlight, lang)}
                 </span>
                 <span className="bg-primary/30 absolute -bottom-1 left-0 right-0 h-1 rounded-full" />
               </span>
@@ -122,9 +120,7 @@ export default function ComplianceContent() {
               variants={itemVariants}
               className="max-w-2xl text-lg leading-relaxed text-slate-600 lg:text-xl"
             >
-              Nossos padrões de excelência são auditados, certificados e
-              disponíveis para consulta. Governança que protege sua marca e a
-              nossa.
+              {t(tx.hero_description, lang)}
             </motion.p>
           </div>
         </motion.div>
@@ -142,14 +138,13 @@ export default function ComplianceContent() {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="mb-16 text-center">
             <span className="mb-3 inline-block text-sm font-bold uppercase tracking-widest text-primary">
-              AUDITORIAS INTERNACIONAIS
+              {t(tx.certs_eyebrow, lang)}
             </span>
             <h2 className="mb-4 text-3xl font-extrabold text-slate-900 lg:text-4xl">
-              Certificações Internacionais
+              {t(tx.certs_title, lang)}
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-slate-600">
-              Auditorias rigorosas que comprovam nossa capacidade de gestão a
-              nível de excelência internacional.
+              {t(tx.certs_description, lang)}
             </p>
           </motion.div>
 
@@ -184,7 +179,7 @@ export default function ComplianceContent() {
                   className="hover:shadow-primary/20 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-md"
                 >
                   <Download className="h-4 w-4" />
-                  Baixar Certificado
+                  {t(tx.download_cert, lang)}
                 </a>
               </motion.div>
             ))}
@@ -203,7 +198,7 @@ export default function ComplianceContent() {
               {/* Badge */}
               <span className="border-primary/40 bg-primary/20 mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-bold uppercase tracking-widest text-primary">
                 <Award className="h-4 w-4" />
-                Padrão Ouro Global
+                {t(tx.r2v3_badge, lang)}
               </span>
 
               {/* Selo */}
@@ -226,13 +221,10 @@ export default function ComplianceContent() {
               </div>
 
               <h3 className="mb-4 text-3xl font-extrabold text-white lg:text-4xl">
-                Certificação R2v3
+                {t(tx.r2v3_title, lang)}
               </h3>
               <p className="mb-10 max-w-xl text-lg leading-relaxed text-white/80">
-                O Responsible Recycling v3 é a norma internacional mais rigorosa
-                para reciclagem de eletrônicos. Exige rastreabilidade total,
-                segurança de dados e conformidade ambiental em cada etapa do
-                processo.
+                {t(tx.r2v3_description, lang)}
               </p>
 
               <a
@@ -242,7 +234,7 @@ export default function ComplianceContent() {
                 className="hover:shadow-primary/20 inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3.5 font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-md"
               >
                 <Download className="h-4 w-4" />
-                Baixar Certificado
+                {t(tx.download_cert, lang)}
               </a>
             </div>
           </motion.div>
@@ -261,14 +253,13 @@ export default function ComplianceContent() {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="mb-16 text-center">
             <span className="mb-3 inline-block text-sm font-bold uppercase tracking-widest text-primary">
-              GOVERNANÇA E ÉTICA
+              {t(tx.docs_eyebrow, lang)}
             </span>
             <h2 className="mb-4 text-3xl font-extrabold text-slate-900 lg:text-4xl">
-              Documentos Institucionais
+              {t(tx.docs_title, lang)}
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-slate-600">
-              Nossos compromissos éticos e operacionais formalizados e
-              disponíveis para consulta.
+              {t(tx.docs_description, lang)}
             </p>
           </motion.div>
 
@@ -301,7 +292,7 @@ export default function ComplianceContent() {
                     className="hover:shadow-primary/20 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-md"
                   >
                     <Download className="h-4 w-4" />
-                    Baixar Documento
+                    {t(tx.download_doc, lang)}
                   </a>
                 </motion.div>
               );
@@ -330,14 +321,14 @@ export default function ComplianceContent() {
             variants={itemVariants}
             className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-primary"
           >
-            TRANSPARÊNCIA ATIVA
+            {t(tx.channel_eyebrow, lang)}
           </motion.span>
 
           <motion.h2
             variants={itemVariants}
             className="mb-8 text-3xl font-extrabold text-white lg:text-5xl"
           >
-            Canal de Comunicação
+            {t(tx.channel_title, lang)}
           </motion.h2>
 
           <motion.div
@@ -345,15 +336,23 @@ export default function ComplianceContent() {
             className="mx-auto mb-10 max-w-2xl rounded-xl border-l-4 border-primary bg-white/5 p-8 backdrop-blur-sm"
           >
             <p className="text-lg leading-relaxed text-white/90">
-              Caso você queira reportar algo relacionado à{' '}
+              {t(tx.channel_description_prefix, lang)}{' '}
               <strong className="font-bold text-primary">
-                comportamento ético
+                {t(tx.channel_ethical, lang)}
               </strong>
-              , <strong className="font-bold text-primary">conduta</strong>,{' '}
-              <strong className="font-bold text-primary">integridade</strong>,{' '}
-              <strong className="font-bold text-primary">assédio</strong> ou
-              qualquer outro tema em desconformidade com nossos princípios,
-              entre em contato:
+              ,{' '}
+              <strong className="font-bold text-primary">
+                {t(tx.channel_conduct, lang)}
+              </strong>
+              ,{' '}
+              <strong className="font-bold text-primary">
+                {t(tx.channel_integrity, lang)}
+              </strong>
+              ,{' '}
+              <strong className="font-bold text-primary">
+                {t(tx.channel_harassment, lang)}
+              </strong>{' '}
+              {t(tx.channel_description_suffix, lang)}
             </p>
           </motion.div>
 
