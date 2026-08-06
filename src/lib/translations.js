@@ -1,4 +1,4 @@
-export const translations = {
+﻿export const translations = {
   // ─── Header ────────────────────────────────────────────────────────────────
   header: {
     nav: {
@@ -6,6 +6,7 @@ export const translations = {
       about: { pt: 'Sobre Nós', en: 'About Us' },
       services: { pt: 'Serviços', en: 'Services' },
       contact: { pt: 'Contato', en: 'Contact' },
+      blog: { pt: 'Blog', en: 'Blog' },
     },
     cta: { pt: 'Falar com Especialista', en: 'Talk to a Specialist' },
   },
@@ -880,6 +881,302 @@ export const translations = {
   },
 
   // ─── Footer ──────────────────────────────────────────────────────────────
+
+  // ============================================================
+  // Blog
+  // ============================================================
+  blog: {
+    breadcrumb_home: { pt: 'Início', en: 'Home' },
+    breadcrumb_blog: { pt: 'Blog', en: 'Blog' },
+    category: { pt: 'Sustentabilidade', en: 'Sustainability' },
+    date: { pt: 'Agosto 2026', en: 'August 2026' },
+    readTime: { pt: '8 min de leitura', en: '8 min read' },
+    hero_title_pre: {
+      pt: 'Logística Reversa: como a Gtech transforma o descarte de eletrônicos em',
+      en: 'Reverse Logistics: how Gtech transforms electronics disposal into',
+    },
+    hero_title_highlight: { pt: 'valor real', en: 'real value' },
+    hero_title_pos: {
+      pt: 'para empresas e para o meio ambiente.',
+      en: 'for companies and the environment.',
+    },
+    hero_subtitle: {
+      pt: 'A transformação digital aumentou significativamente a quantidade de resíduos eletrônicos. Descubra como a Gtech transforma esse desafio em estratégia sustentável, segura e eficiente.',
+      en: 'The digital transformation has significantly increased the volume of electronic waste. Discover how Gtech turns this challenge into a sustainable, safe, and efficient strategy.',
+    },
+    intro_p1: {
+      pt: 'A transformação digital trouxe inúmeros benefícios para empresas de todos os setores. No entanto, ela também aumentou significativamente a quantidade de resíduos eletrônicos, tornando o descarte de eletrônicos um dos principais desafios ambientais da atualidade.',
+      en: 'The digital transformation has brought countless benefits to companies across all sectors. However, it has also significantly increased the volume of electronic waste, making electronics disposal one of the leading environmental challenges of our time.',
+    },
+    intro_p2: {
+      pt: 'Computadores, notebooks, celulares, servidores, impressoras, monitores, baterias e diversos outros equipamentos possuem vida útil limitada. Quando chegam ao fim de seu ciclo, precisam receber uma destinação adequada para evitar riscos ambientais, proteger informações sensíveis e garantir o cumprimento da legislação.',
+      en: 'Computers, laptops, mobile phones, servers, printers, monitors, batteries, and many other devices have a limited lifespan. When they reach the end of their cycle, they need proper disposal to avoid environmental risks, protect sensitive information, and ensure legal compliance.',
+    },
+    intro_p3: {
+      pt: 'É exatamente nesse cenário que a Gtech se destaca. Especializada em logística reversa, gestão de resíduos eletrônicos e economia circular, a empresa oferece soluções completas para organizações que desejam transformar o descarte de equipamentos em uma estratégia sustentável, segura e eficiente.',
+      en: 'It is precisely in this scenario that Gtech stands out. Specialized in reverse logistics, e-waste management, and circular economy, the company offers comprehensive solutions for organizations that want to turn equipment disposal into a sustainable, safe, and efficient strategy.',
+    },
+    section1_title: {
+      pt: 'O que é logística reversa?',
+      en: 'What is reverse logistics?',
+    },
+    section1_p1: {
+      pt: 'A logística reversa é um conjunto de processos destinados ao retorno de produtos e materiais ao ciclo produtivo após o consumo ou término da sua vida útil.',
+      en: 'Reverse logistics is a set of processes aimed at returning products and materials to the production cycle after consumption or the end of their useful life.',
+    },
+    section1_p2: {
+      pt: 'Mais do que simplesmente recolher equipamentos, esse processo envolve coleta, transporte, triagem, rastreabilidade, descaracterização, reciclagem e destinação ambientalmente correta.',
+      en: 'More than simply collecting equipment, this process involves collection, transport, sorting, traceability, data destruction, recycling, and environmentally correct disposal.',
+    },
+    section1_p3: {
+      pt: 'No Brasil, a logística reversa ganhou ainda mais importância com a Política Nacional de Resíduos Sólidos (PNRS). Hoje, investir em logística reversa deixou de ser apenas uma obrigação legal e passou a representar uma vantagem competitiva para empresas comprometidas com ESG, sustentabilidade e governança corporativa.',
+      en: 'In Brazil, reverse logistics gained even more importance with the National Solid Waste Policy (PNRS). Today, investing in reverse logistics is no longer just a legal obligation — it represents a competitive advantage for companies committed to ESG, sustainability, and corporate governance.',
+    },
+    section2_title: {
+      pt: 'Por que o descarte de eletrônicos exige atenção?',
+      en: 'Why does electronics disposal require special attention?',
+    },
+    section2_p1: {
+      pt: 'O chamado lixo eletrônico é um dos resíduos que mais cresce no mundo. Equipamentos eletrônicos possuem componentes como cobre, alumínio, aço, ouro, prata, paládio e diversos outros materiais de alto valor econômico. Ao mesmo tempo, também podem conter substâncias potencialmente prejudiciais ao meio ambiente quando descartados de forma inadequada.',
+      en: 'Electronic waste is one of the fastest-growing waste streams in the world. Electronic equipment contains components such as copper, aluminum, steel, gold, silver, palladium, and many other economically valuable materials. At the same time, they can also contain substances that are potentially harmful to the environment when improperly disposed of.',
+    },
+    section2_p2: {
+      pt: 'Além dos impactos ambientais, existe outro fator extremamente importante: a segurança das informações. Empresas descartam diariamente equipamentos que armazenam dados estratégicos, documentos financeiros, informações de clientes e arquivos confidenciais. Um descarte incorreto pode resultar em vazamento de dados, prejuízos financeiros e danos à reputação da organização. Por isso, contar com uma empresa especializada faz toda a diferença.',
+      en: 'Beyond environmental impacts, there is another extremely important factor: information security. Companies daily discard equipment storing strategic data, financial documents, customer information, and confidential files. Improper disposal can result in data breaches, financial losses, and reputational damage. That is why partnering with a specialized company makes all the difference.',
+    },
+    section3_title: {
+      pt: 'Como a Gtech realiza a logística reversa',
+      en: 'How Gtech Performs Reverse Logistics',
+    },
+    section3_intro: {
+      pt: 'A Gtech desenvolveu um processo completo para garantir que todo equipamento eletrônico seja tratado com segurança, rastreabilidade e responsabilidade ambiental. Entre as principais etapas estão:',
+      en: 'Gtech has developed a comprehensive process to ensure that every electronic device is handled with safety, traceability, and environmental responsibility. The main steps include:',
+    },
+    steps: [
+      {
+        title: { pt: 'Coleta Especializada', en: 'Specialized Collection' },
+        desc: {
+          pt: 'A operação começa com a coleta planejada dos equipamentos, realizada por profissionais capacitados seguindo todas as normas de transporte e segurança.',
+          en: 'The operation begins with the planned collection of equipment, carried out by trained professionals following all transport and safety regulations.',
+        },
+      },
+      {
+        title: { pt: 'Triagem Técnica', en: 'Technical Sorting' },
+        desc: {
+          pt: 'Após a chegada ao centro de processamento, cada equipamento passa por uma avaliação técnica para definir o melhor destino: reaproveitamento, desmontagem ou reciclagem.',
+          en: 'Upon arrival at the processing center, each device undergoes a technical assessment to determine the best destination: reuse, dismantling, or recycling.',
+        },
+      },
+      {
+        title: { pt: 'Segurança das Informações', en: 'Information Security' },
+        desc: {
+          pt: 'A Gtech adota procedimentos específicos para garantir a eliminação segura de informações, reduzindo riscos relacionados à LGPD e protegendo os dados corporativos dos clientes.',
+          en: 'Gtech adopts specific procedures to ensure the secure elimination of information, reducing LGPD/GDPR-related risks and protecting clients corporate data.',
+        },
+      },
+      {
+        title: {
+          pt: 'Destinação Ambientalmente Correta',
+          en: 'Environmentally Correct Disposal',
+        },
+        desc: {
+          pt: 'Os materiais são separados e encaminhados para processos certificados de reciclagem e recuperação de matérias-primas. Todo o processo ocorre com rastreabilidade e documentação completa.',
+          en: 'Materials are separated and sent for certified recycling and raw-material recovery processes. The entire process is carried out with full traceability and documentation.',
+        },
+      },
+    ],
+    section4_title: {
+      pt: 'Gestão de resíduos eletrônicos: muito além do descarte',
+      en: 'E-Waste Management: Much More Than Disposal',
+    },
+    section4_p1: {
+      pt: 'Quando falamos em gestão de resíduos eletrônicos, não estamos falando apenas de retirar equipamentos antigos das empresas.',
+      en: 'When we talk about e-waste management, we are not simply talking about removing old equipment from companies.',
+    },
+    section4_p2: {
+      pt: 'Uma gestão eficiente envolve planejamento, controle, rastreamento e comprovação documental de todas as etapas. A Gtech oferece soluções completas que permitem às empresas:',
+      en: 'Efficient management involves planning, control, tracking, and documentary proof of every stage. Gtech offers comprehensive solutions that allow companies to:',
+    },
+    section4_list: [
+      {
+        pt: 'Organizar seus ativos obsoletos',
+        en: 'Organize their obsolete assets',
+      },
+      { pt: 'Reduzir riscos ambientais', en: 'Reduce environmental risks' },
+      { pt: 'Atender às exigências legais', en: 'Meet legal requirements' },
+      {
+        pt: 'Garantir segurança da informação',
+        en: 'Ensure information security',
+      },
+      {
+        pt: 'Demonstrar compromisso com práticas sustentáveis',
+        en: 'Demonstrate commitment to sustainable practices',
+      },
+      { pt: 'Fortalecer ações de ESG', en: 'Strengthen ESG initiatives' },
+    ],
+    section5_title: {
+      pt: 'Economia circular e mineração urbana',
+      en: 'Circular Economy and Urban Mining',
+    },
+    section5_p1: {
+      pt: 'Ao contrário do descarte convencional, a logística reversa permite que diversos materiais retornem ao ciclo produtivo. Esse processo é conhecido como mineração urbana.',
+      en: 'Unlike conventional disposal, reverse logistics allows many materials to return to the production cycle. This process is known as urban mining.',
+    },
+    section5_p2: {
+      pt: 'Em vez de extrair novos recursos naturais, materiais presentes em equipamentos eletrônicos são recuperados, tratados e reaproveitados pela indústria. Entre eles estão:',
+      en: 'Instead of extracting new natural resources, materials found in electronic equipment are recovered, processed, and reused by industry. These include:',
+    },
+    materials: [
+      { pt: 'Cobre', en: 'Copper' },
+      { pt: 'Alumínio', en: 'Aluminum' },
+      { pt: 'Aço', en: 'Steel' },
+      { pt: 'Plásticos industriais', en: 'Industrial plastics' },
+      { pt: 'Ouro', en: 'Gold' },
+      { pt: 'Prata', en: 'Silver' },
+      { pt: 'Paládio', en: 'Palladium' },
+      { pt: 'Outros metais de alto valor', en: 'Other high-value metals' },
+    ],
+    section5_p3: {
+      pt: 'Essa prática reduz impactos ambientais, economiza recursos naturais e fortalece a economia circular. Na Gtech, sustentabilidade significa transformar resíduos em novas oportunidades.',
+      en: 'This practice reduces environmental impacts, conserves natural resources, and strengthens the circular economy. At Gtech, sustainability means turning waste into new opportunities.',
+    },
+    section6_title: {
+      pt: 'Benefícios da logística reversa para empresas',
+      en: 'Benefits of Reverse Logistics for Companies',
+    },
+    benefits: [
+      {
+        title: { pt: 'Conformidade Legal', en: 'Legal Compliance' },
+        desc: {
+          pt: 'Atendimento às exigências ambientais e às políticas de responsabilidade corporativa.',
+          en: 'Compliance with environmental requirements and corporate responsibility policies.',
+        },
+      },
+      {
+        title: { pt: 'Segurança da Informação', en: 'Information Security' },
+        desc: {
+          pt: 'Eliminação segura de dados armazenados em computadores, servidores e demais equipamentos.',
+          en: 'Secure elimination of data stored on computers, servers, and other equipment.',
+        },
+      },
+      {
+        title: { pt: 'Fortalecimento da Marca', en: 'Brand Strengthening' },
+        desc: {
+          pt: 'Consumidores e parceiros valorizam empresas comprometidas com práticas sustentáveis.',
+          en: 'Consumers and partners value companies committed to sustainable practices.',
+        },
+      },
+      {
+        title: {
+          pt: 'Redução de Impactos Ambientais',
+          en: 'Reduced Environmental Impact',
+        },
+        desc: {
+          pt: 'Menor volume de resíduos destinados a aterros e maior reaproveitamento de materiais.',
+          en: 'Lower volume of waste sent to landfills and greater material reuse.',
+        },
+      },
+      {
+        title: { pt: 'Apoio às Estratégias ESG', en: 'ESG Strategy Support' },
+        desc: {
+          pt: 'A logística reversa fortalece pilares ambientais, sociais e de governança da sua empresa.',
+          en: 'Reverse logistics strengthens the environmental, social, and governance pillars of your company.',
+        },
+      },
+      {
+        title: { pt: 'Economia Circular', en: 'Circular Economy' },
+        desc: {
+          pt: 'Transformação de resíduos em matérias-primas que retornam ao mercado.',
+          en: 'Transformation of waste into raw materials that return to the market.',
+        },
+      },
+    ],
+    section7_title: {
+      pt: 'Por que escolher a Gtech?',
+      en: 'Why Choose Gtech?',
+    },
+    section7_p1: {
+      pt: 'A Gtech atua como parceira estratégica de empresas que buscam excelência na gestão de resíduos eletrônicos. Seu diferencial está na combinação de tecnologia, processos certificados, rastreabilidade e compromisso ambiental.',
+      en: 'Gtech acts as a strategic partner for companies seeking excellence in e-waste management. Its differentiator lies in the combination of technology, certified processes, traceability, and environmental commitment.',
+    },
+    section7_p2: {
+      pt: 'Ao contratar a Gtech, sua empresa conta com:',
+      en: 'By partnering with Gtech, your company gains access to:',
+    },
+    whyGtech: [
+      {
+        pt: 'Soluções completas em logística reversa',
+        en: 'Comprehensive reverse logistics solutions',
+      },
+      {
+        pt: 'Gestão especializada de resíduos eletrônicos',
+        en: 'Specialized e-waste management',
+      },
+      {
+        pt: 'Segurança no descarte de equipamentos',
+        en: 'Secure equipment disposal',
+      },
+      { pt: 'Proteção de dados corporativos', en: 'Corporate data protection' },
+      { pt: 'Atendimento personalizado', en: 'Personalized service' },
+      {
+        pt: 'Transparência durante todas as etapas do processo',
+        en: 'Full transparency throughout every stage of the process',
+      },
+      {
+        pt: 'Compromisso com sustentabilidade e economia circular',
+        en: 'Commitment to sustainability and the circular economy',
+      },
+    ],
+    conclusion_title: {
+      pt: 'O futuro da sustentabilidade começa hoje',
+      en: 'The Future of Sustainability Starts Today',
+    },
+    conclusion_p1: {
+      pt: 'O crescimento do volume de equipamentos eletrônicos torna indispensável que empresas adotem práticas responsáveis para o descarte de seus ativos.',
+      en: 'The growing volume of electronic equipment makes it essential for companies to adopt responsible practices for the disposal of their assets.',
+    },
+    conclusion_p2: {
+      pt: 'Com experiência, tecnologia e compromisso com a excelência, a Gtech oferece soluções completas para que empresas realizem o descarte de eletrônicos de maneira segura, eficiente e ambientalmente correta. Ao escolher a Gtech, sua empresa não apenas reduz impactos ambientais, mas também fortalece sua governança, protege informações estratégicas e contribui para um futuro mais sustentável.',
+      en: 'With experience, technology, and a commitment to excellence, Gtech offers comprehensive solutions for companies to dispose of electronics safely, efficiently, and in an environmentally responsible way. By choosing Gtech, your company not only reduces environmental impacts but also strengthens its governance, protects strategic information, and contributes to a more sustainable future.',
+    },
+    conclusion_tagline: {
+      pt: 'Recuperamos valor, protegemos marcas e preservamos o futuro.',
+      en: 'We recover value, protect brands, and preserve the future.',
+    },
+    sidebar_cta_title: {
+      pt: 'Fale com um especialista',
+      en: 'Talk to a Specialist',
+    },
+    sidebar_cta_desc: {
+      pt: 'Descubra como a Gtech pode ajudar a sua empresa a transformar o descarte de eletrônicos em uma estratégia sustentável.',
+      en: 'Discover how Gtech can help your company turn electronics disposal into a sustainable strategy.',
+    },
+    sidebar_cta_btn: { pt: 'Falar pelo WhatsApp', en: 'Contact via WhatsApp' },
+    sidebar_about_label: { pt: 'Gtech em números', en: 'Gtech by the numbers' },
+    sidebar_stats: [
+      {
+        pt: '+95% de reaproveitamento de materiais',
+        en: '+95% material reuse rate',
+      },
+      {
+        pt: 'Certificações R2v3, ISO 9001, 14001 e 45001',
+        en: 'R2v3, ISO 9001, 14001 & 45001 certified',
+      },
+      {
+        pt: 'Hub de 9.300m² com segurança armada 24/7',
+        en: '9,300m² hub with 24/7 armed security',
+      },
+      {
+        pt: '10+ anos de experiência em ITAD',
+        en: '10+ years of ITAD experience',
+      },
+    ],
+    sidebar_compliance_link: {
+      pt: 'Ver nossas certificações',
+      en: 'View our certifications',
+    },
+  },
+
   footer: {
     tagline: {
       pt: 'Recuperamos valor, protegemos marcas e preservamos o futuro. Especialistas em gestão de resíduos eletroeletrônicos e economia circular com governança sólida para a sua empresa.',
@@ -903,6 +1200,7 @@ export const translations = {
       about: { pt: 'Sobre Nós', en: 'About Us' },
       services: { pt: 'Serviços', en: 'Services' },
       contact: { pt: 'Contato', en: 'Contact' },
+      blog: { pt: 'Blog', en: 'Blog' },
     },
   },
 };

@@ -83,6 +83,12 @@ export default function Header() {
               Compliance
             </Link>
             <Link
+              href="/blog"
+              className="cursor-pointer font-medium text-slate-600 transition hover:text-primary"
+            >
+              {t(nav.blog, lang)}
+            </Link>
+            <Link
               href="/fale-conosco"
               className="cursor-pointer font-medium text-slate-600 transition hover:text-primary"
             >
@@ -155,6 +161,13 @@ export default function Header() {
               className="block rounded-md px-3 py-2 text-base font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-primary"
             >
               Compliance
+            </Link>
+            <Link
+              href="/blog"
+              onClick={() => setIsOpen(false)}
+              className="block rounded-md px-3 py-2 text-base font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-primary"
+            >
+              {t(nav.blog, lang)}
             </Link>
             <Link
               href="/fale-conosco"

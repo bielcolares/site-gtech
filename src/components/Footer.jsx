@@ -89,6 +89,11 @@ export default function Footer() {
                   {t(nav.contact, lang)}
                 </Link>
               </li>
+              <li>
+                <Link href="/blog" className="transition hover:text-primary">
+                  {t(nav.blog, lang)}
+                </Link>
+              </li>
             </ul>
           </div>
 
