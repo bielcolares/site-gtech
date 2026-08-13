@@ -66,7 +66,7 @@ Três pontos no site direcionam o usuário para `/compliance`:
 *   **GA4:** `G-HBFW0D3QJW` — NÃO REMOVER
 *   **GTM:** `GTM-T7HQQSL9` — NÃO REMOVER
 *   **Meta Pixel:** `317156430061443` — Funciona de forma independente, NÃO instalar via GTM
-*   **WhatsApp:** `11 99380-8385` — Redirecionamento direto `wa.me` (sem modal)
+*   **WhatsApp:** `11 98904-6274` — Redirecionamento direto `wa.me` (sem modal)
 
 ## ✅ Status
 Tudo codado, formatado pelo Prettier (via Husky pre-commit), commitado e hospedado no repositório `https://github.com/bielcolares/site-gtech.git` com deploy automático pela Vercel.

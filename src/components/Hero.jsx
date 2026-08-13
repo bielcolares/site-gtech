@@ -20,7 +20,7 @@ import { trackCtaClick, trackWhatsAppLead } from '@/lib/analytics';
 
 // ─── Dados dos slides ────────────────────────────────────────────────────────
 const WA_LINK =
-  'https://wa.me/5511993808385?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20conversar%20com%20um%20especialista.';
+  'https://wa.me/5511989046274?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20conversar%20com%20um%20especialista.';
 
 const slideConfig = [
   {

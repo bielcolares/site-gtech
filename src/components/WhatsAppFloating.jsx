@@ -5,12 +5,12 @@ import { trackCtaClick, trackWhatsAppLead } from '@/lib/analytics';
 import { MessageCircle } from 'lucide-react';
 
 export default function WhatsAppFloating() {
-  const phoneNumber = '5511993808385'; // Número da GTech
+  const phoneNumber = '5511989046274'; // Número da GTech
   const message =
     'Olá! Gostaria de falar com um especialista sobre a gestão correta de resíduos eletrônicos para a minha empresa.';
 
   const wpLink =
-    'https://wa.me/5511993808385?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20conversar%20com%20um%20especialista.';
+    'https://wa.me/5511989046274?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20conversar%20com%20um%20especialista.';
 
   return (
     <a

@@ -491,7 +491,7 @@ export default function BlogContent() {
                   {t(tx.sidebar_cta_desc, lang)}
                 </p>
                 <a
-                  href="https://wa.me/5511993808385?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20conversar%20com%20um%20especialista%20sobre%20log%C3%ADstica%20reversa."
+                  href="https://wa.me/5511989046274?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20conversar%20com%20um%20especialista%20sobre%20log%C3%ADstica%20reversa."
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => {

@@ -114,6 +114,6 @@ Para manter a integridade dos dados de marketing e tráfego, as seguintes regras
    - O Meta Pixel foi instalado de forma **independente** via <Script> do Next.js. **NÃO** remova e **NÃO** tente instalar esse mesmo Pixel por dentro do GTM, para evitar duplicação.
 
 3. **Eventos e CTAs do WhatsApp**:
-   - O telefone oficial para redirecionamentos é **11 99380-8385**.
+   - O telefone oficial para redirecionamentos é **11 98904-6274**.
    - Os CTAs devem redirecionar diretamente para a URL do WhatsApp (wa.me). **NÃO** reintroduzir modais de pré-formulário antes do clique.
    - Ao redirecionar, assegure-se de que os cliques disparem os eventos de rastreio configurados (como whatsapp_cta_click).
