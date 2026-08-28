@@ -15,12 +15,14 @@ import {
 import { useLanguage } from '@/context/LanguageContext';
 import { translations, t } from '@/lib/translations';
 import { trackCtaClick, trackWhatsAppLead } from '@/lib/analytics';
+import { SERVICE_DETAILS } from '@/data/servicosDetails';
 
 export default function ServicosContent() {
   const { lang } = useLanguage();
   const tx = translations.services;
   const txCta = translations.services_cta;
   const [activeCert, setActiveCert] = useState(null);
+  const [activeService, setActiveService] = useState(null);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -250,7 +252,11 @@ export default function ServicosContent() {
               <motion.div
                 variants={fadeUp}
                 key={i}
-                className={`group flex flex-col rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-lg ${
+                onClick={() => setActiveService(svc)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === 'Enter' && setActiveService(svc)}
+                className={`group flex cursor-pointer flex-col rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-lg focus:outline-none ${
                   i === 0
                     ? 'border-primary/30 items-center justify-center bg-gradient-to-br from-slate-50 to-white p-8 text-center shadow-sm md:col-span-2 lg:col-span-3 lg:p-12'
                     : 'items-start border-slate-200 bg-white p-8 text-left'
@@ -270,6 +276,12 @@ export default function ServicosContent() {
                 >
                   {t(svc.desc, lang)}
                 </p>
+                <div
+                  className={`mt-4 flex items-center gap-1 text-xs font-bold text-primary-dark opacity-0 transition-opacity group-hover:opacity-100 ${i === 0 ? 'mx-auto' : 'self-start'}`}
+                >
+                  <span>{lang === 'pt' ? 'Ver detalhes' : 'See details'}</span>
+                  <ArrowRight className="h-3 w-3" />
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -565,6 +577,140 @@ export default function ServicosContent() {
           </motion.div>
         </div>
       )}
+
+      {/* ─── Service Detail Modal ─── */}
+      {activeService &&
+        (() => {
+          const title = t(activeService.title, lang);
+          const desc = t(activeService.desc, lang);
+          const details =
+            (SERVICE_DETAILS[title] && SERVICE_DETAILS[title][lang]) ||
+            (SERVICE_DETAILS[title] && SERVICE_DETAILS[title]['pt']) ||
+            null;
+
+          return (
+            <div
+              className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+              onClick={() => setActiveService(null)}
+            >
+              <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ type: 'spring', duration: 0.4 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative z-10 flex max-h-[85vh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl"
+              >
+                {/* Header (fixo) */}
+                <div className="flex flex-shrink-0 items-center justify-between border-b border-slate-100 bg-slate-50 px-6 py-4">
+                  <span className="bg-primary/20 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary-dark">
+                    {lang === 'pt' ? 'Detalhes do Serviço' : 'Service Details'}
+                  </span>
+                  <button
+                    onClick={() => setActiveService(null)}
+                    aria-label={lang === 'pt' ? 'Fechar' : 'Close'}
+                    className="rounded-full p-2 text-slate-400 transition-colors hover:bg-slate-200 hover:text-slate-700"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                </div>
+
+                {/* Body (rolagem interna) */}
+                <div className="flex-1 overflow-y-auto px-8 py-8">
+                  <h3 className="mb-6 text-2xl font-extrabold leading-tight text-slate-800">
+                    {details ? details.title : title}
+                  </h3>
+
+                  {details ? (
+                    <div className="space-y-6">
+                      {details.sections.map((sec, idx) => (
+                        <div
+                          key={idx}
+                          className={
+                            sec.highlight
+                              ? 'rounded-xl border border-slate-100 bg-slate-50 p-6'
+                              : ''
+                          }
+                        >
+                          {sec.heading && (
+                            <h4 className="mb-2 text-base font-bold text-slate-800">
+                              {sec.heading}
+                            </h4>
+                          )}
+                          <p className="leading-relaxed text-slate-700">
+                            {sec.body}
+                          </p>
+                          {sec.list && sec.listType === 'ordered' && (
+                            <ol className="mt-3 list-decimal space-y-2 pl-5 text-slate-700">
+                              {sec.list.map((item, li) => (
+                                <li key={li} className="leading-relaxed">
+                                  {item}
+                                </li>
+                              ))}
+                            </ol>
+                          )}
+                          {sec.list && sec.listType === 'unordered' && (
+                            <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-700">
+                              {sec.list.map((item, li) => (
+                                <li key={li} className="leading-relaxed">
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="space-y-6">
+                      <p className="leading-relaxed text-slate-700">{desc}</p>
+                      <div className="rounded-xl border border-slate-100 bg-slate-50 p-6">
+                        <h4 className="mb-2 text-base font-bold text-slate-800">
+                          {lang === 'pt'
+                            ? 'Gostaria de saber mais?'
+                            : 'Would you like to know more?'}
+                        </h4>
+                        <p className="leading-relaxed text-slate-700">
+                          {lang === 'pt'
+                            ? 'Entre em contato com a equipe da Gtech para receber informações detalhadas sobre a contratação, operação e viabilidade deste serviço para a sua empresa.'
+                            : 'Contact the Gtech team to receive detailed information about hiring, operation, and feasibility of this service for your company.'}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Footer (fixo) */}
+                <div className="flex flex-shrink-0 flex-wrap items-center justify-between gap-3 border-t border-slate-100 bg-slate-50 px-8 py-4">
+                  <span className="text-sm text-slate-500">
+                    {t(tx.modal_footer, lang)}
+                  </span>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={() => setActiveService(null)}
+                      className="px-4 py-2 text-sm font-bold text-slate-500 transition hover:text-slate-700"
+                    >
+                      {lang === 'pt' ? 'Fechar' : 'Close'}
+                    </button>
+                    <a
+                      href="https://wa.me/5511989046274?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20conversar%20com%20um%20especialista."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => {
+                        trackCtaClick('servicos_detail_modal', title);
+                        trackWhatsAppLead('direct');
+                        setActiveService(null);
+                      }}
+                      className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white transition hover:bg-primary-dark"
+                    >
+                      {t(tx.modal_cta, lang)}
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          );
+        })()}
     </div>
   );
 }
