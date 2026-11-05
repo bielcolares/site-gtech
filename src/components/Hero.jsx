@@ -270,18 +270,11 @@ export default function Hero() {
             style={{ width: '45%' }}
           >
             <div className="relative flex h-auto w-full max-w-[850px] flex-col justify-center rounded-[40px] rounded-tl-[100px] bg-[#1a5f32] p-8 text-white shadow-2xl lg:p-10">
-              <div className="relative z-10 grid grid-cols-4 gap-4 md:gap-6">
-                {/* SETAS DE CONEXÃO (Absolute/background) */}
-                <div className="pointer-events-none absolute left-0 top-[40px] z-0 flex w-full justify-between px-[12%] opacity-50">
-                  <ArrowRight className="h-8 w-8 text-white/50 md:h-10 md:w-10" />
-                  <ArrowRight className="h-8 w-8 text-white/50 md:h-10 md:w-10" />
-                  <ArrowRight className="h-8 w-8 text-white/50 md:h-10 md:w-10" />
-                </div>
-
+              <div className="flex items-start justify-between gap-1 md:gap-2">
                 {/* STEP 1 */}
-                <div className="relative z-10 flex flex-col items-center text-center">
+                <div className="relative z-10 flex flex-1 flex-col items-center text-center">
                   <div className="mb-4 text-white">
-                    <Wrench className="h-12 w-12 md:h-16 md:w-16" />
+                    <Truck className="h-12 w-12 md:h-16 md:w-16" />
                   </div>
                   <h3 className="mb-3 text-lg font-bold md:text-xl">
                     {t(tx.process_diagram.step1_title, lang)}
@@ -291,10 +284,12 @@ export default function Hero() {
                   </p>
                 </div>
 
+                <ArrowRight className="mt-6 h-6 w-6 shrink-0 text-white/40 md:mt-8 md:h-8 md:w-8" />
+
                 {/* STEP 2 */}
-                <div className="relative z-10 flex flex-col items-center text-center">
+                <div className="relative z-10 flex flex-1 flex-col items-center text-center">
                   <div className="mb-4 text-white">
-                    <Truck className="h-12 w-12 md:h-16 md:w-16" />
+                    <Wrench className="h-12 w-12 md:h-16 md:w-16" />
                   </div>
                   <h3 className="mb-3 text-lg font-bold md:text-xl">
                     {t(tx.process_diagram.step2_title, lang)}
@@ -304,8 +299,10 @@ export default function Hero() {
                   </p>
                 </div>
 
+                <ArrowRight className="mt-6 h-6 w-6 shrink-0 text-white/40 md:mt-8 md:h-8 md:w-8" />
+
                 {/* STEP 3 */}
-                <div className="relative z-10 flex flex-col items-center text-center">
+                <div className="relative z-10 flex flex-1 flex-col items-center text-center">
                   <div className="mb-4 text-white">
                     <Filter className="h-12 w-12 md:h-16 md:w-16" />
                   </div>
@@ -317,8 +314,10 @@ export default function Hero() {
                   </p>
                 </div>
 
+                <ArrowRight className="mt-6 h-6 w-6 shrink-0 text-white/40 md:mt-8 md:h-8 md:w-8" />
+
                 {/* STEP 4 */}
-                <div className="relative z-10 flex flex-col items-center text-center">
+                <div className="relative z-10 flex flex-1 flex-col items-center text-center">
                   <div className="mb-4 inline-flex rounded-xl bg-white p-1 text-white">
                     <CheckSquare className="h-10 w-10 text-[#1a5f32] md:h-14 md:w-14" />
                   </div>
